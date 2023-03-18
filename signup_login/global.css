@@ -1,0 +1,86 @@
+body {
+  margin: 0;
+  line-height: normal;
+}
+
+:root {
+  /* fonts */
+  --font-google-sans: "Google Sans";
+  --button: "Nasalization";
+  --small-size-body-medium: Poppins;
+  --font-open-sans: "Open Sans";
+  --font-inter: Inter;
+  --font-inherit: inherit;
+
+  /* font sizes */
+  --font-size-21xl: 40px;
+  --font-size-29xl: 48px;
+  --font-size-17xl: 36px;
+  --font-size-5xl: 24px;
+  --font-size-9xl: 28px;
+  --font-size-13xl: 32px;
+  --font-size-11xl: 30px;
+  --font-size-xl: 20px;
+  --button-size: 14px;
+  --font-size-base: 16px;
+
+  /* Colors */
+  --black-like-ur-heart: #000;
+  --black-white-white: #fff;
+  --sexy-rouge: #ff182c;
+  --color-darkgray: #aeaeae;
+  --color-darkgray-100: #999;
+  --color-dimgray: #636262;
+  --color-crimson-200: #ff273a;
+  --color-crimson-100: #db3846;
+  --color-lightskyblue: #79d7ff;
+  --text-medium: #494e50;
+  --grey-grey-800: #424242;
+  --color-darkslategray-200: #39393d;
+  --color-darkslategray-100: #263238;
+  --color-darkslategray: #2f2d2d;
+  --color-steelblue-100: #3c74ba;
+  --grey-grey-50: #fafafa;
+  --color-gray-100: #808080;
+  --color-gray-200: #2b2b2e;
+  --color-gray-300: #1d1d1b;
+  --color-gainsboro-100: #e8e7e2;
+  --grey-grey-300: #e0e0e0;
+  --color-gainsboro: #d9d9d9;
+  --grey-grey-400: #bdbdbd;
+  --color-tomato-100: #fb4040;
+  --color-tomato-200: #fd3c3c;
+  --color-whitesmoke: #f3f2ef;
+  --color-yellowgreen-100: #82b63f;
+  --color-snow: #fff8f8;
+  --color-pink: #ffbfc5;
+
+  /* Gaps */
+  --gap-7xs: 6px;
+  --gap-9xs: 4px;
+  --gap-11xs: 2px;
+  --gap-3xs: 10px;
+  --gap-22xl: 41px;
+
+  /* Paddings */
+  --padding-4xs: 9px;
+  --padding-21xl: 40px;
+  --padding-5xs: 8px;
+  --padding-9xs: 4px;
+  --padding-base: 16px;
+  --padding-6xs-5: 6.5px;
+  --padding-xl: 20px;
+  --padding-13xl: 32px;
+
+  /* border radiuses */
+  --br-mini: 15px;
+  --br-xl: 20px;
+  --br-11xl: 30px;
+  --br-9xs: 4px;
+  --br-5xs: 8px;
+  --br-11xs: 2px;
+  --br-3xs: 10px;
+
+  /* Effects */
+  --bootstrap-focused: 0px 0px 0px 3.2px rgba(32, 162, 232, 0.25);
+}

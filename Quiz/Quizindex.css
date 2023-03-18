@@ -1,0 +1,132 @@
+.icon-park-outlinemuscle,
+.material-symbolsavg-time-outl-icon,
+.octicongoal-16 {
+  position: absolute;
+  top: 206px;
+  left: 1126px;
+  width: 108px;
+  height: 108px;
+}
+.material-symbolsavg-time-outl-icon,
+.octicongoal-16 {
+  left: 812px;
+}
+.material-symbolsavg-time-outl-icon {
+  left: 499px;
+}
+.age,
+.experience,
+.gender,
+.goal {
+  position: absolute;
+  top: 329px;
+  left: 167px;
+}
+.age,
+.experience,
+.goal {
+  left: 515px;
+}
+.experience,
+.goal {
+  left: 818px;
+}
+.experience {
+  left: 1069px;
+}
+.jamtransgender-icon {
+  position: absolute;
+  top: 206px;
+  left: 187px;
+  width: 108px;
+  height: 108px;
+}
+.quiz-question-child {
+  position: absolute;
+  top: 390px;
+  left: 94px;
+  width: 289.5px;
+  height: 18px;
+}
+.quiz-question-inner,
+.quiz-question-item,
+.rectangle-icon {
+  position: absolute;
+  top: 390px;
+  left: 405px;
+  width: 289.5px;
+  height: 18px;
+}
+.quiz-question-inner,
+.rectangle-icon {
+  left: 719px;
+}
+.rectangle-icon {
+  left: 1033px;
+}
+.are-you {
+  position: absolute;
+  top: 499px;
+  left: 604px;
+  font-size: var(--font-size-29xl);
+  font-weight: 800;
+  font-family: var(--font-open-sans);
+  color: var(--normal-text-color);
+}
+.quiz-question-child1,
+.rectangle-div {
+  position: absolute;
+  top: 640px;
+  left: 386px;
+  border-radius: var(--br-7xs);
+  background-color: var(--color-red-100);
+  width: 309px;
+  height: 100px;
+  cursor: pointer;
+}
+.quiz-question-child1 {
+  left: 741px;
+  background-color: var(--yuuuuh-nice-black);
+}
+.female,
+.male {
+  position: absolute;
+  top: 661px;
+  left: 475px;
+  font-size: var(--font-size-29xl);
+  color: var(--color-whitesmoke);
+}
+.female {
+  top: 662px;
+  left: 801px;
+  color: var(--sexy-rouge);
+}
+.red-lines-icon,
+.red-lines-icon1{
+  position: absolute;
+  top: 3px;
+  left: 187px;
+  width: 209.96px;
+  height: 141.72px;
+}
+.red-lines-icon1 {
+  top: 900px;
+  left: 1310px;
+}
+
+.red-lines-icon2 {
+  top: 0px;
+  left: 136px;
+}
+
+.quiz-question {
+  position: relative;
+  background-color: var(--color-whitesmoke);
+  width: 100%;
+  height: 1024px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-13xl);
+  color: var(--black-like-ur-heart);
+  font-family: var(--font-nasalization);
+}
