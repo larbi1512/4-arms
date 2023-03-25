@@ -5,4 +5,4 @@
 The scope of the project includes the development of a responsive website that includes features such as user registration, personalized diet plans, workout routines, supplements market and progress tracking.
 
 # Preview Website:
-    You can check our website on this link: https://4armss.netlify.app/
+   You can check our website on this link: https://4armss.netlify.app/
