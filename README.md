@@ -10,12 +10,10 @@ The scope of the project includes the development of a responsive website that i
 # Road Map:
 
 ## Contributors: 
-
-<a href="https://github.com/remarkablemark/html-react-parser/graphs/contributors">
-  <img src="https://opencollective.com/html-react-parser/contributors.svg?width=890&button=false">
+<a href="https://github.com/hafidabkt">
+  <img src="[https://github.com/remarkablemark.png](https://avatars.githubusercontent.com/u/126509431?v=4)?size=50">
 </a>
 
-[![](https://opencollective.com/html-react-parser/contributors.svg?width=890&button=false)](https://github.com/remarkablemark/html-react-parser/graphs/contributors)
 
    
 # Contributing:
