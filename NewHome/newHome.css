@@ -1,0 +1,420 @@
+.white-lines {
+    position: absolute;
+    top: 151px;
+    left: 0;
+    width: 1570.96px;
+    height: 802.56px;
+}
+
+.skipping-rope-bro-1 {
+    position: absolute;
+    top: 154px;
+    left: 870px;
+    width: 664px;
+    height: 664px;
+    overflow: hidden;
+}
+
+.frame-icon {
+    width: 62px;
+    height: 51px;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.arms,
+.frame-icon {
+    position: relative;
+}
+
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 21px;
+    width: 191px;
+    height: 51px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: var(--gap-7xs);
+    font-size: var(--font-size-9xl);
+}
+
+.be-strong-be,
+.nav-bar {
+    position: absolute;
+    color: var(--sexy-rouge);
+}
+
+.nav-bar {
+    top: 28px;
+    left: 356px;
+    width: 612px;
+    height: 36px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 41px;
+    font-size: var(--font-size-11xl);
+}
+
+.be-strong-be {
+    top: 310px;
+    left: 93px;
+    font-size: 36px;
+    font-family: var(--font-nasalization);
+}
+
+.make-yourself-stronger {
+    margin: 0;
+        font-size: var(--font-size-29xl);
+            color: var(--color-gainsboro);
+            font-family: var(--font-nasalization);
+}
+
+.make-yourself-stronger-container,
+.take-our-60-second {
+    position: absolute;
+    top: 380px;
+    left: 93px;
+    font-size: var(--font-size-29xl);
+    color: var(--color-gainsboro);
+    font-family: var(--font-nasalization);
+}
+
+
+
+.buttoniconsettings {
+    position: relative;
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.button1 {
+    position: relative;
+    line-height: 20px;
+    font-size: 24px;
+    left: -15 px;
+    color: #fff;
+}
+
+.button {
+    align-self: stretch;
+    border-radius: 10px;
+    background-color: var(--sexy-rouge);
+    display: flex;
+    flex-direction: row;
+    padding: 15px 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
+.login-button,
+.sign-up-button {
+    text-decoration: none;
+    position: absolute;
+    top: 20px;
+    border-radius: var(--br-xl);
+    background-color: var(--color-gainsboro);
+    height: 51px;
+    display: flex;
+    flex-direction: row;
+    padding: var(--padding-4xs) var(--padding-21xl);
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-xl);
+    color: var(--sexy-rouge);
+}
+
+.login-button {
+    left: 1280px;
+    cursor: pointer;
+}
+
+.login-button:hover {
+    background-color: #fb4040;
+    cursor: auto;
+}
+
+.login-button:hover .arms {
+    background: linear-gradient(#fff, #fff), snow;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.sign-up-button {
+    left: 1107px;
+}
+
+.sign-up-button:hover {
+    background-color: #fd3c3c;
+}
+
+.sign-up-button:hover .arms {
+    color: #fff8f8;
+}
+
+
+
+
+
+
+
+
+.frame-icon6 {
+    position: relative;
+    width: 92px;
+    height: 76px;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.logo1 {
+    position: absolute;
+    top: 3465px;
+    left: 121px;
+    width: 191px;
+    height: 51px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: var(--gap-7xs);
+}
+
+.armsgmailcom,
+.div,
+.sidi-abdellah-algiers {
+    position: absolute;
+    top: 3610px;
+    left: 129px;
+    font-family: var(--font-open-sans);
+}
+
+.armsgmailcom,
+.div {
+    top: 3663px;
+    left: 128px;
+}
+
+.div {
+    top: 3727px;
+}
+
+.home-page-child {
+    position: absolute;
+    top: 3610px;
+    left: 606px;
+    border-radius: var(--br-xl);
+    border: 6px solid var(--sexy-rouge);
+    box-sizing: border-box;
+    width: 412px;
+    height: 95px;
+}
+
+.give-us-your {
+    position: absolute;
+    top: 3635px;
+    left: 625px;
+    font-family: var(--font-open-sans);
+    display: inline-block;
+    width: 525px;
+    height: 88px;
+    font-family: google sans;
+    font-weight: 500;
+    color: #fff;
+    font-size: 36px;
+}
+
+.home-page {
+    position: relative;
+    background-color: var(--black-like-ur-heart);
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    text-align: left;
+    font-size: var(--font-size-13xl);
+    color: var(--color-white);
+    font-family: var(--font-nasalization);
+}
+
+.profile1 {
+    position: relative;
+    color: var(--sexy-rouge);
+    font-size: var(--font-size-xl);
+    font-family: var(--font-nasalization);
+    text-align: left;
+}
+
+.profile{
+    position: relative;
+        border-radius: var(--br-3xs);
+        width: 511px;
+        height: 733px;
+        max-width: 90%;
+        max-height: 90%;
+        overflow: auto;
+        text-align: left;
+        font-size: var(--font-size-5xl);
+        color: var(--black-like-ur-heart);
+        font-family: var(--font-nasalization);
+}
+
+.profile-child {
+    top: 31px;
+    left: -14px;
+    background-color: var(--color-gainsboro-200);
+    width: 430px;
+    height: 630px;
+}
+
+.profile-child,
+.profile-item {
+    position: absolute;
+    border-radius: var(--br-xl);
+}
+
+.profile-item {
+    top: 62px;
+    left: 25px;
+    width: 113px;
+    height: 113px;
+}
+
+img {
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
+
+.ls {
+    position: absolute;
+    top: 99px;
+    left: 60px;
+    font-size: var(--font-size-13xl);
+}
+.larbi-saidchikh,
+.larbisckgmailcom {
+    position: absolute;
+    top: 91px;
+    left: 151px;
+}
+
+.larbisckgmailcom {
+    top: 121px;
+    font-size: var(--font-size-xl);
+    font-family: var(--font-damion);
+    color: var(--grey-grey-800);
+}
+.my-diet,
+.my-progress,
+.settings {
+    position: absolute;
+    top: 248px;
+    left: 79px;
+}
+
+.my-diet,
+.settings {
+    top: 303px;
+}
+
+.settings {
+    top: 462px;
+    left: 78px;
+}
+
+.log-out,
+.my-supplements {
+    position: absolute;
+    top: 542px;
+    left: 79px;
+}
+
+.my-supplements {
+    top: 381px;
+    left: 78px;
+}
+
+.login-button{
+    position: absolute;
+        top: 0;
+        left: 135%;
+        border-radius: var(--br-xl);
+        background-color: #a1a0a0;
+        width: 200px;
+        height: 51px;
+        display: flex;
+        flex-direction: row;
+        padding: var(--padding-4xs) var(--padding-21xl);
+        box-sizing: border-box;
+        align-items: center;
+        justify-content: center;
+        font-size: var(--font-size-xl);
+        color: var(--sexy-rouge);
+}
+
+
+/* cards css  */
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    width: 50%;
+    background-color: #fd3c3c;
+    border-radius: var(--br-3xs);
+    margin: 0 auto;
+    margin-top: 70%;
+    margin-bottom: 20px;
+    padding: 10px;
+    text-align: center;
+    font-family: var(--font-nasalization);
+    color: var(--color-white);
+    font-size: var(--font-size-5xl);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 1.5;
+    cursor: pointer;
+
+
+}
+
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(242, 46, 46, 0.655);
+}
+
+.container {
+    padding: 2px 16px;
+}
+
+.cardyuh {
+    box-shadow: 0 4px 8px 0 rgba(28, 201, 48, 0.929);
+        transition: 0.3s;
+        width: 50%;
+        background-color: rgb(24, 161, 40);
+        border-radius: var(--br-3xs);
+        margin: 0 auto;
+        margin-top: 5%;
+        margin-bottom: 10%;
+        padding: 10px;
+        text-align: center;
+        font-family: var(--font-nasalization);
+        color: var(--color-white);
+        font-size: var(--font-size-5xl);
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        line-height: 1.5;
+        cursor: pointer;
+}
+.cardyuh:hover {
+    box-shadow: 0 8px 16px 0 rgba(28, 201, 48, 0.929);
+}

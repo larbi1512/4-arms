@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./newHome.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open Sans:wght@400;600&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google Sans:wght@400;500&display=swap" />
+
+    <style>
+        @font-face {
+            font-family: "Nasalization";
+            src: url("fonts/nasalization-rg.otf");
+            font-weight: 400;
+        }
+
+        @font-face {
+            font-family: "font";
+            src: url("fonts/nasalization-rg.otf");
+            font-weight: 400;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="home-page">
+        <img class="white-lines" alt="" src="./public/white-lines.svg">
+        <img class="skipping-rope-bro-1" alt="" src="./public/skipping-ropebro-1.svg">
+        <div class="logo"><img class="frame-icon" alt="" src="./public/frame.svg">
+            <div class="arms">4-ARMS</div>
+        </div>
+        <div class="nav-bar">
+            <style>
+                a {
+                    text-decoration: none;
+                    color: #ff182c !important;
+                }
+            </style>
+                <div class="arms"><a href="../index.html">Home</a></div>
+                <div class="arms"><a href="../workout/workout.html">Workout</a></div>
+                <div class="arms"><a href="../diet/diet.html">Diet</a></div>
+                <div class="arms"><a href="../supplement/supplement.html">Supplement</a></div>
+                <button class="arms login-button" id="profile">
+                <div class="profile1">Profile</div>
+                </button>
+            </div>
+
+        
+        
+        
+        <div id="pROFILEContainer" class="popup-overlay" style="display: none">
+            <div class="profile">
+                <div class="profile-child"></div>
+                <img class="profile-item" alt="" src="./public/ellipse-800.svg" />
+                <div class="ls">LS</div>
+                <div class="larbi-saidchikh">Larbi SAIDCHIKH</div>
+                <div class="larbisckgmailcom">larbisck@gmail.com</div>
+                <div class="my-progress">my progress</div>
+                <div class="my-diet">my diet</div>
+                <div class="settings">Settings</div>
+                <div class="log-out">Log out</div>
+                <div class="my-supplements">my supplements</div>
+            </div>
+        </div>
+                <div class="be-strong-be">Be strong Be fit</div>
+                <div class="make-yourself-stronger-container">
+                    <p class="make-yourself-stronger">Make yourself stronger </p>
+                    <p class="make-yourself-stronger">than your excuses </p>
+                </div>   
+                <a href="../workout/workout.html" style="display: block; width: 100%; height: 100%;">
+                    <div class="card">
+                        <img src="./public/workout programs copy.png" alt="workout" style="width:100%; border-radius: 10px;">
+                        <div class="container">
+                            <h4><b>Lion Hour</b></h4>
+                            <p>check your workout progress</p>
+                        </div>
+                        </div>
+                    </a>
+                    
+                    <a href="../diet/diet.html" style="display: block; width: 100%; height: 100%;">
+                    <div class="cardyuh">
+                    <img src="./public/tangerine-newt-RgT22Ixcq4Y-unsplash.jpg" alt="Diet" style="width:100%; border-radius: 10px;">
+                    <div class="container">
+                     <h4><b>Skinny bitch</b></h4>
+                    <p>Do not forget ur diet</p>
+                    </div>
+                    </div>
+                </a>
+
+          
+
+    
+        </div>
+
+
+                <script>
+            var dietText = document.getElementById("dietText");
+            if (dietText) {
+                dietText.addEventListener("click", function (e) {
+                    window.location.href = "./diet1.html";
+                });
+            }
+
+            var loginButton = document.getElementById("profile");
+            if (loginButton) {
+                loginButton.addEventListener("click", function () {
+                    var popup = document.getElementById("pROFILEContainer");
+                    if (!popup) return;
+                    var popupStyle = popup.style;
+                    if (popupStyle) {
+                        popupStyle.display = "flex";
+                        popupStyle.zIndex = 100;
+                        popupStyle.backgroundColor = "rgba(113, 113, 113, 0.3)";
+                        popupStyle.alignItems = "center";
+                        popupStyle.justifyContent = "center";
+                    }
+                    popup.setAttribute("closable", "");
+
+                    var onClick =
+                        popup.onClick ||
+                        function (e) {
+                            if (e.target === popup && popup.hasAttribute("closable")) {
+                                popupStyle.display = "none";
+                            }
+                        };
+                    popup.addEventListener("click", onClick);
+                });
+            }
+        </script>
+
+
+
+
+
+</body>
+</html>
