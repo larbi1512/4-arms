@@ -72,7 +72,7 @@
         src="./public/rectangle-15.svg"
       />
       <div class="what-is-your">What is your fitness Experience?</div>
-      <div class="beginner">
+      <div class="beginner" id="beginnerContainer">
         <div class="beginner-child"></div>
         <div class="beginner1">BEGINNER</div>
         <div class="i-am-starting-container">
@@ -104,6 +104,15 @@
           window.location.href = "QUIZResults.html";
         });
       }
+
+      var beginnerContainer = document.getElementById("beginnerContainer");
+      if (beginnerContainer) {
+        beginnerContainer.addEventListener("click", function (e) {
+          window.location.href = "QUIZResults.html";
+        });
+      }
+
+      
       </script>
   </body>
 </html>

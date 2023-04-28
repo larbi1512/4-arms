@@ -127,6 +127,13 @@
 }
 .quiz-question-child15 {
   left: 774px;
+}
+
+.quiz-question-child13,
+.quiz-question-child14,
+.quiz-question-child15,
+.quiz-question-child16
+{
   cursor: pointer;
 }
 .quiz-question-child16 {

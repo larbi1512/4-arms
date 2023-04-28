@@ -100,7 +100,12 @@
   width: 255px;
   height: 82px;
 }
-.quiz-question-child23 {
+.quiz-question-child21,
+.quiz-question-child22,
+.quiz-question-child23,
+.quiz-question-child24,
+.quiz-question-child25,
+.quiz-question-child26 {
   top: 614px;
   cursor: pointer;
 }
@@ -180,4 +185,10 @@
   font-size: var(--font-size-29xl);
   color: var(--color-white);
   font-family: var(--font-nasalization);
+}
+
+.icon-park-outlinemuscle3:hover, .octicongoal-163:hover, .material-symbolsavg-time-outl-icon3:hover,.jamtransgender-icon3:hover, .gender3:hover, .age3:hover, .goal3:hover ,.experience3:hover,.quiz-question-child18:hover,
+.quiz-question-child19:hover,
+.quiz-question-child20:hover,.quiz-question-child17:hover{
+  color: var(--color-red-100);
 }

@@ -111,6 +111,7 @@
   height: 257px;
   font-size: var(--font-size-17xl);
   color: var(--normal-text-color);
+  cursor: pointer;
 }
 .experienced1 {
   position: absolute;
