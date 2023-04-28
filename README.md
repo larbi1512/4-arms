@@ -12,7 +12,7 @@ The scope of the project includes the development of a responsive website that i
 ## Contributors: 
 
 <a href="https://github.com/hafidabkt">
-  <img src="(https://avatars.githubusercontent.com/u/126509431?v=4)?size=50">
+  <img src="![image](https://user-images.githubusercontent.com/99117566/235267077-31f4a465-f807-4836-b611-52504577b99f.png)?size=50">
 </a>
 
 
