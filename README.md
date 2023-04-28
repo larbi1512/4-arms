@@ -7,7 +7,7 @@ The scope of the project includes the development of a responsive website that i
 # Preview Website:
    You can check our website on this link: https://4armss.netlify.app/
    
-## Contributing
+# Contributing
 
 Pull requests are welcome. For major changes, please open an issue first
 to discuss what you would like to change.
