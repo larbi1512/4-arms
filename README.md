@@ -10,9 +10,9 @@ The scope of the project includes the development of a responsive website that i
 # Road Map:
 
 ## Contributors: 
-<a href="https://github.com/hafidabkt">
-  <img src="[https://github.com/remarkablemark.png](https://avatars.githubusercontent.com/u/126509431?v=4)?size=50">
-</a>
+
+ [https://github.com/remarkablemark.png](https://avatars.githubusercontent.com/u/126509431?v=4)
+
 
 
    
