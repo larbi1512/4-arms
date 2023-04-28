@@ -11,16 +11,11 @@ The scope of the project includes the development of a responsive website that i
 
 ## Contributors: 
 
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
+<a href="https://github.com/remarkablemark/html-react-parser/graphs/contributors">
+  <img src="https://opencollective.com/html-react-parser/contributors.svg?width=890&button=false">
+</a>
 
-@all-contributors please add @hafidabkt for backend
-
-<!-- markdownlint-restore -->
-<!-- prettier-ignore-end -->
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
+[![](https://opencollective.com/html-react-parser/contributors.svg?width=890&button=false)](https://github.com/remarkablemark/html-react-parser/graphs/contributors)
 
    
 # Contributing:
