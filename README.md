@@ -8,6 +8,10 @@ The scope of the project includes the development of a responsive website that i
    You can check our website on this link: https://4armss.netlify.app/
    
 # Road Map:
+
+# Contributors: 
+Thanks go to these beautiful people:
+
    
 # Contributing:
 
