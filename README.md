@@ -15,6 +15,8 @@ The scope of the project includes the development of a responsive website that i
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
 
+@all-contributors please add @hafidabkt for backend
+
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
 
