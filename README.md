@@ -10,6 +10,7 @@ The scope of the project includes the development of a responsive website that i
 # Road Map:
 
 ## Contributors: 
+
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
