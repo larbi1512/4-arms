@@ -9,13 +9,12 @@ if(isset($_GET['divName'])) {
 
 
 // insert the div_name value into the name_div column of a MySQL table
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "4-arms";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+$host = "sql209.epizy.com";
+$dbuser = "epiz_34106685";
+$dbpass = "f@7EbG#KFdr3tvH";
+$dbname = "epiz_34106685_4ARMS";
+// Create database connection
+$conn = new mysqli($host, $dbuser, $dbpass, $dbname);
 
 // Check connection
 if ($conn->connect_error) {
@@ -36,4 +35,3 @@ if ($stmt->execute()) {
 // close the statement and the connection
 $stmt->close();
 $conn->close();
-?>

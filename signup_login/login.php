@@ -6,11 +6,12 @@ session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   // Define and establish a database connection
-  $servername = "localhost";
-  $username = "root";
-  $password = "";
-  $dbname = "4-arms";
-  $link = mysqli_connect($servername, $username, $password, $dbname);
+  $host = "sql209.epizy.com";
+  $dbuser = "epiz_34106685";
+  $dbpass = "f@7EbG#KFdr3tvH";
+  $dbname = "epiz_34106685_4ARMS";
+  // Create database connection
+  $conn = new mysqli($host, $dbuser, $dbpass, $dbname);
 
   // Check if connection is successful
   if (!$link) {
@@ -45,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($user_email_err) && empty($user_password_err)) {
 
     // Prepare a select statement
-    $sql = "SELECT user_email, user_password FROM `user_signup` WHERE user_email = ?";
+    $sql = "SELECT user_id, user_email, user_password FROM `user_signup` WHERE user_email = ?";
 
     if ($stmt = mysqli_prepare($link, $sql)) {
       // Bind variables to the prepared statement as parameters
@@ -64,30 +65,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           // Bind result variables
           mysqli_stmt_bind_result($stmt, $user_email, $hashed_user_password);
           if (mysqli_stmt_fetch($stmt)) {
-                        if(password_verify($user_password, $hashed_user_password)){
-                            // user_password is correct, so start a new session
-                            session_start();
+            if (password_verify($user_password, $hashed_user_password)) {
+              // user_password is correct, so start a new session
+              session_start();
 
-                            // Store data in session variables
-                            $_SESSION["loggedin"] = true;
-                            $_SESSION["user_email"] = $user_email;                            
+              // Store data in session variables
+              $_SESSION["loggedin"] = true;
+              $_SESSION["user_email"] = $user_email;
+              $_SESSION["user_id"] = $user_id;
 
-                            // Redirect user to welcome page
-                            header("location: ../../NewHome/newHome.html");
-                            exit();
-
-                        } 
-                    }
-                } 
-            } 
-            
-            
-            // Close statement
-            mysqli_stmt_close($stmt);
+              // Redirect user to welcome page
+              header("location: ../../NewHome/newHome.html");
+              exit();
+            }
+          }
         }
-    }
+      }
 
-    // Close connection
-    mysqli_close($link);
+
+      // Close statement
+      mysqli_stmt_close($stmt);
+    }
+  }
+
+  // Close connection
+  mysqli_close($link);
 }
-?>

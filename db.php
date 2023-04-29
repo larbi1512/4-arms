@@ -1,9 +1,9 @@
 <?php
 // Database configuration
-$host = "localhost";
-$dbuser = "root";
-$dbpass = "";
-$dbname = "4_arms";
+$host = "sql209.epizy.com";
+$dbuser = "epiz_34106685";
+$dbpass = "f@7EbG#KFdr3tvH";
+$dbname = "epiz_34106685_4ARMS";
 // Create database connection
 $conn = new mysqli($host, $dbuser, $dbpass, $dbname);
 // Check connection

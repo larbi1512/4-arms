@@ -1,10 +1,11 @@
 <?php
 // Connect to the database
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "4-arms";
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+$host = "sql209.epizy.com";
+$dbuser = "epiz_34106685";
+$dbpass = "f@7EbG#KFdr3tvH";
+$dbname = "epiz_34106685_4ARMS";
+// Create database connection
+$conn = new mysqli($host, $dbuser, $dbpass, $dbname);
 
 // Checking connection
 if (!$conn) {
@@ -36,5 +37,3 @@ header("location: login.html");
 exit();
 // Close database connection
 mysqli_close($conn);
-
-?>

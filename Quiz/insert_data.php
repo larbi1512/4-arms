@@ -6,11 +6,12 @@ $user_id=$_SESSION["user_id"];
 $sql = "INSERT INTO assigned (user_id, workout_id, diet_id, gym_id) VALUES (1, '$choice', '$choice', NULL)";
 
 // Connect to the database
-$servername = "localhost"; // Replace with your servername
-$username = "root"; // Replace with your username
-$password = ""; // Replace with your password
-$dbname = "4-arms"; // Replace with your database name
-$conn = new mysqli($servername, $username, $password, $dbname);
+$host = "sql209.epizy.com";
+$dbuser = "epiz_34106685";
+$dbpass = "f@7EbG#KFdr3tvH";
+$dbname = "epiz_34106685_4ARMS";
+// Create database connection
+$conn = new mysqli($host, $dbuser, $dbpass, $dbname);
 
 // Check connection
 if ($conn->connect_error) {
@@ -28,4 +29,3 @@ if ($conn->query($sql) === TRUE) {
 
 // Close the connection
 $conn->close();
-?>
