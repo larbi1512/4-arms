@@ -1,16 +1,35 @@
 <?php
 // start the session
-session_start();
-
+$user_id=1;
 // initialize the consumed variables from the session data, or to 0 if not set
+      $servername = "localhost";
+      $username = "root";
+      $password = "";
+      $dbname = "4_arms";
+
+      // Create connection
+      $conn = new mysqli($servername, $username, $password, $dbname);
+
+      // Check connection
+      if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+      }
+      $sql = "SELECT * FROM assigned WHERE user_id = $user_id";
+      $result = $conn->query($sql);
+      $row = $result->fetch_assoc();
+      $diet_id = $row['diet_id'];
+      $sql = "SELECT * FROM diet WHERE diet_id = $diet_id";
+      $result = $conn->query($sql);
+      $row = $result->fetch_assoc();
+      $conn->close();
 $carbs_consumed = $_SESSION['carbs_consumed'] ?? 0;
 $calories_consumed = $_SESSION['calories_consumed'] ?? 0;
 $proteins_consumed = $_SESSION['proteins_consumed'] ?? 0;
 
 // initialize the remaining variables
-$carbs_remaining = 100 - $carbs_consumed;
-$calories_remaining = 2000 - $calories_consumed;
-$proteins_remaining = 200 - $proteins_consumed;
+$carbs_remaining = $row['carbs'] - $carbs_consumed;
+$calories_remaining = $row['Calories'] - $calories_consumed;
+$proteins_remaining = $row['Proteins'] - $proteins_consumed;
 
 // check if the form was submitted:
 if (isset($_POST['carbs_consumed']) && isset($_POST['calories_consumed']) && isset($_POST['proteins_consumed'])) {
@@ -27,9 +46,9 @@ if (isset($_POST['carbs_consumed']) && isset($_POST['calories_consumed']) && iss
   $_SESSION['calories_consumed'] = $calories_consumed;
   $_SESSION['proteins_consumed'] = $proteins_consumed;
 
-  $carbs_remaining = 100 - $carbs_consumed;
-  $calories_remaining = 2000 - $calories_consumed;
-  $proteins_remaining = 200 - $proteins_consumed;
+  $carbs_remaining = $row['carbs'] - $carbs_consumed;
+  $calories_remaining = $row['Calories'] - $calories_consumed;
+  $proteins_remaining = $row['Proteins'] - $proteins_consumed;
 }
 ?>
 <!DOCTYPE html>
@@ -84,7 +103,7 @@ if (isset($_POST['carbs_consumed']) && isset($_POST['calories_consumed']) && iss
           <a class="diet1" href="./diet.php">Diet</a
           ><a class="supplement" href="../supplement/supplement.html">Supplement</a>
         </div>
-      </div>
+    </div>
 
     
     <button class="login-button" id="profile">
@@ -127,7 +146,7 @@ if (isset($_POST['carbs_consumed']) && isset($_POST['calories_consumed']) && iss
     <tbody>
       <tr>
         <td>Carbs</td>
-        <td>100</td>
+        <td><?php echo $row['carbs'] ?></td>
         <td><input type="number" name="carbs_consumed" value="" required></td>
         <td><span class="remaining">
             <?php echo $carbs_remaining ?>
@@ -135,7 +154,7 @@ if (isset($_POST['carbs_consumed']) && isset($_POST['calories_consumed']) && iss
       </tr>
       <tr>
         <td>Calories</td>
-        <td>2000</td>
+        <td><?php echo $row['Calories'] ?></td>
         <td><input type="number" name="calories_consumed"
             value="" required></td>
         <td><span class="remaining">
@@ -144,7 +163,7 @@ if (isset($_POST['carbs_consumed']) && isset($_POST['calories_consumed']) && iss
       </tr>
       <tr>
         <td>Proteins</td>
-        <td>200</td>
+        <td><?php echo $row['Proteins'] ?></td>
         <td><input type="number" name="proteins_consumed"
             value="" required></td>
         <td><span class="remaining">
@@ -155,8 +174,75 @@ if (isset($_POST['carbs_consumed']) && isset($_POST['calories_consumed']) && iss
   </table>
   <input type="submit" value="Check Progress">
 </form>
-</div>
 
+<div class="recommended-activities">Your diet </div>
+      <div class="plan">
+  <div class="plan-img">
+    <a href="<?php echo $row['diet_link'] ?>">
+      <img src="<?php echo $row['diet_link_img'] ?>" alt="" onmouseover="this.style.opacity=1"
+        onmouseout="this.style.opacity=0.7">
+    </a>
+  </div>
+  <div class="plan-description">
+    <p style="font-size:36px">
+      <?php echo $row['diet_name'] ?>
+    </p>
+    <a href="<?php echo $row['diet_link'] ?>">Learn More</a>
+  </div>
+</div>
+<style>
+  .recommended-activities{
+    margin-top: 28%;
+    margin-left: 10%;
+    color: green;
+  }
+  .plan {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(28, 86, 28);
+    border-radius: 30px;
+    width: 95%;
+    padding: 20px;
+    margin-top:  3%;
+    z-index: 9999;
+  }
+  
+  .plan-img {
+    margin-right: 20px;
+    top:50%;
+  }
+  
+  .plan-img img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    top:50%;
+  }
+  
+  .plan-description {
+    display: flex;
+    flex-direction: column;
+    top:50%;
+  }
+  
+  .plan-description p {
+    color: white;
+    font-size: 18px;
+    margin: 0 0 10px 0;
+    top:50%;
+  }
+  
+  .plan-description a {
+    color: #EEC643;
+    font-size: 16px;
+    text-decoration: none;
+    margin-top: auto;
+    
+  }
+ </style>
+</div>
     <script>
       var dietText = document.getElementById("dietText");
       if (dietText) {
