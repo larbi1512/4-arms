@@ -43,18 +43,11 @@
       <div class="login">
         <div class="login-child"></div>
         <div class="login-menu">
+          <form class="create-an-account" method="POST" action="login.php">
           <b class="log-in-to">Log in to your account</b>
-          <input
-            class="login-menu-child"
-            type="email"
-            placeholder="Enter Your Email"
-            required
-          /><input
-            class="login-menu-item"
-            type="password"
-            placeholder="enter your password"
-            required
-          />
+          <input class="login-menu-child" type="email" name="user_email" placeholder="Enter Your Email"   required>
+          <input class="login-menu-item" type="password" name="user_password" placeholder="enter your password" required>
+
           <style>
             a{
               text-decoration: none;
@@ -65,16 +58,15 @@
 
             }
           </style>
-          <button class="login-menu-inner"><a href="../index.html">log in now</a></button>
+
+          <button class="login-menu-inner" type="submit">LOGIN</button>
+        </form>
+
           <div class="email">Email</div>
           <div class="password">Password</div>
           <div class="forgot">Forgot ?</div>
           <span class="dont-have-an-container">Don't have an account ? 
           <span class="sign-up"><a href="signup.html">sign Up</span></a>
-          <!-- <span class="already-have-an">Already have an account ? </span
-                ><span class="log-in"><a href="login.html">Log in</a></span
-                ><span class="span4"> </span> -->
-          <div class="log-in-now"><a href="../index.html">Log in Now</a></div>
           <img class="vector-icon" alt="" src="./public/vector.svg" />
         </div>
         <div class="frame-parent">

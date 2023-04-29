@@ -41,38 +41,71 @@
   <body>
     <div class="sign-up3">
       <div class="sign-up-child"></div>
-      <form class="create-an-account" method="get">
-        <b class="create-an-account1">Create an account</b
-        ><input
-          class="create-an-account-child"
-          type="email"
-          placeholder="larbi.saidchikh@ensia.edu.dz"
-          required
-        /><input class="create-an-account-item" type="text" /><button
-          class="create-an-account-inner"
-        ></button
-        ><button class="rectangle-button"></button>
-        <div class="email1">Email</div>
-        <div class="password1">Password</div>
-        <input class="larbisaidchikhensiaedudz1" type="email" /><input
-          class="enter-your-password1"
-          type="text"
-          required
-        />
+      <form class="create-an-account" method="POST" action="signup.php">
+        <b class="create-an-account1">Create an account</b>
+        <div class="form-group">
+          <div class="label">Name</div>
+          <input
+            class="create-an-account-child"
+            type="text"
+            name="user_name"
+            placeholder="Larbi SCK"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <div class="label"></div>
+          <input
+            class="create-an-account-child"
+            type="email"
+            name="user_email"
+            placeholder="john.doe@example.com"
+            required
+          />
+        </div>
+        
+        <div class="form-group">
+          <div class="label"></div>
+          <input
+            class="create-an-account-child"
+            type="password"
+            name="user_password"
+            placeholder="**********"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <div class="label"></div>
+          <input
+            class="create-an-account-child"
+            type="number"
+            name="age"
+            placeholder="Your age"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <div class="label"></div>
+          <select name="gender" required>
+            <option value="" selected disabled hidden>Select your gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </div>
         <div class="already-have-an-container">
           <span class="already-have-an">Already have an account ? </span
-          ><span class="log-in"><a href="login.html">Log in</a></span
+          ><span class="log-in"><a href="login.html">Login</a></span
           ></div>
           <style>
             a{
               text-decoration: none;
-              color: whitesmoke; 
+              
             }
           </style>
           <!-- <a href="../index.html"></a> -->
         <button type="submit" class="create-account" onclick="myfunction()">Create account</a></button>
         <div class="continue-with-google">Continue with Google</div>
-        <img class="vector-icon1" alt="" src="./public/vector.svg" /><img
+        <img
           class="icons8-google-2"
           alt=""
           src="./public/icons8google-2.svg"
