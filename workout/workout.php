@@ -473,11 +473,11 @@
           <div class="arms">4-ARMS</div>
         </div>
         <div class="home-parent">
-          <div class="home"><a href="../index.html">Home</a></div>
+          <div class="home"><a href="../NewHome/newHome.html">Home</a></div>
           <button class="frame-item"></button>
-          <div class="workout1"><a href="../workout/workout.html">Workout</a></div>
-          <div class="diet" ><a href="../diet/diet.html">Diet</a></div>
-          <div class="supplement"><a href="../supplement/supplement.html">Supplement</a></div>
+          <div class="workout1"><a href="../workout/workout.php">Workout</a></div>
+          <div class="diet" ><a href="../diet/diet.php">Diet</a></div>
+          <div class="supplement"><a href="../Shop/supplement.html">Supplement</a></div>
         </div>
         <button class="login-button" id="profile">
           <div class="profile1">Profile</div>
