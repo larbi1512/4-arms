@@ -2,7 +2,7 @@
 require_once('../db.php');
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="eng">
 
 <head>
     <meta charset="utf-8">
@@ -10,16 +10,21 @@ require_once('../db.php');
 </head>
 
 <body>
-    <p>Welcome to Dashboard.</p>
-    <p><a href="../index.html">Home</a></p>
-    <p><a href="insert.php?table=gym">Insert new gym record</a></p>
-    <p><a href="insert.php?table=diet">Insert new diet record</a></p>
-    <p><a href="insert.php?table=product">Insert new product record</a> </p>
-    <p><a href="insert.php?table=workout">Insert new workout record</a></p>
-
+    <header>
+    <h2 class="welcome">Welcome to Dashboard.</h2>
+    <nav>
+    <ul>
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="insert.php?table=gym">Insert new gym record</a></li>
+    <li><a href="insert.php?table=diet">Insert new diet record</a></li>
+    <li><a href="insert.php?table=product">Insert new product record</a> </li>
+    <li><a href="insert.php?table=workout">Insert new workout record</a></li>
+    </ul>
+</nav>
+</header>
 
     <h2>GYMS</h2>
-    <table width="100%" border="1" style="border-collapse:collapse;">
+    <table class="styled-table" width="100%" border="1" style="border-collapse:collapse;">
         <thead>
             <tr>
                 <th><strong>S.NO</strong></th>
@@ -55,7 +60,7 @@ require_once('../db.php');
 
 
     <h2>DIETS</h2>
-    <table width="100%" border="1" style="border-collapse:collapse;">
+    <table class="styled-table" width="100%" border="1" style="border-collapse:collapse;">
         <thead>
             <tr>
                 <th><strong>S.NO</strong></th>
@@ -97,7 +102,7 @@ require_once('../db.php');
 
 
     <h2>workout plans</h2>
-    <table width="100%" border="1" style="border-collapse:collapse;">
+    <table class="styled-table" width="100%" border="1" style="border-collapse:collapse;">
         <thead>
             <tr>
                 <th><strong>S.NO</strong></th>
@@ -133,7 +138,7 @@ require_once('../db.php');
 
 
     <h2>products</h2>
-    <table width="100%" border="1" style="border-collapse:collapse;">
+    <table class="styled-table" width="100%" border="1" style="border-collapse:collapse;">
         <thead>
             <tr>
                 <th><strong>S.NO</strong></th>
@@ -171,9 +176,6 @@ require_once('../db.php');
         </tbody>
     </table>
 
-</body>
-
-</html>
 </body>
 
 </html>
