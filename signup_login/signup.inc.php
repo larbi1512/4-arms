@@ -50,10 +50,10 @@ if (!is_numeric($height) || !is_numeric($weight)) {
   exit();
 }
 // Insert new user into database
-$sql = "INSERT INTO user_signup (user_name, user_email, user_password)
-VALUES (?, ?, ?)";
+$sql = "INSERT INTO user_signup (user_name, user_email, user_password, height , weight)
+VALUES (?, ?, ?,?,?)";
 $stmt = $conn->prepare($sql);
-$stmt->bind_param('sss', $user_name, $user_email,  $user_password);
+$stmt->bind_param('sssii', $user_name, $user_email,  $user_password, $height, $weight);
 $stmt->execute();
 $stmt->close();
 
