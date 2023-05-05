@@ -1,14 +1,16 @@
 body {
   margin: 0;
   line-height: normal;
+  font-family: 'Nasalization', sans-serif;
 }
 
 :root {
   /* fonts */
-  --font-google-sans: "Google Sans";
-  --button: "Nasalization";
-  --small-size-body-medium: Poppins;
-  --font-open-sans: "Open Sans";
+  /* --font-google-sans: "Google Sans"; */
+  font-family: 'nasalization-rg';
+  --button: "Nasalization Rg";
+  /* --small-size-body-medium: Poppins; */
+  /* --font-open-sans: "Open Sans"; */
   --font-inter: Inter;
   --font-inherit: inherit;
 
