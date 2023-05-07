@@ -1,16 +1,16 @@
 body {
     height: 125vh;
-    background-image: url('https://codetheweb.blog/assets/img/posts/style-a-navigation-bar-css/background.jpg');
+    background-color: #dddddd;
     background-size: cover;
     font-family: sans-serif;
     margin-top: 80px;
-    padding: 30px;
+    padding: 2%;
 }
 
 main {
     color: white;
 }
-*
+
 header {
     background-color: white;
     position: fixed;
@@ -20,6 +20,7 @@ header {
     height: 80px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     box-shadow: 0 0 25px 0 black;
 }
 
@@ -35,7 +36,74 @@ header li a {
     color: black;
     text-decoration: none;
 }
-h2{
+
+/* Hamburger menu styles */
+
+.hamburger {
+    display: none;
+    font-size: 1.5em;
+    margin-right: 10px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav li {
+    margin: 0 20px;
+}
+
+@media only screen and (max-width: 600px) {
+    header li {
+        display: none;
+        margin: 0;
+    }
+
+    header li:first-child {
+        display: block;
+        margin: 20px;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    header {
+        flex-direction: column;
+        height: auto;
+    }
+
+    nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    nav ul {
+        margin-top: 20px;
+        border-top: 1px solid black;
+        padding-top: 20px;
+        flex-direction: column;
+    }
+
+    nav li {
+        margin: 10px;
+    }
+}
+h2 {
     color: rgb(218, 30, 30);
     font-size: 1.2em;
     font-weight: bold;
@@ -74,8 +142,27 @@ h2{
     border-bottom: 2px solid #d51c1c;
 }
 
-.styled-table tbody tr:hover{
-     color: #d51c1c;
+.styled-table tbody tr:hover {
+    color: #d51c1c;
     font-weight: bold;
-    
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        height: auto;
+        padding: 5%;
+    }
+
+    header {
+        height: 60px;
+    }
+
+    .styled-table {
+        font-size: 0.8em;
+        min-width: 300px;
+    }
+
+    h2 {
+        font-size: 1em;
+    }
 }
