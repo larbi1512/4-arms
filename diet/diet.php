@@ -1,18 +1,8 @@
 <?php
 // start the session
 $user_id = 1;
-// initialize the consumed variables from the session data, or to 0 if not set
-$host = "sql209.epizy.com";
-$dbuser = "epiz_34106685";
-$dbpass = "f@7EbG#KFdr3tvH";
-$dbname = "epiz_34106685_4ARMS";
-// Create database connection
-$conn = new mysqli($host, $dbuser, $dbpass, $dbname);
+require_once('../db.php');
 
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
 $sql = "SELECT * FROM assigned WHERE user_id = $user_id";
 $result = $conn->query($sql);
 $row = $result->fetch_assoc();
