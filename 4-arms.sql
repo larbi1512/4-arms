@@ -49,12 +49,6 @@ CREATE TABLE `diet` (
   `diet_carbs` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-INSERT INTO `diet` (`diet_id`, `diet_link`, `diet_name`, `diet_link_img`, `diet_calories`, `diet_protien`, `diet_carbs`) VALUES
-(1, 'bo', 'bo', NULL, NULL, NULL, NULL),
-(2, NULL, 'gg', NULL, NULL, NULL, NULL),
-(3, NULL, 'ggg', NULL, NULL, NULL, NULL),
-(4, NULL, 'lolgg', NULL, NULL, NULL, NULL);
-
 CREATE TABLE `gym` (
   `gym_id` int(11) NOT NULL,
   `gym_name` varchar(100) DEFAULT NULL,

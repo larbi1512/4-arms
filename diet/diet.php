@@ -1,8 +1,18 @@
 <?php
 // start the session
 $user_id = 1;
-require_once('../db.php');
+// initialize the consumed variables from the session data, or to 0 if not set
+$host = "localhost";
+$dbuser = "root";
+$dbpass = "";
+$dbname = "4-arms";
+// Create database connection
+$conn = new mysqli($host, $dbuser, $dbpass, $dbname);
 
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
 $sql = "SELECT * FROM assigned WHERE user_id = $user_id";
 $result = $conn->query($sql);
 $row = $result->fetch_assoc();
@@ -79,7 +89,7 @@ if (isset($_POST['carbs_consumed']) && isset($_POST['calories_consumed']) && iss
     <div class="nav-bar">
       <div class="nav-bar1">
         <a class="home" id="home" href="../newHome.html">Home</a>
-        <a class="workout" id="workout" href="../workout/workout.html">Workout</a>
+        <a class="workout" id="workout" href="../workout/workout.php">Workout</a>
         <a class="diet1" href="./diet.php">Diet</a><a class="supplement" href="../Shop/supplement.html">Supplement</a>
       </div>
     </div>
@@ -162,6 +172,9 @@ if (isset($_POST['carbs_consumed']) && isset($_POST['calories_consumed']) && iss
       <div class="plan-description">
         <p style="font-size:36px">
           <?php echo $row['diet_name'] ?>
+        </p>
+        <p style="font-size:70%">
+        <?php echo $row['description'] ?>
         </p>
         <a href="<?php echo $row['diet_link'] ?>">Learn More</a>
       </div>

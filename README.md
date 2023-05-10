@@ -25,9 +25,6 @@ to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
 
-# Contact US:
-If you have any questions about our products or would like to learn more about workout programs, please don't hesitate to contact us. You can reach us through our website or by emailing us at team.4armss@gmail.com. We look forward to hearing from you
-
 # SQL CODE:
 -- phpMyAdmin SQL Dump
 -- version 5.2.0
