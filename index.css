@@ -1,0 +1,566 @@
+
+.white-lines {
+  position: absolute;
+  top: 151px;
+  left: 0;
+  width: 1570.96px;
+  height: 802.56px;
+}
+.skipping-rope-bro-1 {
+  position: absolute;
+  top: 154px;
+  left: 870px;
+  width: 664px;
+  height: 664px;
+  overflow: hidden;
+}
+.frame-icon {
+  width: 62px;
+  height: 51px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.arms,
+.frame-icon {
+  position: relative;
+}
+.logo {
+  position: absolute;
+  top: 20px;
+  left: 21px;
+  width: 191px;
+  height: 51px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-7xs);
+  font-size: var(--font-size-9xl);
+}
+.be-strong-be,
+.nav-bar {
+  position: absolute;
+  color: var(--sexy-rouge);
+}
+.nav-bar {
+  top: 28px;
+  left: 356px;
+  width: 612px;
+  height: 36px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 41px;
+  font-size: var(--font-size-11xl);
+}
+.be-strong-be {
+  top: 310px;
+  left: 93px;
+  font-size: 36px;
+}
+.make-yourself-stronger {
+  margin: 0;
+}
+.make-yourself-stronger-container,
+.take-our-60-second {
+  position: absolute;
+  top: 380px;
+  left: 93px;
+  font-size: var(--font-size-29xl);
+}
+.take-our-60-second {
+  top: 555px;
+  font-size: var(--font-size-xl);
+  letter-spacing: 0.05em;
+  line-height: 24px;
+  display: inline-block;
+  width: 516px;
+  height: 76px;
+}
+.buttoniconsettings {
+  position: relative;
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.button1 {
+  position: relative;
+  line-height: 20px;
+  font-size: 24px;
+  left: -15 px;
+  color: #fff;
+}
+.button {
+  align-self: stretch;
+  border-radius: 10px;
+  background-color: var(--sexy-rouge);
+  display: flex;
+  flex-direction: row;
+  padding: 15px 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+.button-take-your-quiz {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 10px;
+  position: absolute;
+  width: 307px;
+  height: 33px;
+  left: 93px;
+  bottom: 3199px;
+}
+.login-button,
+.sign-up-button {
+  text-decoration: none;
+  position: absolute;
+  top: 20px;
+  border-radius: var(--br-xl);
+  background-color: var(--color-gainsboro);
+  height: 51px;
+  display: flex;
+  flex-direction: row;
+  padding: var(--padding-4xs) var(--padding-21xl);
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-xl);
+  color: var(--sexy-rouge);
+}
+.login-button {
+  left: 1280px;
+  cursor: pointer;
+}
+.login-button:hover {
+  background-color: #fb4040;
+  cursor: auto;
+}
+.login-button:hover .arms {
+  background: linear-gradient(#fff, #fff), snow;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.sign-up-button {
+  left: 1107px;
+}
+.sign-up-button:hover {
+  background-color: #fd3c3c;
+}
+.sign-up-button:hover .arms {
+  color: #fff8f8;
+}
+.services-child,
+.services-item {
+  position: absolute;
+  top: 0;
+  left: 960px;
+  background-color: var(--color-yellowgreen);
+  width: 480px;
+  height: 1024px;
+}
+.services-item {
+  left: 480px;
+  background-color: var(--color-crimson);
+}
+.frame-icon1 {
+  position: absolute;
+  top: 37px;
+  left: 520px;
+  width: 383px;
+  height: 549px;
+  overflow: hidden;
+}
+.services-inner {
+  position: absolute;
+  top: -5px;
+  left: 0;
+  background-color: var(--color-lightskyblue);
+  width: 480px;
+  height: 1024px;
+}
+.frame-icon2,
+.frame-icon3,
+.frame-icon4 {
+  position: absolute;
+  top: 46px;
+  left: 69px;
+  width: 152px;
+  height: 169px;
+  overflow: hidden;
+}
+.frame-icon3,
+.frame-icon4 {
+  height: 11.91%;
+  width: 17.15%;
+  top: 19.82%;
+  right: 70.35%;
+  bottom: 68.26%;
+  left: 12.5%;
+  max-width: 100%;
+  max-height: 100%;
+}
+.frame-icon4 {
+  height: 20.8%;
+  width: 24.86%;
+  top: 34.08%;
+  right: 72.08%;
+  bottom: 45.12%;
+  left: 3.06%;
+}
+.rectangle-div,
+.services-child1 {
+  position: absolute;
+  top: 692px;
+  left: 958px;
+  background-color: #9cc665;
+  width: 482px;
+  height: 332px;
+}
+.services-child1 {
+  left: 480px;
+  background-color: #ec837e;
+  width: 480px;
+}
+.a-meal-planner {
+  top:760px;
+  margin-bottom: 0;
+  opacity:1;
+}
+.a-meal-planner-that-suggests {
+  top:760px;
+  margin: 0;
+  padding-left: var(--padding-xl);
+  opacity: 1;
+}
+
+
+
+
+
+.services-child2 {
+  position: absolute;
+  top: 692px;
+  left: 0;
+  background-color: #c5ebfc;
+  width: 480px;
+  height: 332px;
+}
+.frame-icon5 {
+  position: absolute;
+  top: 84px;
+  left: 1032px;
+  width: 334px;
+  height: 511px;
+  overflow: hidden;
+}
+.services-child3,
+.services-child4,
+.services-child5 {
+  position: absolute;
+  top: 934px;
+  left: 145px;
+  border-radius: var(--br-xl);
+  background-color: var(--color-lightskyblue);
+  width: 166px;
+  height: 60px;
+}
+.services-child4,
+.services-child5 {
+  left: 632px;
+  background-color: var(--color-crimson);
+}
+.services-child5 {
+  left: 1115px;
+  background-color: var(--color-yellowgreen);
+}
+.read-more,
+.read-more1,
+.read-more2 {
+  position: absolute;
+  top: 947px;
+  left: 153px;
+  font-size: var(--font-size-9xl);
+  font-family: var(--font-inter);
+  color: var(--color-darkslategray-100);
+}
+.read-more1,
+.read-more2 {
+  left: 644px;
+}
+.read-more2 {
+  left: 1122px;
+}
+.a-meal-planner-container {
+
+  position: absolute;
+  top: 760 px;
+  left: 999px;
+  font-weight: 500;
+  font-size: 24px;
+  font-family: var(--font-google-sans);
+}
+
+.provide-a-marketplace-container {
+  position: absolute;
+  top: 760px;
+  left: 50px;
+  font-weight: 500;
+  font-size: 24px;
+  font-family: var(--font-google-sans);
+}
+.customized-workout-plans {
+  font-weight: 500;
+  font-size: 24px;
+}
+
+.customized-workout-plans-container {
+  position: absolute;
+  top: 722px;
+  left: 534px;
+  font-family: var(--font-google-sans);
+}
+.progress-tracking-and-container {
+  position: absolute;
+  top: 822px;
+  left: 534px;
+  font-weight: 500;
+  font-size: 24px;
+  font-family: var(--font-google-sans);
+}
+.progress-tracking-and-container2 {
+  position: absolute;
+  top: 760px;
+  left: 1030px;
+  font-weight: 500;
+  font-size: 24px;
+  font-family: var(--font-google-sans);
+}
+.services {
+  position: absolute;
+  top: 1082px;
+  left: 30px;
+  background-color: var(--color-white);
+  width: 1440px;
+  height: 1024px;
+  overflow: hidden;
+  font-size: var(--font-nasalization);
+  color: var(--color-darkslategray);
+  font-family: var(--font-nasalization);
+}
+.about-us,
+.our-team,
+.what-we-offer {
+  position: absolute;
+  top: 990px;
+  left: 481px;
+  font-size: var(--font-size-29xl);
+  color: var(--color-whitesmoke);
+  font-family: Nasalization;
+}
+.about-us,
+.our-team {
+  top: 2141px;
+  left: 591px;
+}
+.about-us {
+  top: 3290px;
+  left: 573px;
+}
+.our-team-child,
+.our-team-inner,
+.our-team-item {
+  position: absolute;
+  top: 251.51px;
+  left: 72.45px;
+  width: 333.22px;
+  height: 325.1px;
+  object-fit: cover;
+}
+.our-team-inner,
+.our-team-item {
+  top: 431.8px;
+  left: 521.99px;
+  width: 344.83px;
+  height: 344.83px;
+}
+.our-team-inner {
+  top: 241.59px;
+  left: 954.59px;
+}
+.our-team-child1,
+.our-team-child2,
+.our-team-child3 {
+  position: absolute;
+  border-radius: var(--br-11xl);
+  width: 375px;
+}
+.our-team-child1 {
+  top: 568px;
+  left: 62px;
+  background-color: var(--sexy-rouge);
+  height: 83px;
+}
+.our-team-child2,
+.our-team-child3 {
+  top: 769px;
+  left: 501px;
+  background-color: #a4bc54;
+  height: 84px;
+}
+.our-team-child3 {
+  top: 568px;
+  left: 938px;
+  background-color: #4f84c6;
+  height: 83px;
+}
+.dedicated-and-professional {
+  position: absolute;
+  top: 77px;
+  left: 157px;
+  font-size: 40px;
+  color: var(--black-like-ur-heart);
+  font-family: Nasalization;
+}
+.selma-bouaouina {
+  position: absolute;
+  top: 579px;
+  left: 123px;
+  font-family: Nasalization;
+}
+.gym-trainer,
+.professional-nutritionist,
+.professional-psychologist {
+  position: absolute;
+  top: 611px;
+  left: 166px;
+  color: var(--color-darkslategray-100);
+  font-family: Nasalization;
+}
+.professional-nutritionist,
+.professional-psychologist {
+  top: 814px;
+  left: 535px;
+  font-family: Nasalization;
+}
+.professional-psychologist {
+  top: 604px;
+  left: 965px;
+  font-family: Nasalization;
+}
+.ahmed-chellal,
+.meriem-meziani {
+  position: absolute;
+  top: 780px;
+  left: 567px;
+  font-family: Nasalization;
+}
+.ahmed-chellal {
+  top: 575px;
+  left: 1034px;
+  font-family: Nasalization;
+}
+.our-team1,
+.red-lines-icon,
+.red-lines-icon1,
+.red-lines-icon2 {
+  position: absolute;
+  top: 828px;
+  left: 0;
+  width: 230.45px;
+  height: 141.72px;
+}
+.our-team1,
+.red-lines-icon1,
+.red-lines-icon2 {
+  top: 830px;
+  left: 118px;
+}
+.our-team1,
+.red-lines-icon2 {
+  top: 72px;
+  left: 1252px;
+}
+.our-team1 {
+  top: 2232px;
+  left: 30px;
+  background-color: var(--color-white);
+  width: 1440px;
+  height: 1024px;
+  overflow: hidden;
+  position: absolute;
+  font-size: var(--font-size-5xl);
+  color: var(--color-gainsboro-100);
+}
+.frame-icon6 {
+  position: relative;
+  width: 92px;
+  height: 76px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.logo1 {
+  position: absolute;
+  top: 3465px;
+  left: 121px;
+  width: 191px;
+  height: 51px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-7xs);
+}
+.armsgmailcom,
+.div,
+.sidi-abdellah-algiers {
+  position: absolute;
+  top: 3610px;
+  left: 129px;
+  font-family: var(--font-open-sans);
+}
+.armsgmailcom,
+.div {
+  top: 3663px;
+  left: 128px;
+}
+.div {
+  top: 3727px;
+}
+.home-page-child {
+  position: absolute;
+  top: 3610px;
+  left: 606px;
+  border-radius: var(--br-xl);
+  border: 6px solid var(--sexy-rouge);
+  box-sizing: border-box;
+  width: 412px;
+  height: 95px;
+}
+.give-us-your {
+  position: absolute;
+  top: 3635px;
+  left: 625px;
+  font-family: var(--font-open-sans);
+  display: inline-block;
+  width: 525px;
+  height: 88px;
+  font-family: google sans;
+  font-weight: 500;
+  color: #fff;
+  font-size: 36px;
+}
+.home-page {
+  position: relative;
+  background-color: var(--black-like-ur-heart);
+  width: 100%;
+  height: 3928px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-13xl);
+  color: var(--color-white);
+  font-family: var(--font-nasalization);
+}

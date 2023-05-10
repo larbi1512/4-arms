@@ -1,0 +1,301 @@
+.diet-child,
+.frame-icon {
+  position: absolute;
+  top: 0;
+  position: fixed;
+  left: 0;
+}
+.diet-child {
+  background-color: var(--color-yellowgreen-200);
+  width: 100%;
+  height: 95px;
+}
+.frame-icon {
+  width: 62px;
+  height: 51px;
+  overflow: hidden;
+    top: 20px;
+}
+.arms,
+.logo {
+  position: fixed;
+  top: 20px;
+  left: 68px;
+}
+.logo {
+  position: fixed;
+  top: 20px;
+  left: 21px;
+  width: 191px;
+  height: 51px;
+  font-size: var(--font-size-9xl);
+}
+.profile {
+  position: relative;
+  font-size: var(--font-size-xl);
+  font-family: var(--font-nasalization);
+  color: var(--sexy-rouge);
+  text-align: left;
+}
+.home,
+.login-button {
+  position: absolute;
+  cursor: pointer;
+}
+.login-button {
+  position: fixed;
+  border: 0;
+  padding: var(--padding-4xs) var(--padding-21xl);
+  background-color: var(--color-gainsboro-200);
+  top: 20px;
+  left: 80%;
+  border-radius: var(--br-xl);
+  width: 200px;
+  height: 51px;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+}
+.home {
+  text-decoration: none;
+  top: calc(50% - 17.5px);
+  left: calc(50% - 306px);
+  color: inherit;
+    top: 20px;
+  position: fixed;
+}
+.nav-bar-child {
+  position: fixed;
+  top: 20px;
+  left: 293px;
+  border-radius: var(--br-xl);
+  background-color: var(--color-gainsboro-200);
+  width: 98px;
+  height: 37px;
+}
+.diet1,
+.supplement,
+.workout {
+    top: 20px;
+  text-decoration: none;
+  position: fixed;
+  top: calc(50% - 17.5px);
+  color: inherit;
+}
+.workout {
+  left: calc(50% - 171px);
+  cursor: pointer;
+  top: 20px;
+  position: fixed;
+}
+.diet1,
+.supplement {
+  top: 20px;
+  position: fixed;
+  left: calc(50% + 9px);
+}
+.supplement {
+  left: calc(50% + 111px);
+}
+.nav-bar,
+.nav-bar1 {
+  position: fixed;
+  top: calc(50% - 18.5px);
+  left: calc(50% - 306px);
+  width: 100%;
+  z-index: 999;
+}
+.nav-bar {
+  top: calc(50% - 793px);
+  left: calc(50% - 339px);
+  color: var(--sexy-rouge);
+  z-index: 999;
+}
+
+.diet {
+  position: relative;
+  background-color: #c0eac5;
+  width: 100%;
+  height: 1200px ;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-11xl);
+  color: var(--color-white);
+  font-family: var(--font-nasalization);
+}
+.profile-child,
+.profile-item {
+  position: absolute;
+  border-radius: var(--br-xl);
+}
+.profile-child {
+  top: 31px;
+  left: -14px;
+  background-color: var(--color-gainsboro-200);
+  width: 430px;
+  height: 630px;
+}
+.profile-item {
+  top: 62px;
+  left: 25px;
+  width: 113px;
+  height: 113px;
+}
+.ls {
+  position: absolute;
+  top: 99px;
+  left: 60px;
+  font-size: var(--font-size-13xl);
+}
+.larbi-saidchikh,
+.larbisckgmailcom {
+  position: absolute;
+  top: 91px;
+  left: 151px;
+}
+.larbisckgmailcom {
+  top: 121px;
+  font-size: var(--font-size-xl);
+  font-family: var(--font-damion);
+  color: var(--grey-grey-800);
+}
+.my-diet,
+.my-progress,
+.settings {
+  position: absolute;
+  top: 248px;
+  left: 79px;
+}
+.my-diet,
+.settings {
+  top: 303px;
+}
+.settings {
+  top: 462px;
+  left: 78px;
+}
+.log-out,
+.my-supplements {
+  position: absolute;
+  top: 542px;
+  left: 79px;
+}
+.my-supplements {
+  top: 381px;
+  left: 78px;
+}
+.profile {
+  position: relative;
+  border-radius: var(--br-3xs);
+  width: 511px;
+  height: 733px;
+  max-width: 90%;
+  max-height: 90%;
+  overflow: auto;
+  text-align: left;
+  font-size: var(--font-size-5xl);
+  color: var(--black-like-ur-heart);
+  font-family: var(--font-nasalization);
+}
+form {
+  position: absolute;
+  display: flex;
+  margin-top: 20%;
+  align-items: center;
+  left: 10%;
+  top: 0.5%;
+  bottom: 10%;
+  width: 70%;
+  height: 100%;
+  flex-direction: column;
+  z-index: 1;
+
+
+
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  border-radius: 25%;
+}
+
+th,
+td {
+  border: 1px solid rgba(181, 239, 93, 0.626);
+  padding: 8px;
+  text-align: center;
+  z-index: -1;
+}
+
+th {
+  background-color: green;
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid rgba(181, 239, 93, 0.626);
+  border-radius: 4px;
+  background-color: #3CBC8D;
+  color: white;
+  font-size: large;
+  font-family: var(--font-nasalization);
+}
+
+.remaining {
+  font-weight: bold;
+}
+input[type="submit"]{
+  background-color: #3CBC8D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  margin-left: 100px;
+  border-radius: 10%;
+  cursor: pointer;
+  font-size: large;
+  font-family: var(--font-nasalization);
+
+
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+.top{
+  margin-top: 7%;
+  font-size: 50px;
+  font-family: var(--font-nasalization);
+  margin-left: 35%;
+  margin-right: 35%;
+  color: rgb(28, 86, 28);
+  padding: 10px 10px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 15px;
+    box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
+    background: rgb(155, 198, 53);
+    /* Old browsers */
+    background: -moz-linear-gradient(45deg, rgba(155, 198, 53, 1) 0%, rgba(192, 234, 103, 1) 99%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg, rgba(155, 198, 53, 1) 0%, rgba(192, 234, 103, 1) 99%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg, rgba(155, 198, 53, 1) 0%, rgba(192, 234, 103, 1) 99%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9bc635', endColorstr='#c0ea67', GradientType=1);
+    /* IE6-9 fallback on horizontal gradient */
+
+}
+.text{
+  font-size: large;
+  font-family: var(--font-nasalization);
+  color: rgb(28, 86, 28);
+  font-weight: bold;
+  text-align: center;
+  
+
+}

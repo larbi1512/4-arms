@@ -1,0 +1,185 @@
+.login-child {
+    position: absolute;
+    top: 0;
+    left: 755px;
+    background-color: var(--sexy-rouge);
+    width: 685px;
+    height: 1024px;
+  }
+  .log-in-to {
+    position: absolute;
+    top: 40px;
+    left: 37px;
+    font-size: var(--font-size-21xl);
+    color: var(--black-like-ur-heart);
+  }
+  .login-menu-child {
+    border: 4px solid var(--color-lightskyblue);
+    background-color: var(--black-white-white);
+    top: 179px;
+    box-sizing: border-box;
+  }
+  .login-menu-child,
+  .login-menu-inner,
+  .login-menu-item {
+    position: absolute;
+    left: 52px;
+    border-radius: var(--br-mini);
+    width: 391px;
+    height: 66px;
+  }
+  .login-menu-item {
+    border: 4px solid var(--color-lightskyblue);
+    background-color: var(--black-white-white);
+    top: 321px;
+    box-sizing: border-box;
+  }
+ 
+  .login-menu-inner {
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+    background-color: var(--color-crimson-200);
+    top: 424px;
+  }
+  .email {
+    top: 132px;
+    left: 52px;
+  }
+  .email,
+  .forgot,
+  .password {
+    position: absolute;
+    font-size: var(--font-size-9xl);
+    font-weight: 500;
+  }
+  .password {
+    left: 52px;
+  }
+  .forgot,
+  .password {
+    top: 274px;
+  }
+  .forgot {
+    left: 335px;
+    color: var(--color-crimson-200);
+  }
+  
+  .enter-your-password {
+    top: 339px;
+    color: var(--color-darkgray);
+  }
+
+  .sign-up {
+    color: var(--sexy-rouge);
+  }
+  .dont-have-an-container {
+    position: absolute;
+    top: 519px;
+    left: 60px;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--color-darkgray);
+  }
+  .log-in-now {
+    position: absolute;
+    top: 441px;
+    left: 190px;
+    font-weight: 500;
+    color: black;
+  }
+  .vector-icon {
+    position: absolute;
+    height: 2.6%;
+    width: 4.44%;
+    top: 60.03%;
+    right: 14.92%;
+    bottom: 37.37%;
+    left: 80.65%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+  }
+  .login-menu {
+    position: absolute;
+    top: 182px;
+    left: 850px;
+    background-color: var(--black-white-white);
+    box-shadow: 4px 6px 11px 6px rgba(60, 60, 60, 0.25);
+    width: 496px;
+    height: 578px;
+  }
+  .frame-icon {
+    position: absolute;
+    top: 242px;
+    left: 185px;
+    width: 248.19px;
+    height: 203.64px;
+    overflow: hidden;
+  }
+  .hello-welcome {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-weight: 500;
+  }
+  .arms {
+    position: absolute;
+    top: 484px;
+    left: 203px;
+    font-size: var(--font-size-29xl);
+    font-family: var(--button);
+  }
+  .let-begin-your {
+    position: absolute;
+    top: 634px;
+    left: 26px;
+    font-size: var(--font-size-21xl);
+    font-weight: 500;
+  }
+  .frame-parent {
+    position: absolute;
+    top: 58px;
+    left: 74px;
+    width: 592px;
+    height: 685px;
+    font-size: var(--font-size-17xl);
+    color: var(--black-white-white);
+  }
+  .login {
+    align-self: stretch;
+    position: relative;
+    background-color: var(--black-like-ur-heart);
+    height: 1024px;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+  .login-parent {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    font-size: var(--font-size-5xl);
+    color: var(--color-dimgray);
+    font-family: var(--font-google-sans);
+  }
+   
+  ::placeholder 
+  {
+    font-family: var(--font-google-sans);
+    font-weight: 500;
+    position: absolute;
+    text-align: left;
+    color: var(--color-darkgray);
+    left: 15.12%;
+
+  }
+
+  .login-menu-child ::placeholder
+  {
+    left: 15.12%;
+
+  }

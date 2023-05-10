@@ -1,0 +1,968 @@
+.activity-child,
+.activity-inner,
+.activity-item,
+.rectangle-canvas,
+.rectangle-div {
+  position: absolute;
+  top: 25px;
+  left: 13px;
+  border-radius: var(--br-xl);
+  background-color: var(--color-gray-500);
+  width: 60px;
+}
+.activity-inner,
+.activity-item,
+.rectangle-canvas,
+.rectangle-div {
+  left: 211px;
+}
+.activity-inner,
+.rectangle-canvas,
+.rectangle-div {
+  left: 409px;
+}
+.rectangle-canvas,
+.rectangle-div {
+  left: 79px;
+}
+.rectangle-canvas {
+  left: 277px;
+}
+.activity-child1,
+.activity-child2,
+.activity-child3,
+.activity-child4,
+.activity-child5,
+.activity-child6,
+.activity-child7 {
+  position: absolute;
+  top: 25px;
+  left: 475px;
+  border-radius: var(--br-xl);
+  background-color: var(--color-gray-500);
+  width: 60px;
+  height: 232px;
+}
+.activity-child2,
+.activity-child3,
+.activity-child4,
+.activity-child5,
+.activity-child6,
+.activity-child7 {
+  left: 145px;
+}
+.activity-child3,
+.activity-child4,
+.activity-child5,
+.activity-child6,
+.activity-child7 {
+  left: 343px;
+}
+.activity-child4,
+.activity-child5,
+.activity-child6,
+.activity-child7 {
+  left: 541px;
+}
+.activity-child5,
+.activity-child6,
+.activity-child7 {
+  left: 607px;
+}
+.activity-child6,
+.activity-child7 {
+  left: 673px;
+}
+.activity-child7 {
+  left: 739px;
+}
+.activity-child10,
+.activity-child8,
+.activity-child9 {
+  position: absolute;
+  top: 175px;
+  left: 21px;
+  border-radius: var(--br-mini);
+  background-color: var(--color-dimgray);
+  width: 45px;
+  height: 71px;
+}
+.activity-child10,
+.activity-child9 {
+  top: 126px;
+  left: 87px;
+  height: 120px;
+}
+.activity-child10 {
+  top: 85px;
+  left: 152px;
+  background-color: var(--color-gray-100);
+  height: 161px;
+}
+.activity,
+.div,
+.div1,
+.div2 {
+  position: absolute;
+  top: 155px;
+  left: 30px;
+  color: var(--color-dimgray);
+}
+.activity,
+.div1,
+.div2 {
+  top: 106px;
+  left: 96px;
+}
+.activity,
+.div2 {
+  top: 65px;
+  left: 158px;
+  color: var(--black-white-white);
+}
+.activity {
+  top: 285px;
+  left: 31px;
+  border-radius: var(--br-xl);
+  background-color: var(--color-darkslategray-100);
+  width: 100%;
+  height: 282px;
+  font-size: var(--font-size-base);
+  color: var(--color-gray-200);
+  font-family: var(--font-habibi);
+}
+.workout-child,
+.workout-item {
+  position: absolute;
+  top: 287px;
+  left: 891px;
+  border-radius: var(--br-11xl);
+  background-color: var(--color-gray-300);
+  width: 501px;
+  height: 280px;
+}
+.workout-item {
+  top: 778px;
+  left: 30px;
+  width: 1362px;
+  height: 941px;
+}
+.workout-inner {
+  position: absolute;
+  top: 326px;
+  left: 922.96px;
+  width: 200.04px;
+  height: 200.14px;
+}
+.activity1,
+.overview {
+  position: absolute;
+  top: 227px;
+  left: 41px;
+  font-family: var(--font-google-sans);
+}
+.overview {
+  left: 891px;
+}
+.span {
+  color: var(--black-white-white);
+}
+.monthly,
+.monthly1 {
+  position: absolute;
+  top: 237px;
+  left: 677px;
+  color: var(--color-dimgray);
+}
+.monthly1 {
+  top: 227px;
+  left: 1252px;
+}
+.calories-burn,
+.carbs,
+.protein {
+  position: absolute;
+  top: 306px;
+  left: 1205px;
+  font-size: var(--font-size-xl);
+  color: var(--color-darkgray);
+}
+.carbs,
+.protein {
+  top: 382px;
+}
+.carbs {
+  top: 469px;
+}
+.ellipse-icon,
+.workout-child1,
+.workout-child2 {
+  position: absolute;
+  top: 309px;
+  left: 1173px;
+  width: 18px;
+  height: 18px;
+}
+.workout-child1,
+.workout-child2 {
+  top: 385px;
+}
+.workout-child2 {
+  top: 476px;
+}
+.line-div,
+.workout-child3 {
+  position: absolute;
+  top: 372.5px;
+  left: 1170.5px;
+  border-top: 1px solid var(--color-darkgray);
+  box-sizing: border-box;
+  width: 191px;
+  height: 1px;
+}
+.workout-child3 {
+  top: 461.5px;
+}
+.div3,
+.div4,
+.div5 {
+  position: absolute;
+  top: 347px;
+  left: 1191px;
+  font-size: var(--font-size-xl);
+}
+.div4,
+.div5 {
+  top: 430px;
+}
+.div5 {
+  top: 522px;
+}
+.look-for-gyms,
+.recommended-activities {
+  position: absolute;
+  top: 718px;
+  left: 52px;
+}
+.look-for-gyms {
+  top: 1766px;
+  left: 76px;
+}
+.workout-child4,
+.workout-child5,
+.workout-child6,
+.workout-child7 {
+  position: absolute;
+  top: 835px;
+  left: 48px;
+  border-radius: var(--br-xl);
+  border: 4px solid var(--sexy-rouge);
+  box-sizing: border-box;
+  width: 282px;
+  height: 271px;
+}
+.workout-child5,
+.workout-child6,
+.workout-child7 {
+  top: 1141px;
+  left: 50px;
+}
+.workout-child6,
+.workout-child7 {
+  top: 1433px;
+}
+.workout-child7 {
+  top: 835px;
+  left: 396px;
+}
+.workout-child10,
+.workout-child11,
+.workout-child12,
+.workout-child13,
+.workout-child14,
+.workout-child15,
+.workout-child8,
+.workout-child9 {
+  position: absolute;
+  top: 1141px;
+  left: 398px;
+  border-radius: var(--br-xl);
+  border: 4px solid var(--sexy-rouge);
+  box-sizing: border-box;
+  width: 282px;
+  height: 271px;
+}
+.workout-child10,
+.workout-child11,
+.workout-child12,
+.workout-child13,
+.workout-child14,
+.workout-child15,
+.workout-child9 {
+  top: 1433px;
+}
+.workout-child10,
+.workout-child11,
+.workout-child12,
+.workout-child13,
+.workout-child14,
+.workout-child15 {
+  top: 835px;
+  left: 744px;
+}
+.workout-child11,
+.workout-child12,
+.workout-child13,
+.workout-child14,
+.workout-child15 {
+  top: 1141px;
+  left: 746px;
+}
+.workout-child12,
+.workout-child13,
+.workout-child14,
+.workout-child15 {
+  top: 1433px;
+}
+.workout-child13,
+.workout-child14,
+.workout-child15 {
+  top: 835px;
+  left: 1092px;
+}
+.workout-child14,
+.workout-child15 {
+  top: 1141px;
+  left: 1094px;
+}
+.workout-child15 {
+  top: 1433px;
+}
+.stretching-exercices-icon,
+.stretching-exercices-icon1,
+.training-at-home-bro {
+  position: absolute;
+  height: 2.57%;
+  width: 17.26%;
+  top: 31.35%;
+  right: 77.81%;
+  bottom: 66.08%;
+  left: 4.93%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.stretching-exercices-icon1,
+.training-at-home-bro {
+  top: 50.52%;
+  right: 77.67%;
+  bottom: 46.9%;
+  left: 5.07%;
+}
+.training-at-home-bro {
+  height: 5.74%;
+  width: 19.47%;
+  top: 28.19%;
+  right: 52.06%;
+  bottom: 66.07%;
+  left: 28.47%;
+}
+.personal-trainer,
+.personal-trainer1,
+.personal-trainer2,
+.training-at-home-bro1,
+.training-at-home-bro2 {
+  position: absolute;
+  height: 5.74%;
+  width: 19.47%;
+  top: 38%;
+  right: 51.92%;
+  bottom: 56.26%;
+  left: 28.61%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.personal-trainer,
+.personal-trainer1,
+.personal-trainer2,
+.training-at-home-bro2 {
+  top: 47.36%;
+  bottom: 46.89%;
+}
+.personal-trainer,
+.personal-trainer1,
+.personal-trainer2 {
+  height: 6.69%;
+  width: 16.44%;
+  top: 27.53%;
+  right: 29.39%;
+  bottom: 65.79%;
+  left: 54.17%;
+}
+.personal-trainer1,
+.personal-trainer2 {
+  top: 37.34%;
+  right: 29.25%;
+  bottom: 55.97%;
+  left: 54.31%;
+}
+.personal-trainer2 {
+  top: 46.71%;
+  bottom: 46.61%;
+}
+.stretching-exercices-icon2,
+.undraw-pilates-icon,
+.undraw-pilates-icon1,
+.undraw-pilates-icon2 {
+  position: absolute;
+  height: 3.36%;
+  width: 18.96%;
+  top: 29.84%;
+  right: 3.96%;
+  bottom: 66.8%;
+  left: 77.08%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.stretching-exercices-icon2,
+.undraw-pilates-icon1,
+.undraw-pilates-icon2 {
+  top: 39.65%;
+  right: 3.82%;
+  bottom: 56.99%;
+  left: 77.22%;
+}
+.stretching-exercices-icon2,
+.undraw-pilates-icon2 {
+  top: 49.01%;
+  bottom: 47.62%;
+}
+.stretching-exercices-icon2 {
+  height: 2.57%;
+  width: 17.26%;
+  top: 41.16%;
+  right: 77.67%;
+  bottom: 56.27%;
+  left: 5.07%;
+}
+.select {
+  position: relative;
+  font-weight: 500;
+}
+.frame-child {
+  position: relative;
+  border-right: 1px solid var(--text-medium);
+  box-sizing: border-box;
+  width: 1px;
+  height: 21px;
+  flex-shrink: 0;
+  display: none;
+}
+.select-parent {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+.ic-expand-more-48px-icon {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.frame-parent {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-9xs);
+}
+.dropdown-and-multiselect1 {
+  align-self: stretch;
+  border-radius: var(--br-9xs);
+  background-color: var(--black-white-white);
+  box-shadow: var(--bootstrap-focused);
+  border: 1px solid #ff4747;
+  box-sizing: border-box;
+  height: 36px;
+  flex-shrink: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: var(--padding-5xs) var(--padding-base);
+  align-items: flex-start;
+  justify-content: center;
+}
+.label {
+  align-self: stretch;
+  position: relative;
+  font-weight: 600;
+  display: none;
+}
+.text-input {
+  flex: 1;
+  position: relative;
+  font-weight: 500;
+}
+.text-input-wrapper {
+  align-self: stretch;
+  border-radius: var(--br-9xs);
+  background-color: var(--grey-grey-50);
+  border: 1px solid var(--grey-grey-50);
+  display: flex;
+  flex-direction: row;
+  padding: var(--padding-5xs) var(--padding-base);
+  align-items: center;
+  justify-content: center;
+  color: var(--grey-grey-400);
+}
+.form,
+.label-parent {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.label-parent {
+  gap: 8px;
+}
+.form {
+  color: var(--text-medium);
+  font-family: var(--small-size-body-medium);
+}
+.base {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: var(--br-11xs);
+  background-color: var(--black-white-white);
+  border: 1px solid var(--grey-grey-400);
+  box-sizing: border-box;
+}
+.basecheckbox {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+.option {
+  flex: 1;
+  position: relative;
+}
+.dropdown-and-multiselect3 {
+  background-color: #fbd5d5;
+  display: flex;
+  color: var(--sexy-rouge);
+}
+.dropdown-and-multiselect3,
+.dropdown-and-multiselect4,
+.dropdown-and-multiselect5 {
+  align-self: stretch;
+  border-radius: var(--br-9xs);
+  flex-direction: row;
+  padding: var(--padding-9xs) var(--padding-5xs);
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-3xs);
+}
+.dropdown-and-multiselect4 {
+  display: flex;
+}
+.dropdown-and-multiselect5 {
+  display: none;
+}
+.form-parent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: var(--gap-9xs);
+}
+.scroller-child {
+  position: relative;
+  border-radius: var(--br-mini);
+  background-color: var(--grey-grey-300);
+  width: 8px;
+  height: 70px;
+  flex-shrink: 0;
+}
+.frame-group,
+.scroller {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.scroller {
+  border-radius: var(--br-5xs);
+  background-color: var(--black-white-white);
+  overflow: hidden;
+}
+.frame-group {
+  gap: var(--gap-9xs);
+}
+.dropdown-and-multiselect-child {
+  align-self: stretch;
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  height: 1px;
+  flex-shrink: 0;
+}
+.primary-buttons {
+  position: relative;
+  letter-spacing: 1.25px;
+  line-height: 150%;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.button-large {
+  border-radius: var(--br-5xs);
+  padding: var(--padding-5xs);
+  justify-content: center;
+}
+.button-large,
+.button-large-parent,
+.button-large1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.button-large1 {
+  border-radius: var(--br-5xs);
+  background-color: var(--sexy-rouge);
+  padding: var(--padding-5xs);
+  justify-content: center;
+  color: var(--black-white-white);
+}
+.button-large-parent {
+  justify-content: flex-end;
+  gap: var(--gap-9xs);
+  text-align: center;
+  color: var(--sexy-rouge);
+}
+.dropdown-and-multiselect,
+.dropdown-and-multiselect2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.dropdown-and-multiselect2 {
+  align-self: stretch;
+  border-radius: var(--br-9xs);
+  background-color: var(--black-white-white);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  border: 1px solid var(--grey-grey-50);
+  padding: var(--padding-5xs) var(--padding-9xs);
+  align-items: flex-end;
+  gap: var(--gap-9xs);
+  color: var(--grey-grey-800);
+  font-family: var(--button);
+}
+.dropdown-and-multiselect {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  right: 0;
+  left: 0;
+  align-items: flex-start;
+}
+.select-gym {
+  position: absolute;
+  top: 1846px;
+  left: 222px;
+  width: 965px;
+  height: 218px;
+  font-size: var(--button-size);
+  color: var(--grey-grey-400);
+  font-family: var(--small-size-body-medium);
+}
+.workout-child16 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-gray-400);
+  width: 1440px;
+  height: 95px;
+}
+.frame-icon {
+  width: 62px;
+  height: 51px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.arms,
+.frame-icon {
+  position: relative;
+}
+.logo {
+  width: 191px;
+  height: 51px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-7xs);
+}
+.home {
+  position: absolute;
+  top: calc(50% - 16.5px);
+  left: calc(50% - 306px);
+}
+.frame-item {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: var(--color-gainsboro-200);
+  position: absolute;
+  top: 0;
+  left: 122px;
+  border-radius: var(--br-xl);
+  width: 162px;
+  height: 37px;
+}
+.workout1 {
+  left: calc(50% - 171px);
+}
+.diet,
+.supplement,
+.workout1 {
+  position: absolute;
+  top: calc(50% - 16.5px);
+}
+.diet {
+  left: calc(50% + 9px);
+  cursor: pointer;
+}
+.supplement {
+  left: calc(50% + 111px);
+}
+.home-parent,
+.profile1 {
+  position: relative;
+  color: var(--sexy-rouge);
+}
+.home-parent {
+  width: 612px;
+  height: 39px;
+  flex-shrink: 0;
+  font-size: var(--font-size-11xl);
+}
+.profile1 {
+  font-size: var(--font-size-xl);
+  font-family: var(--font-nasalization);
+  text-align: left;
+}
+.login-button,
+.nav-bar {
+  height: 51px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.login-button {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-4xs) var(--padding-21xl);
+  background-color: var(--color-gainsboro-200);
+  border-radius: var(--br-xl);
+  width: 200px;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  justify-content: center;
+}
+.nav-bar {
+  position: absolute;
+  top: 20px;
+  left: 21px;
+  width: 1399px;
+  justify-content: flex-start;
+  gap: var(--gap-179xl);
+  font-size: var(--font-size-9xl);
+  font-family: var(--font-nasalization);
+}
+.workout {
+  position: relative;
+  background-color: var(--color-gray-500);
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-13xl);
+  color: var(--black-white-white);
+  font-family: var(--font-font);
+}
+@media screen and (max-width: 1200px) {
+  .frame-group,
+  .select-parent {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  .select-parent {
+    gap: 1px;
+    align-items: flex-end;
+  }
+  .frame-group {
+    gap: var(--gap-11xs);
+    align-items: flex-start;
+  }
+}
+@media screen and (max-width: 960px) {
+  .frame-group,
+  .select-parent {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  .select-parent {
+    gap: var(--gap-11xs);
+    align-items: flex-end;
+  }
+  .frame-group {
+    gap: 12px;
+    align-items: flex-start;
+  }
+}
+@media screen and (max-width: 420px) {
+  .select-parent {
+    flex-direction: row;
+    gap: 3px;
+    align-items: flex-end;
+    justify-content: flex-start;
+  }
+}
+.profile-child,
+.profile-item {
+  position: absolute;
+  border-radius: var(--br-xl);
+}
+.profile-child {
+  top: 31px;
+  left: -14px;
+  background-color: var(--color-gainsboro-200);
+  width: 430px;
+  height: 630px;
+}
+.profile-item {
+  top: 62px;
+  left: 25px;
+  width: 113px;
+  height: 113px;
+}
+.ls {
+  position: absolute;
+  top: 99px;
+  left: 60px;
+  font-size: var(--font-size-13xl);
+}
+.larbi-saidchikh,
+.larbisckgmailcom {
+  position: absolute;
+  top: 91px;
+  left: 151px;
+}
+.larbisckgmailcom {
+  top: 121px;
+  font-size: var(--font-size-xl);
+  font-family: var(--font-damion);
+  color: var(--grey-grey-800);
+}
+.my-diet,
+.my-progress,
+.settings {
+  position: absolute;
+  top: 248px;
+  left: 79px;
+}
+.my-diet,
+.settings {
+  top: 303px;
+}
+.settings {
+  top: 462px;
+  left: 78px;
+}
+.log-out,
+.my-supplements {
+  position: absolute;
+  top: 542px;
+  left: 79px;
+}
+.my-supplements {
+  top: 381px;
+  left: 78px;
+}
+.profile {
+  position: relative;
+  border-radius: var(--br-3xs);
+  width: 511px;
+  height: 733px;
+  max-width: 90%;
+  max-height: 90%;
+  overflow: auto;
+  text-align: left;
+  font-size: var(--font-size-5xl);
+  color: var(--black-like-ur-heart);
+  font-family: var(--font-nasalization);
+}
+.overview{
+  background-color:black;
+  
+}
+#container {
+    height: 400px;
+}
+
+.highcharts-figure,
+.highcharts-data-table table {
+    min-width: 310px;
+    max-width: 800px;
+    margin: 1em auto;
+}
+
+.highcharts-data-table table {
+    font-family: Verdana, sans-serif;
+    border-collapse: collapse;
+    border: 1px solid #ebebeb;
+    margin: 10px auto;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+.highcharts-data-table caption {
+    padding: 1em 0;
+    font-size: 1.2em;
+    color: #555;
+}
+
+.highcharts-data-table th {
+    font-weight: 600;
+    padding: 0.5em;
+}
+
+.highcharts-data-table td,
+.highcharts-data-table th,
+.highcharts-data-table caption {
+    padding: 0.5em;
+}
+
+.highcharts-data-table thead tr,
+.highcharts-data-table tr:nth-child(even) {
+    background: #f8f8f8;
+}
+
+.highcharts-data-table tr:hover {
+    background: #f1f7ff;
+}
