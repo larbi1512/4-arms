@@ -7,11 +7,13 @@ require_once('../db.php');
 <head>
     <meta charset="utf-8">
     <title>Dashboard - Admin Page</title>
+    <link rel="stylesheet" href="dashboard.css">
 </head>
 
 <body>
     <header>
     <h2 class="welcome">Welcome to Dashboard.</h2>
+      <button class="hamburger">&#9776;</button>
     <nav>
     <ul>
     <li><a href="../index.html">Home</a></li>

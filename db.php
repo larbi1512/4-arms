@@ -4,7 +4,8 @@ session_start();
 $host = "localhost";
 $dbuser = "root";
 $dbpass = "";
-$dbname = "4_arms";
+$dbname = "4-ARMS";
+
 // Create database connection
 $conn = new mysqli($host, $dbuser, $dbpass, $dbname);
 // Check connection
