@@ -11,14 +11,8 @@
 
 <body>
   
-    <?php
-    session_start();
-    if (isset($_SESSION['error_message'])) {
-      echo '<p class="error">' . $_SESSION['error_message'] . '</p>';
-      unset($_SESSION['error_message']); // unset the session variable after displaying the message
-    }
-    ?>
-      </div>
+
+      
   <div class="frame-parent">
     <div class="logo">
       <img class="frame-icon" alt="" src="./public/frame.svg" />
@@ -29,6 +23,13 @@
   </div>
 
   <!-- form -->
+      <?php
+      session_start();
+      if (isset($_SESSION['error_message'])) {
+        echo '<p class="error">' . $_SESSION['error_message'] . '</p>';
+        unset($_SESSION['error_message']); // unset the session variable after displaying the message
+      }
+      ?>
     <form method="POST" action="signup.inc.php" id="signup-form">
       <div class="form-group">
       <p class ="create">Create an account</p>
