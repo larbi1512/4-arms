@@ -1,18 +1,7 @@
 <?php
-// start the session
-$user_id = 1;
-// initialize the consumed variables from the session data, or to 0 if not set
-$host = "localhost";
-$dbuser = "root";
-$dbpass = "";
-$dbname = "4-arms";
-// Create database connection
-$conn = new mysqli($host, $dbuser, $dbpass, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
+session_start();
+require_once "../db.php";
+$user_id = $_SESSION["user_id"] ?? 1;
 $sql = "SELECT * FROM assigned WHERE user_id = $user_id";
 $result = $conn->query($sql);
 $row = $result->fetch_assoc();
@@ -174,7 +163,7 @@ if (isset($_POST['carbs_consumed']) && isset($_POST['calories_consumed']) && iss
           <?php echo $row['diet_name'] ?>
         </p>
         <p style="font-size:70%">
-        <?php echo $row['description'] ?>
+          <?php echo $row['description'] ?>
         </p>
         <a href="<?php echo $row['diet_link'] ?>">Learn More</a>
       </div>

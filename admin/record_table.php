@@ -1,6 +1,5 @@
 <?php
 require_once('../db.php');
-
 $table = $_GET['table'];
 $field_names = array();
 $table_map = array(
