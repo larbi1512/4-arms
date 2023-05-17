@@ -75,7 +75,7 @@ if (isset($_POST['carbs_consumed']) && isset($_POST['calories_consumed']) && iss
       <div class="arms">4-ARMS</div>
     </div>
 
-    <div class="nav-bar">
+    <div class="nav-bar sticky-nav">
       <div class="nav-bar1">
         <a class="home" id="home" href="../newHome.html">Home</a>
         <a class="workout" id="workout" href="../workout/workout.php">Workout</a>
@@ -111,7 +111,8 @@ if (isset($_POST['carbs_consumed']) && isset($_POST['calories_consumed']) && iss
 
     <!-- Add the remaining values to the HTML table -->
     <!-- Display the form with remaining values -->
-    <form method="post" action="">
+    <div class="scrollable-container">
+    <form method="post" action="" class="form-container">
       <table>
         <thead>
           <tr>
@@ -150,6 +151,7 @@ if (isset($_POST['carbs_consumed']) && isset($_POST['calories_consumed']) && iss
       </table>
       <input type="submit" value="Check Progress">
     </form>
+  </div>
 
     <div class="recommended-activities">Your diet </div>
     <div class="plan">
@@ -172,14 +174,14 @@ if (isset($_POST['carbs_consumed']) && isset($_POST['calories_consumed']) && iss
       .recommended-activities {
         margin-top: 28%;
         margin-left: 10%;
-        color: green;
+        color: var(--sexy-rouge);
       }
 
       .plan {
         position: absolute;
         display: flex;
         flex-direction: row;
-        background-color: rgb(28, 86, 28);
+        background-color: var(--sexy-rouge);
         border-radius: 30px;
         width: 95%;
         padding: 20px;
@@ -214,7 +216,7 @@ if (isset($_POST['carbs_consumed']) && isset($_POST['calories_consumed']) && iss
       }
 
       .plan-description a {
-        color: #EEC643;
+        color: black;
         font-size: 16px;
         text-decoration: none;
         margin-top: auto;
@@ -285,6 +287,18 @@ if (isset($_POST['carbs_consumed']) && isset($_POST['calories_consumed']) && iss
       document.querySelector('span.remaining:nth-of-type(2)').textContent = calories_remaining;
       document.querySelector('span.remaining:nth-of-type(3)').textContent = proteins_remaining;
     });
+
+    window.addEventListener("scroll", function() {
+  var navbar = document.querySelector(".diet-child");
+  var formContainer = document.querySelector(".form-container");
+  if (window.pageYOffset > navbar.offsetTop) {
+    navbar.classList.add("sticky-nav");
+    formContainer.style.marginTop = navbar.offsetHeight + "px";
+  } else {
+    navbar.classList.remove("sticky-nav");
+    formContainer.style.marginTop = "0";
+  }
+});
   </script>
 </body>
 
