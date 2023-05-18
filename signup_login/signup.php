@@ -10,51 +10,9 @@
 </head>
 
 <body>
-  <div class="signup-form">
-    <?php
-    session_start();
-    if (isset($_SESSION['error_message'])) {
-      echo '<p class="error">' . $_SESSION['error_message'] . '</p>';
-      unset($_SESSION['error_message']); // unset the session variable after displaying the message
-    }
-    ?>
-    <form method="POST" action="signup.inc.php">
-      <p class="create-an-account1">Create an account</p>
-      <div class="form-group">
-        <div class="label">Name :</div>
-        <input class="create-an-account-child" type="text" name="user_name" placeholder="Enter Your Username" required />
-      </div>
+  
 
-      <div class="form-group">
-        <div class="label">Email :</div>
-        <input class="create-an-account-child" type="email" name="user_email" placeholder="Enter Your E-mail" required />
-      </div>
-
-      <div class="form-group">
-        <div class="label">Password :</div>
-        <input class="create-an-account-child" type="password" name="user_password" placeholder="Enter Your Password" required />
-      </div>
-
-      <div class="form-group">
-        <div class="label">Height :</div>
-        <input type="number" name="height" min="140" max="220" placeholder="Enter your Height">
-      </div>
-
-      <div class="form-group">
-        <div class="label">Weight</div>
-        <input type="number" name="weight" min="40" max="200" placeholder="Enter your Weight">
-      </div>
-
-      <button type="submit" class="create-account">Create account</button>
-    </form>
-
-    <div class="already-have-an-container">
-      <span class="already-have-an">Already have an account ? </span><span class="log-in"><a href="login.php">Login</a></span>
-    </div>
-  </div>
-
-
-  </div>
+      
   <div class="frame-parent">
     <div class="logo">
       <img class="frame-icon" alt="" src="./public/frame.svg" />
@@ -63,6 +21,53 @@
     <div class="hello-welcome">Hello, Welcome !</div>
     <div class="let-begin-your">Let Begin your fitness journey!</div>
   </div>
+
+  <!-- form -->
+      <?php
+      session_start();
+      if (isset($_SESSION['error_message'])) {
+        echo '<p class="error">' . $_SESSION['error_message'] . '</p>';
+        unset($_SESSION['error_message']); // unset the session variable after displaying the message
+      }
+      ?>
+    <form method="POST" action="signup.inc.php" id="signup-form">
+      <div class="form-group">
+      <p class ="create">Create an account</p>
+  </div>
+      <div class="form-group">
+        <label>Name :</label>
+        <input class="form-control" type="text" name="user_name" placeholder="Enter Your Username" required />
+      </div>
+
+      <div class="form-group">
+        <label>Email :</label>
+        <input class="form-control" type="email" name="user_email" placeholder="Enter Your E-mail" required />
+      </div>
+
+      <div class="form-group">
+        <label>Password :</label>
+        <input class="form-control" type="password" name="user_password" placeholder="Enter Your Password" required />
+      </div>
+
+      <div class="form-group">
+        <label>Height :</label>
+        <input type="number" name="height" min="140" max="220" placeholder="Enter your Height">
+      </div>
+
+      <div class="form-group">
+        <label>Weight</label>
+        <input type="number" name="weight" min="40" max="200" placeholder="Enter your Weight">
+      </div>
+    <div class="form-group">
+      <button type="submit" class="submit">Create account</button>
+  </div>
+      <div class="form-group">
+      <span class="already-have-an">Already have an account ? </span><span class="log-in"><a href="login.php">Login</a></span>
+    </div>
+  </div>
+
+    </form>
+
 
 </body>
 

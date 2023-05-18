@@ -200,7 +200,7 @@
         <button id="start-button" onclick="startTimer()">Start The Workout</button>
         <button id="stop-button" onclick="stopTimer()">End Of The Workoit</button>
         <p id="result"></p>
-
+        
         <!-- JavaScript code to handle the timer and AJAX -->
         <script>
           var startTime, endTime, elapsedTime;
