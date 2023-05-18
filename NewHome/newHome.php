@@ -88,7 +88,7 @@ require_once "../db.php";
       </div>
      
 
-      
+
       <a
         href="../workout/workout.php"
         style="display: block; width: 100%; height: 100%"
@@ -140,6 +140,24 @@ require_once "../db.php";
           </div>
         </div>
       </a>
+
+       <a
+        href="../Shop/supplement.html"
+        style="display: block; width: 100%; height: 100%"
+      >
+        <div class="cardib">
+
+          <img src="" alt="" style="width: 100%; border-radius: 10px" />
+          <div class="container">
+            <h4><b>
+                our shop
+              </b></h4>
+            <p>check the latest supplements</p>
+          </div>
+        </div>
+      </a>
+      <img class="white-lines" alt="" src="./public/white-lines.svg" />
+
     </div>
 
     <script>

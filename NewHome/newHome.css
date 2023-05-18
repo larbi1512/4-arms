@@ -371,7 +371,7 @@ img {
     border-radius: var(--br-3xs);
     margin: 0 auto;
     margin-top: 70%;
-    margin-bottom: 20px;
+    margin-right: 60%;
     padding: 10px;
     text-align: center;
     font-family: var(--font-nasalization);
@@ -405,9 +405,7 @@ img {
         background-color: rgb(24, 161, 40);
         border-radius: var(--br-3xs);
         margin: 0 auto;
-        margin-top: 5%;
         margin-left: 60%;
-        margin-bottom: 10%;
         padding: 10px;
         text-align: center;
         font-family: var(--font-nasalization);
@@ -431,8 +429,8 @@ img {
     background-color: rgb(0, 169, 236);
     border-radius: var(--br-3xs);
     margin: 0 auto;
-    margin-top: 5%;
     margin-bottom: 10%;
+    margin-right: 60%;
     padding: 10px;
     text-align: center;
     font-family: var(--font-nasalization);
