@@ -1,3 +1,9 @@
+<?php
+session_start();
+$user_id = $_SESSION["user_id"] ?? 1;
+require_once "../db.php";
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -80,18 +86,30 @@
         <p class="make-yourself-stronger">Make yourself stronger</p>
         <p class="make-yourself-stronger">than your excuses</p>
       </div>
+     
+
+      
       <a
         href="../workout/workout.php"
         style="display: block; width: 100%; height: 100%"
       >
         <div class="card">
+          <?php
+          $sql = "SELECT * FROM assigned WHERE user_id = $user_id";
+          $result = $conn->query($sql);
+          $row = $result->fetch_assoc();
+          $workout_id = $row['workout_id'];
+          $sql = "SELECT * FROM workout_plan WHERE workout_id = $workout_id";
+          $result = $conn->query($sql);
+          $row = $result->fetch_assoc();
+          ?>
           <img
-            src="./public/workout programs copy.png"
-            alt="workout"
+            src="<?php echo $row['workout_img_link'] ?>"
+            alt=""
             style="width: 100%; border-radius: 10px"
           />
           <div class="container">
-            <h4><b>Lion Hour</b></h4>
+            <h4><b><?php echo $row['workout_name'] ?></b></h4>
             <p>check your workout progress</p>
           </div>
         </div>
@@ -102,8 +120,17 @@
         style="display: block; width: 100%; height: 100%"
       >
         <div class="cardyuh">
+                    <?php
+                    $sql = "SELECT * FROM assigned WHERE user_id = $user_id";
+                    $result = $conn->query($sql);
+                    $row = $result->fetch_assoc();
+                    $diet_id = $row['diet_id'];
+                    $sql = "SELECT * FROM diet WHERE diet_id = $diet_id";
+                    $result = $conn->query($sql);
+                    $row = $result->fetch_assoc();
+                    ?>
           <img
-            src="./public/tangerine-newt-RgT22Ixcq4Y-unsplash.jpg"
+           src="<?php echo $row['diet_link_img'] ?>" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.7"
             alt="Diet"
             style="width: 100%; border-radius: 10px"
           />
