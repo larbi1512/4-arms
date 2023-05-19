@@ -9,7 +9,6 @@ $diet_id = $row['diet_id'];
 $sql = "SELECT * FROM diet WHERE diet_id = $diet_id";
 $result = $conn->query($sql);
 $row = $result->fetch_assoc();
-$conn->close();
 $carbs_consumed = $_SESSION['carbs_consumed'] ?? 0;
 $calories_consumed = $_SESSION['calories_consumed'] ?? 0;
 $proteins_consumed = $_SESSION['proteins_consumed'] ?? 0;
