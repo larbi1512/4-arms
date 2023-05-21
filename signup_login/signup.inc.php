@@ -64,7 +64,7 @@ $stmt->close();
 
 
 echo "New record created successfully";
-header("location: login.php");
+header("location: ../NewHome/newHome.php");
 exit();
 // Close connection to database
 $conn->close();

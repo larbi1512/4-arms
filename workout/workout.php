@@ -109,12 +109,12 @@
             $data[] = array(
               'name' => 'Calories',
               'y' => intval($row['Calories']),
-              'color' => '#0046F9'
+              'color' => '#F93535'
             );
             $data[] = array(
               'name' => 'Carbs',
               'y' => intval($row['carbs']),
-              'color' => '#F93535'
+              'color' => '#003459'
             );
             $data[] = array(
               'name' => 'Protein',
@@ -124,8 +124,11 @@
           }
         }
         ?>
-
-
+        <style>
+          .imh{
+            border-color: ;
+          }
+        </style>
         <script>
           // Render pie chart using Highcharts
           Highcharts.chart('container', {
@@ -137,8 +140,11 @@
               type: 'pie',
             },
             title: {
-              text: 'OverVeiw',
-              plotBackgroundColor: 'black',
+              text: 'Nutrition',
+              style: {
+                color: 'white',
+                font: 'bold 200% '
+              }
             },
             tooltip: {
               pointFormat: '{series.name}: <b>{point.y}g</b>',
@@ -159,7 +165,7 @@
               name: 'Nutrition',
               colorByPoint: true,
               plotBackgroundColor: 'black',
-              data: <?php echo json_encode($data); ?>
+              data: <?php echo json_encode($data); ?>,
 
             }]
 
