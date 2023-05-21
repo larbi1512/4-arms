@@ -1,3 +1,27 @@
+ html {
+   box-sizing: border-box;
+   -webkit-font-smoothing: antialiased;
+ }
+
+ * {
+   box-sizing: inherit;
+
+   &:before,
+   &:after {
+     box-sizing: inherit;
+   }
+ }
+
+ body {
+   min-height: 100vh;
+   display: flex;
+   font-family: 'Roboto', Arial;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   background:  #1d1d1b;
+ }
+
 .diet-child,
 .frame-icon {
   position: absolute;
@@ -48,6 +72,7 @@
 .login-button {
   position: absolute;
   cursor: pointer;
+  
 }
 .login-button {
   position: fixed;
@@ -64,6 +89,14 @@
   box-sizing: border-box;
   align-items: center;
   justify-content: center;
+  z-index: 999;
+}
+.profile1{
+    position: relative;
+      color: var(--sexy-rouge);
+        font-size: var(--font-size-xl);
+          font-family: var(--font-nasalization);
+          text-align: left;
 }
 .home {
   text-decoration: none;
@@ -129,77 +162,16 @@
 }
 
 .diet {
-  position: relative;
-  background-color: var(--color-black);
+  background-color: var(--color-gray-500);
   width: 100%;
-  height: 1200px ;
+  height: 100% ;
   overflow: hidden;
   text-align: left;
   font-size: var(--font-size-11xl);
   color: var(--color-white);
   font-family: var(--font-nasalization);
 }
-.profile-child,
-.profile-item {
-  position: absolute;
-  border-radius: var(--br-xl);
-}
-.profile-child {
-  top: 31px;
-  left: -14px;
-  background-color: var(--color-gainsboro-200);
-  width: 430px;
-  height: 630px;
-}
-.profile-item {
-  top: 62px;
-  left: 25px;
-  width: 113px;
-  height: 113px;
-}
-.ls {
-  position: absolute;
-  top: 99px;
-  left: 60px;
-  font-size: var(--font-size-13xl);
-}
-.larbi-saidchikh,
-.larbisckgmailcom {
-  position: absolute;
-  top: 91px;
-  left: 151px;
-}
-.larbisckgmailcom {
-  top: 121px;
-  font-size: var(--font-size-xl);
-  font-family: var(--font-damion);
-  color: var(--grey-grey-800);
-}
-.my-diet,
-.my-progress,
-.settings {
-  position: absolute;
-  top: 248px;
-  left: 79px;
-}
-.my-diet,
-.settings {
-  top: 303px;
-}
-.settings {
-  top: 462px;
-  left: 78px;
-}
-.log-out,
-.my-supplements {
-  position: absolute;
-  top: 542px;
-  left: 79px;
-}
-.my-supplements {
-  top: 381px;
-  left: 78px;
-}
+
 .profile {
   position: relative;
   border-radius: var(--br-3xs);
@@ -316,3 +288,76 @@ input[type="submit"]:hover {
   
 
 }
+
+
+.profile-child {
+  margin-top: 17%;
+  background-color: var(--color-gainsboro-200);
+  width: 430px;
+  height: 87%;
+  border-radius: 7%;
+}
+.larbi-saidchikh {
+  position: absolute;
+  top: 16%;
+  left: 27%;
+}
+
+.larbisckgmailcom {
+  position: absolute;
+  top: 27%;
+  left: 27%;
+  font-size: var(--font-size-xl);
+  font-family: var(--font-damion);
+  color: var(--grey-grey-800);
+}
+.my-progress{
+  position: absolute;
+  top: 50%;
+  left: 10%;
+}
+.my-diet{
+  position: absolute;
+  top: 60%;
+  left: 10%;
+}
+.my-supplements{
+  position: absolute;
+  top: 70%;
+  left: 10%;
+}
+.log-out{
+  position: absolute;
+  top: 90%;
+  left: 50%;
+}
+.log-out, a{
+  text-decoration: none;
+    color: var(--sexy-rouge);
+}
+.profile {
+  position: relative;
+  border-radius: 20%;
+  width: 511px;
+  height: 733px;
+  max-width: 90%;
+  max-height: 90%;
+  text-align: left;
+  font-size: var(--font-size-5xl);
+  color: var(--black-like-ur-heart);
+  font-family: var(--font-nasalization);
+}
+.overview{
+  background-color:black;
+  
+}
+
+                .gotopopup {
+                  position: relative;
+                  margin-top: 8.5%;
+                  margin-left: -5%;
+                  background-color: var(--color-gainsboro-200);
+                  width: 430px;
+                  height: 70%;
+                  border-radius: 7%;
+                }
