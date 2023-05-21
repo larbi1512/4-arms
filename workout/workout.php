@@ -75,9 +75,9 @@
               label: 'Timing',
               data: <?php echo json_encode($time) ?>,
               borderWidth: 0.5,
-              backgroundColor: '#8F8F8F',
+              backgroundColor: '#F93535',
               borderRadius: 30,
-              hoverBackgroundColor: '#F93535',
+              hoverBackgroundColor: '#8F8F8F',
 
             }]
           },
@@ -98,7 +98,8 @@
       </style>
       <div id="container" class="overview">
         <?php
-        $sql = "SELECT calories, carbs, protien FROM progress WHERE user_id = $user_id";
+        $sql = "SELECT Calories, carbs, Proteins FROM diet 
+        inner join assigned on diet.diet_id=assigned.diet_id WHERE user_id = $user_id";
         $result = $conn->query($sql);
 
         // Prepare data for pie chart
@@ -107,15 +108,18 @@
           while ($row = $result->fetch_assoc()) {
             $data[] = array(
               'name' => 'Calories',
-              'y' => intval($row['calories'])
+              'y' => intval($row['Calories']),
+              'color' => '#0046F9'
             );
             $data[] = array(
               'name' => 'Carbs',
-              'y' => intval($row['carbs'])
+              'y' => intval($row['carbs']),
+              'color' => '#F93535'
             );
             $data[] = array(
               'name' => 'Protein',
-              'y' => intval($row['protien'])
+              'y' => intval($row['Proteins']),
+              'color' => '#D9D9D9'
             );
           }
         }
@@ -164,41 +168,20 @@
       </div>
       <div class="recommended-activities" style="font-size:50px;" id="plan">Your WorkOut Plan</div>
       <div class="counter" style="margin-right:0;">
-        <p style="margin: 0;font-size: 24px;font-weight: bold;">Time Counter</p>
-        <style>
-          .counter {
-            margin-top: 35%;
-            text-align: center;
-          }
-
-          #start-button,
-          #stop-button {
-            background-color: #FF182C;
-            border: none;
-            border-radius: 30px;
-            color: white;
-            padding: 10px 24px;
-            text-align: center;
-            text-decoration: none;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-
-          }
-
-          #start-button:hover,
-          #stop-button:hover {
-            background-color: #999999;
-          }
-
-          #start-button:active,
-          #stop-button:active {
-            background-color: #999999;
-          }
-        </style>
+        <p style="margin-buttom: 5%;font-size: 24px;font-weight: bold;">Time Counter</p>
         <!-- HTML code for the button and result display -->
         <button id="start-button" onclick="startTimer()">Start The Workout</button>
-        <button id="stop-button" onclick="stopTimer()">End Of The Workoit</button>
+        <button id="stop-button" onclick="stopTimer()">End Of The Workout</button>
+        <div class="running">
+    <div class="outer">
+        <div class="body">
+            <div class="arm behind"></div>
+            <div class="arm front"></div>
+            <div class="leg behind"></div>
+            <div class="leg front"></div>
+        </div>
+    </div>
+  </div>
         <p id="result"></p>
         
         <!-- JavaScript code to handle the timer and AJAX -->
@@ -206,19 +189,24 @@
           var startTime, endTime, elapsedTime;
 
           function startTimer() {
+            const runningElement = document.querySelector('.running');
+            runningElement.style.setProperty('--duration', '.7s');
             startTime = new Date().getTime();
           }
-
-          function stopTimer() {
+          function stopTimer(event) {
+            const runningElement = document.querySelector('.running');
+            runningElement.style.setProperty('--duration', '0s');
+            event.preventDefault(); // Prevent the default form submission behavior
             endTime = new Date().getTime();
             elapsedTime = (endTime - startTime) / 1000; // Calculate elapsed time in seconds
-
             // Get the current month (1-12)
             var currentMonth = new Date().getMonth() + 1;
-
             // Send the elapsed time and month to a PHP script using AJAX
             var xhr = new XMLHttpRequest();
             xhr.onreadystatechange = function() {
+              console.log("readyState: " + this.readyState);
+              console.log("status: " + this.status);
+              console.log("responseText: " + this.responseText);
               if (this.readyState == 4 && this.status == 200) {
                 document.getElementById("result").innerHTML = this.responseText;
               }
@@ -280,8 +268,6 @@
         } else {
           echo "0 results";
         }
-
-        $conn->close();
         ?>
 
         <title>List of Gyms</title>
@@ -290,7 +276,7 @@
           select {
             border-radius: 30px;
             padding: 10px;
-            font-size: 32px;
+            font-size: 32px;c
           }
 
           select option:hover {
@@ -488,9 +474,9 @@
         <div class="home-parent">
           <div class="home"><a href="../index.html">Home</a></div>
           <button class="frame-item"></button>
-          <div class="workout1"><a href="../workout/workout.html">Workout</a></div>
-          <div class="diet"><a href="../diet/diet.html">Diet</a></div>
-          <div class="supplement"><a href="../supplement/supplement.html">Supplement</a></div>
+          <div class="workout1"><a href="./workout.php">Workout</a></div>
+          <div class="diet"><a href="../diet/diet.php">Diet</a></div>
+          <div class="supplement"><a href="../Shop/supplement.php">Supplement</a></div>
         </div>
         <button class="login-button" id="profile">
           <div class="profile1">Profile</div>
@@ -509,51 +495,30 @@
             $user_img = $data['user_img'];
           }
           ?>
-          <style>
-            .profile-child {
-              position: relative;
-            }
-
-            .profile-item {
-              position: absolute;
-              top: 0;
-              left: 0;
-              width: 10px;
-              height: 50px;
-            }
-          </style>
           <div class="profile-child">
             <img class="profile-item" alt="" src="./public/ellipse-800.svg" />
-            <img src="<?php echo $user_img ?>" style="height:30%;width:30%; border-radius:30%;margin-right:20%" />
+            <img src="<?php echo $user_img ?>" style="height:25%;width:17%; border-radius:15%;margin-right:20%;margin-left:10%;margin-top:4%" />
           </div>
-          <div class="larbi-saidchikh">
+          <div class="larbi-saidchikh" style="margin-top:6%">
             <?php echo $user_name ?>
           </div>
           <div class="larbisckgmailcom"><?php echo $user_email ?></div>
           <div class="my-progress">
-            <a href="./workout/workout.php" style="color:black">My progress</a>
+            <a href="./workout.php" style="color:black !important">My progress</a>
           </div>
           <div class="my-diet">
-            <a href="./diet/diet.html" style="color:black">My diet</a>
+            <a href="../diet/diet.php" style="color:black !important">My diet</a>
           </div>
           <div class="log-out">
-            <a href="./index.html" style="color:black">Log out</a>
+            <a href="../signup_login/login.php" style="color:black">Log out</a>
           </div>
           <div class="my-supplements">
-            <a href="./supplement/supplement.html" style="color:black">My supplements</a>
+            <a href="../Shop/supplement.html" style="color:black !important">My supplements</a>
           </div>
         </div>
       </div>
     </div>
-
     <script>
-      var dietText = document.getElementById("dietText");
-      if (dietText) {
-        dietText.addEventListener("click", function(e) {
-          window.location.href = "./diet1.html";
-        });
-      }
-
       var loginButton = document.getElementById("profile");
       if (loginButton) {
         loginButton.addEventListener("click", function() {
@@ -581,27 +546,14 @@
       }
     </script>
     <div id="goto" class="popup-overlay" style="display: none">
-      <style>
-        .profile-child {
-          position: relative;
-        }
-
-        .profile-item {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 10px;
-          height: 50px;
-        }
-      </style>
-      <div class="profile-child">
-        <div class="my-progress">
+      <div class="gotopopup">
+        <div class="my-overview">
           <a href="#act" style="color:black">My OverView</a>
         </div>
-        <div class="my-diet">
+        <div class="my_workout_plan">
           <a href="#plan" style="color:black">My WorkOut Plan</a>
         </div>
-        <div class="my-supplements">
+        <div class="my-gym_sapce">
           <a href="#gym" style="color:black">The Gym Space</a>
         </div>
       </div>
