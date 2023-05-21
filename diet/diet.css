@@ -92,7 +92,7 @@
 .diet1,
 .supplement,
 .workout {
-    top: 20px;
+  top: 20px;
   text-decoration: none;
   position: fixed;
   top: calc(50% - 17.5px);

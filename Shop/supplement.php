@@ -541,11 +541,11 @@
                   color: #ff182c !important;
                 }
               </style>
-          <div class="home" ><a href="../NewHome/newHome.html">home</a></div>
+          <div class="home" ><a href="../NewHome/newHome.php">home</a></div>
           <div class="nav-bar-child"></div>
           <div class="workout" id="workoutText"><a href="../workout/workout.php">Workout</a></div>
           <div class="diet1"><a href="../diet/diet.php">Diet</a></div>
-          <div class="supplement"><a href="../Shop/supplement.html"> Shop</a></div>
+          <div class="supplement"><a href="../Shop/supplement.php"> Shop</a></div>
         </div>
       </div>
       <div class="diet-child6"></div>
@@ -612,7 +612,7 @@
           </div>
           <div class="larbisckgmailcom"><?php echo $user_email ?></div>
           <div class="my-progress">
-            <a href="./workout.php" style="color:black !important">My progress</a>
+            <a href="../workout/workout.php" style="color:black !important">My progress</a>
           </div>
           <div class="my-diet">
             <a href="../diet/diet.php" style="color:black !important">My diet</a>
@@ -621,7 +621,7 @@
             <a href="../signup_login/login.php" style="color:black">Log out</a>
           </div>
           <div class="my-supplements">
-            <a href="../Shop/supplement.php" style="color:black !important">My supplements</a>
+            <a href="./bascket.php" style="color:black !important">My Orders</a>
           </div>
         </div>
       </div>
