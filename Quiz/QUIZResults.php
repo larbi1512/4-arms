@@ -1,3 +1,9 @@
+<?php 
+session_start();
+$user_id = $_SESSION["user_id"] ?? 1;
+require_once "../db.php";
+
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -48,10 +54,19 @@
       /><img class="quiz-question-child3" alt="" src="./public/vector-4.svg" />
       <div class="your-results-are">Your results are in !</div>
       <div class="based-on-your-container">
+        <?php
+        $sql = "SELECT * FROM assigned WHERE user_id = $user_id";
+        $result = $conn->query($sql);
+        $row = $result->fetch_assoc();
+        $workout_id = $row['workout_id'];
+        $sql = "SELECT * FROM workout_plan WHERE workout_id = $workout_id";
+        $result = $conn->query($sql);
+        $row = $result->fetch_assoc();
+        ?>
         <span>Based on your answers, </span
-        ><span class="name-of-the">Name of the plan </span
+        ><span class="name-of-the"><?php echo $row['workout_name'] ?></span
         ><span
-          >is the right fit for your body type and goals. Use it to build lean
+          > is the right fit for your body type and goals. Use it to build lean
           muscle, take your gains to the next level, and finally create the body
           of your dreams.</span
         >

@@ -78,7 +78,7 @@ if (isset($_POST['carbs_consumed']) && isset($_POST['calories_consumed']) && iss
       <div class="nav-bar1">
         <a class="home" id="home" href="../newHome.html">Home</a>
         <a class="workout" id="workout" href="../workout/workout.php">Workout</a>
-        <a class="diet1" href="./diet.php">Diet</a><a class="supplement" href="../Shop/supplement.html">Supplement</a>
+        <a class="diet1" href="./diet.php">Diet</a><a class="supplement" href="../Shop/supplement.php">Supplement</a>
       </div>
     </div>
 
