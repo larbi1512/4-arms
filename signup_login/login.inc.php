@@ -53,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               $_SESSION["user_email"] = $user_email;
               $_SESSION["user_id"] = $user_id;
               // Redirect user to welcome page
-              header("location: ../NewHome/newHome.html");
+              header("location: ../NewHome/newHome.php");
               exit();
             } else {
               // Display an error message if password is not valid
