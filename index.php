@@ -61,7 +61,7 @@ if (isset($_SESSION['logged'])) {
       Take our 60-second quiz to find the most effective program for achieving
       your specific fitness goals.
     </div>
-    <a href="Quiz/Quizindex.html">
+    <a href="Quiz/QuizQuestion1.php">
       <div class="button-take-your-quiz">
         <div class="button">
           <img class="buttoniconsettings" alt="" /><b class="button1">

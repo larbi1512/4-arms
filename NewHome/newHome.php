@@ -1,13 +1,14 @@
 <?php
 session_start();
-$user_id = $_SESSION["user_id"] ?? 1;
 require_once "../db.php";
+$user_id = $_SESSION["user_id"];
 ?>
 
 <!DOCTYPE html>
 <html>
 
 <head>
+  <title>Home</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="initial-scale=1, width=device-width" />
   <link rel="stylesheet" href="./global.css" />
@@ -99,12 +100,8 @@ require_once "../db.php";
     <a href="../workout/workout.php" style="display: block; width: 100%; height: 100%">
       <div class="card">
         <?php
-        $sql = "SELECT * FROM assigned WHERE user_id = $user_id";
-        $result = $conn->query($sql);
-        $row = $result->fetch_assoc();
-        $workout_id = $row['workout_id'];
-        $sql = "SELECT * FROM workout_plan WHERE workout_id = $workout_id";
-        $result = $conn->query($sql);
+        $sql_workout = "SELECT * FROM assigned inner join workout_plan on workout_plan.workout_id = assigned.workout_id WHERE user_id = $user_id LIMIT 1";
+        $result = $conn->query($sql_workout);
         $row = $result->fetch_assoc();
         ?>
         <img src="<?php echo $row['workout_img_link'] ?>" alt="" style="width: 100%; border-radius: 10px" />
