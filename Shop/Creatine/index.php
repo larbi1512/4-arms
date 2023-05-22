@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   // Execute the query
   if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
-    header("location: ../supplement.html");
+    header("location: ../supplement.php");
     exit();
   } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
@@ -54,11 +54,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       </div>
     </div>
     <div class="nav-bar">
-      <div class="home"><a href="../../NewHome/newHome.html">Home</a></div>
+      <div class="home"><a href="../../NewHome/newHome.php">Home</a></div>
       <div class="nav-bar-child"></div>
-      <div class="workout"><a href="../../workout/workout.html">Workout</a></div>
+      <div class="workout"><a href="../../workout/workout.php">Workout</a></div>
       <div class="diet1"><a href="../../diet/diet.php">Diet</a></div>
-      <div class="shop"><a href="../../Shop/shop.html">Shop</a></div>
+      <div class="shop"><a href="../../Shop/supplement.php">Shop</a></div>
     </div>
     <style>
       a {

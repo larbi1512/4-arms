@@ -10,9 +10,9 @@
 </head>
 
 <body>
-  
 
-      
+
+
   <div class="frame-parent">
     <div class="logo">
       <img class="frame-icon" alt="" src="./public/frame.svg" />
@@ -23,6 +23,9 @@
   </div>
 
   <!-- form -->
+  <form method="POST" action="signup.inc.php" id="signup-form">
+    <div class="form-group">
+      <p class="create">Create an account</p>
       <?php
       session_start();
       if (isset($_SESSION['error_message'])) {
@@ -30,43 +33,40 @@
         unset($_SESSION['error_message']); // unset the session variable after displaying the message
       }
       ?>
-    <form method="POST" action="signup.inc.php" id="signup-form">
-      <div class="form-group">
-      <p class ="create">Create an account</p>
-  </div>
-      <div class="form-group">
-        <label>Name :</label>
-        <input class="form-control" type="text" name="user_name" placeholder="Enter Your Username" required />
-      </div>
+    </div>
+    <div class="form-group">
+      <label>Name :</label>
+      <input class="form-control" type="text" name="user_name" placeholder="Enter Your Username" required />
+    </div>
 
-      <div class="form-group">
-        <label>Email :</label>
-        <input class="form-control" type="email" name="user_email" placeholder="Enter Your E-mail" required />
-      </div>
+    <div class="form-group">
+      <label>Email :</label>
+      <input class="form-control" type="email" name="user_email" placeholder="Enter Your E-mail" required />
+    </div>
 
-      <div class="form-group">
-        <label>Password :</label>
-        <input class="form-control" type="password" name="user_password" placeholder="Enter Your Password" required />
-      </div>
+    <div class="form-group">
+      <label>Password :</label>
+      <input class="form-control" type="password" name="user_password" placeholder="Enter Your Password" required />
+    </div>
 
-      <div class="form-group">
-        <label>Height :</label>
-        <input type="number" name="height" min="140" max="220" placeholder="Enter your Height">
-      </div>
+    <div class="form-group">
+      <label>Height :</label>
+      <input type="number" name="height" min="140" max="220" placeholder="Enter your Height">
+    </div>
 
-      <div class="form-group">
-        <label>Weight</label>
-        <input type="number" name="weight" min="40" max="200" placeholder="Enter your Weight">
-      </div>
+    <div class="form-group">
+      <label>Weight</label>
+      <input type="number" name="weight" min="40" max="200" placeholder="Enter your Weight">
+    </div>
     <div class="form-group">
       <button type="submit" class="submit">Create account</button>
-  </div>
-      <div class="form-group">
+    </div>
+    <div class="form-group">
       <span class="already-have-an">Already have an account ? </span><span class="log-in"><a href="login.php">Login</a></span>
     </div>
-  </div>
+    </div>
 
-    </form>
+  </form>
 
 
 </body>

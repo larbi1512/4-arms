@@ -78,53 +78,52 @@ if (isset($_POST['carbs_consumed']) && isset($_POST['calories_consumed']) && iss
       <div class="nav-bar1">
         <a class="home" id="home" href="../NewHome/newHome.php">Home</a>
         <a class="workout" id="workout" href="../workout/workout.php">Workout</a>
-        <a class="diet1" href="./diet.php">Diet</a><a class="supplement" href="../Shop/supplement.html">Supplement</a>
+        <a class="diet1" href="./diet.php">Diet</a><a class="supplement" href="../Shop/supplement.php">Supplement</a>
       </div>
-          <button class="login-button" id="profile">
-      <div class="profile1">Profile</div>
-    </button>
-     </div>
+      <button class="login-button" id="profile">
+        <div class="profile1">Profile</div>
+      </button>
+    </div>
 
-   
 
-      <div id="pROFILEContainer" class="popup-overlay" style="display: none">
-        <div class="profile">
-          <?php
-          $query = $conn->query(
-            "select * from user_signup where user_id=$user_id"
-          );
-          foreach ($query as $data) {
-            $user_name = $data['user_name'];
-            $user_email = $data['user_email'];
-            $user_img = $data['user_img'];
-          }
-          ?>
-          <div class="profile-child">
-            <img class="profile-item" alt="" src="./public/ellipse-800.svg" />
-            <img src="<?php echo $user_img ?>"
-              style="height:25%;width:17%; border-radius:15%;margin-right:20%;margin-left:10%;margin-top:4%" />
-          </div>
-          <div class="larbi-saidchikh" style="margin-top:6%">
-            <?php echo $user_name ?>
-          </div>
-          <div class="larbisckgmailcom" style="margin-top:2%">
-            <?php echo $user_email ?>
-          </div>
-          <div class="my-progress">
-            <a href="../workout/workout.php" style="color:black !important">My progress</a>
-          </div>
-          <div class="my-diet">
-            <a href="./diet.php" style="color:black !important">My diet</a>
-          </div>
-          <div class="log-out">
-            <a href="../signup_login/login.php">Log out</a>
-          </div>
-          <div class="my-supplements">
-            <a href="../Shop/supplement.php" style="color:black !important">My supplements</a>
-          </div>
+
+    <div id="pROFILEContainer" class="popup-overlay" style="display: none">
+      <div class="profile">
+        <?php
+        $query = $conn->query(
+          "select * from user_signup where user_id=$user_id"
+        );
+        foreach ($query as $data) {
+          $user_name = $data['user_name'];
+          $user_email = $data['user_email'];
+          $user_img = $data['user_img'];
+        }
+        ?>
+        <div class="profile-child">
+          <img class="profile-item" alt="" src="./public/ellipse-800.svg" />
+          <img src="<?php echo $user_img ?>" style="height:25%;width:17%; border-radius:15%;margin-right:20%;margin-left:10%;margin-top:4%" />
+        </div>
+        <div class="larbi-saidchikh" style="margin-top:6%">
+          <?php echo $user_name ?>
+        </div>
+        <div class="larbisckgmailcom" style="margin-top:2%">
+          <?php echo $user_email ?>
+        </div>
+        <div class="my-progress">
+          <a href="../workout/workout.php" style="color:black !important">My progress</a>
+        </div>
+        <div class="my-diet">
+          <a href="./diet.php" style="color:black !important">My diet</a>
+        </div>
+        <div class="log-out">
+          <a href="../logout.php" style="color:black">Log out</a>
+        </div>
+        <div class="my-supplements">
+          <a href="../Shop/supplement.php" style="color:black !important">My supplements</a>
         </div>
       </div>
-        <script>
+    </div>
+    <script>
       var loginButton = document.getElementById("profile");
       if (loginButton) {
         loginButton.addEventListener("click", function() {
@@ -152,10 +151,10 @@ if (isset($_POST['carbs_consumed']) && isset($_POST['calories_consumed']) && iss
       }
     </script>
 
-       
 
-    
-        <h1 class=" top">Your daily nutrition:</h1>
+
+
+    <h1 class=" top">Your daily nutrition:</h1>
 
     <p class="text">Eat healthy while having fun :3 </p>
 
@@ -199,142 +198,140 @@ if (isset($_POST['carbs_consumed']) && isset($_POST['calories_consumed']) && iss
       </table>
       <input type="submit" value="Check Progress">
     </form>
-        <div class="recommended-activities">Your diet </div>
+    <div class="recommended-activities">Your diet </div>
     <div class="plan">
       <div class="plan-img">
         <a href="<?php echo $row['diet_link'] ?>">
-              <img src="<?php echo $row['diet_link_img'] ?>" alt="" onmouseover="this.style.opacity=1"
-                onmouseout="this.style.opacity=0.7">
-            </a>
-          </div>
-          <div class="plan-description">
-            <p style="font-size:36px">
-              <?php echo $row['diet_name'] ?>
-            </p>
-            <p style="font-size:70%">
-              <?php echo $row['description'] ?>
-            </p>
-            <a href="<?php echo $row['diet_link'] ?>">Learn More</a>
-          </div>
-        </div>
-     </div>
+          <img src="<?php echo $row['diet_link_img'] ?>" alt="" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.7">
+        </a>
+      </div>
+      <div class="plan-description">
+        <p style="font-size:36px">
+          <?php echo $row['diet_name'] ?>
+        </p>
+        <p style="font-size:70%">
+          <?php echo $row['description'] ?>
+        </p>
+        <a href="<?php echo $row['diet_link'] ?>">Learn More</a>
+      </div>
+    </div>
+  </div>
 
 
-    <style>
-      .recommended-activities {
-        margin-top: 28%;
-        margin-left: 10%;
-        color: var(--sexy-rouge);
-      }
+  <style>
+    .recommended-activities {
+      margin-top: 28%;
+      margin-left: 10%;
+      color: var(--sexy-rouge);
+    }
 
-      .plan {
-        position: absolute;
-        display: flex;
-        flex-direction: row;
-        background-color: var(--sexy-rouge);
-        border-radius: 30px;
-        width: 95%;
-        padding: 20px;
-        margin-top: 3%;
-        z-index: 99;
-      }
+    .plan {
+      position: absolute;
+      display: flex;
+      flex-direction: row;
+      background-color: var(--sexy-rouge);
+      border-radius: 30px;
+      width: 95%;
+      padding: 20px;
+      margin-top: 3%;
+      z-index: 99;
+    }
 
-      .plan-img {
-        margin-right: 20px;
-        top: 50%;
-      }
+    .plan-img {
+      margin-right: 20px;
+      top: 50%;
+    }
 
-      .plan-img img {
-        width: 200px;
-        height: 200px;
-        object-fit: cover;
-        border-radius: 10px;
-        top: 50%;
-      }
+    .plan-img img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      top: 50%;
+    }
 
-      .plan-description {
-        display: flex;
-        flex-direction: column;
-        top: 50%;
-      }
+    .plan-description {
+      display: flex;
+      flex-direction: column;
+      top: 50%;
+    }
 
-      .plan-description p {
-        color: white;
-        font-size: 18px;
-        margin: 0 0 10px 0;
-        top: 50%;
-      }
+    .plan-description p {
+      color: white;
+      font-size: 18px;
+      margin: 0 0 10px 0;
+      top: 50%;
+    }
 
-      .plan-description a {
-        color: black;
-        font-size: 16px;
-        text-decoration: none;
-        margin-top: auto;
+    .plan-description a {
+      color: black;
+      font-size: 16px;
+      text-decoration: none;
+      margin-top: auto;
 
-      }
-    </style>
+    }
+  </style>
   <script>
-   document.querySelector('form').addEventListener('submit', function() {
-    var carbs_consumed = parseInt(document.querySelector('input[name="carbs_consumed"]').value);
-    var calories_consumed = parseInt(document.querySelector('input[name="calories_consumed"]').value);
-    var proteins_consumed = parseInt(document.querySelector('input[name="proteins_consumed"]').value);
-    carbs_consumed += carbs_consumed;
-    calories_consumed += calories_consumed;
-    proteins_consumed += proteins_consumed;
-    var carbs_remaining = <?php echo $row['carbs'] ?> - carbs_consumed;
+    document.querySelector('form').addEventListener('submit', function() {
+      var carbs_consumed = parseInt(document.querySelector('input[name="carbs_consumed"]').value);
+      var calories_consumed = parseInt(document.querySelector('input[name="calories_consumed"]').value);
+      var proteins_consumed = parseInt(document.querySelector('input[name="proteins_consumed"]').value);
+      carbs_consumed += carbs_consumed;
+      calories_consumed += calories_consumed;
+      proteins_consumed += proteins_consumed;
+      var carbs_remaining = <?php echo $row['carbs'] ?> - carbs_consumed;
     var calories_remaining = <?php echo $row['Calories'] ?> - calories_consumed;
     var proteins_remaining = <?php echo $row['Proteins'] ?> - proteins_consumed;
 
       document.querySelector('span.remaining:nth-of-type(1)').textContent = carbs_remaining;
-    document.querySelector('span.remaining:nth-of-type(2)').textContent = calories_remaining;
-    document.querySelector('span.remaining:nth-of-type(3)').textContent = proteins_remaining;
+      document.querySelector('span.remaining:nth-of-type(2)').textContent = calories_remaining;
+      document.querySelector('span.remaining:nth-of-type(3)').textContent = proteins_remaining;
 
-});
+    });
   </script>
 
-    <div id="goto" class="popup-overlay" style="display: none">
-      <div class="gotopopup">
-        <div class="my-overview">
-          <a href="#act" style="color:black">My OverView</a>
-        </div>
-        <div class="my_workout_plan">
-          <a href="#plan" style="color:black">My WorkOut Plan</a>
-        </div>
-        <div class="my-gym_sapce">
-          <a href="#gym" style="color:black">The Gym Space</a>
-        </div>
+  <div id="goto" class="popup-overlay" style="display: none">
+    <div class="gotopopup">
+      <div class="my-overview">
+        <a href="#act" style="color:black">My OverView</a>
+      </div>
+      <div class="my_workout_plan">
+        <a href="#plan" style="color:black">My WorkOut Plan</a>
+      </div>
+      <div class="my-gym_sapce">
+        <a href="#gym" style="color:black">The Gym Space</a>
       </div>
     </div>
- 
+  </div>
 
-    <script>
 
-      var loginButton = document.getElementById("go");
-      if (loginButton) {
-        loginButton.addEventListener("click", function() {
-          var popup = document.getElementById("goto");
-          if (!popup) return;
-          var popupStyle = popup.style;
-          if (popupStyle) {
-            popupStyle.display = "flex";
-            popupStyle.zIndex = 100;
-            popupStyle.backgroundColor = "rgba(113, 113, 113, 0.3)";
-            popupStyle.alignItems = "center";
-            popupStyle.justifyContent = "center";
-          }
-          popup.setAttribute("closable", "");
+  <script>
+    var loginButton = document.getElementById("go");
+    if (loginButton) {
+      loginButton.addEventListener("click", function() {
+        var popup = document.getElementById("goto");
+        if (!popup) return;
+        var popupStyle = popup.style;
+        if (popupStyle) {
+          popupStyle.display = "flex";
+          popupStyle.zIndex = 100;
+          popupStyle.backgroundColor = "rgba(113, 113, 113, 0.3)";
+          popupStyle.alignItems = "center";
+          popupStyle.justifyContent = "center";
+        }
+        popup.setAttribute("closable", "");
 
-          var onClick =
-            popup.onClick ||
-            function(e) {
-              if (e.target === popup && popup.hasAttribute("closable")) {
-                popupStyle.display = "none";
-              }
-            };
-          popup.addEventListener("click", onClick);
-        });
-      }
-    </script>
+        var onClick =
+          popup.onClick ||
+          function(e) {
+            if (e.target === popup && popup.hasAttribute("closable")) {
+              popupStyle.display = "none";
+            }
+          };
+        popup.addEventListener("click", onClick);
+      });
+    }
+  </script>
 </body>
 
 </html>
