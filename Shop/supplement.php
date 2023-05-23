@@ -656,7 +656,7 @@ require_once "../db.php";
         <a href="../logout.php" style="color:black">Log out</a>
       </div>
       <div class="my-supplements">
-        <a href="../Shop/supplement.php" style="color:black !important">My supplements</a>
+            <a href="./bascket.php" style="color:black !important">My Orders</a>
       </div>
     </div>
   </div>

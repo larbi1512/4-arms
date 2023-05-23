@@ -100,66 +100,73 @@ require_once "../db.php";
       <?php
         $sql = "SELECT Calories, carbs, Proteins FROM diet 
         inner join assigned on diet.diet_id=assigned.diet_id WHERE user_id = $user_id";
-      $result = $conn->query($sql);
+        $result = $conn->query($sql);
 
-      // Prepare data for pie chart
-      $data = array();
-      if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-          $data[] = array(
-            'name' => 'Calories',
-            'y' => intval($row['Calories']),
-            'color' => '#0046F9'
-          );
-          $data[] = array(
-            'name' => 'Carbs',
-            'y' => intval($row['carbs']),
-            'color' => '#F93535'
-          );
-          $data[] = array(
-            'name' => 'Protein',
-            'y' => intval($row['Proteins']),
-            'color' => '#D9D9D9'
-          );
+        // Prepare data for pie chart
+        $data = array();
+        if ($result->num_rows > 0) {
+          while ($row = $result->fetch_assoc()) {
+            $data[] = array(
+              'name' => 'Calories',
+              'y' => intval($row['Calories']),
+              'color' => '#F93535'
+            );
+            $data[] = array(
+              'name' => 'Carbs',
+              'y' => intval($row['carbs']),
+              'color' => '#003459'
+            );
+            $data[] = array(
+              'name' => 'Protein',
+              'y' => intval($row['Proteins']),
+              'color' => '#D9D9D9'
+            );
+          }
         }
-      }
-      ?>
-
-
-      <script>
-        // Render pie chart using Highcharts
-        Highcharts.chart('container', {
-          chart: {
-            plotBackgroundColor: '#3E3E3E',
-            backgroundColor: '#3E3E3E',
-            plotBorderWidth: null,
-            plotShadow: false,
-            type: 'pie',
-          },
-          title: {
-            text: 'OverVeiw',
-            plotBackgroundColor: 'black',
-          },
-          tooltip: {
-            pointFormat: '{series.name}: <b>{point.y}g</b>',
-            plotBackgroundColor: 'black'
-          },
-          plotOptions: {
-            pie: {
-              plotBackgroundColor: 'black',
-              allowPointSelect: true,
-              cursor: 'pointer',
-              showInLegend: true,
-              dataLabels: {
-                enabled: false,
+        ?>
+        <style>
+          .imh{
+            border-color: ;
+          }
+        </style>
+        <script>
+          // Render pie chart using Highcharts
+          Highcharts.chart('container', {
+            chart: {
+              plotBackgroundColor: '#3E3E3E',
+              backgroundColor: '#3E3E3E',
+              plotBorderWidth: null,
+              plotShadow: false,
+              type: 'pie',
+            },
+            title: {
+              text: 'Nutrition',
+              style: {
+                color: 'white',
+                font: 'bold 200% '
               }
-            }
-          },
-          series: [{
-            name: 'Nutrition',
-            colorByPoint: true,
-            plotBackgroundColor: 'black',
-            data: <?php echo json_encode($data); ?>
+            },
+            tooltip: {
+              pointFormat: '{series.name}: <b>{point.y}g</b>',
+              plotBackgroundColor: 'black'
+            },
+            plotOptions: {
+              pie: {
+                plotBackgroundColor: 'black',
+                allowPointSelect: true,
+                cursor: 'pointer',
+                showInLegend: true,
+                dataLabels: {
+                  enabled: false,
+                }
+              }
+            },
+            series: [{
+              name: 'Nutrition',
+              colorByPoint: true,
+              plotBackgroundColor: 'black',
+              data: <?php echo json_encode($data); ?>,
+
 
           }]
 

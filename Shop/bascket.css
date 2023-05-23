@@ -1,0 +1,85 @@
+body {
+    height: 125vh;
+    background-color: #1E1E1E;
+    background-size: cover;
+    font-family: sans-serif;
+    padding: 4%;
+    top: 20%;
+}
+.nav-bar1 {
+    position: fixed;
+    width: 100%;
+    z-index: +999;
+    background-color: #272523;
+    margin-top: 0%;
+    top: 0%;
+    left: 0%;
+    height: 10%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .nav-bar1 a {
+    font-family: 'nasalization' ,sans-serif;
+    text-decoration: none;
+    color: red;
+    font-size: 30px; 
+    margin-right: 5%;
+
+  }
+.record h2
+{
+    position: relative;
+    top: 20%;
+    font-family: 'nasalization' ,sans-serif;
+    font-weight: bold;
+    font-size: 50px;
+    color: white;
+}
+.styled-table{
+    border-collapse: collapse;
+    width: 100%;
+    border-radius: 30px;
+    color: #ddd;
+    font-family: 'nasalization' ,sans-serif;
+  }
+
+.styled-table th {
+    text-align: left;
+    padding: 8px;
+    background-color: red;
+    font-size: medium;
+    height: 70px;
+    
+  }
+
+.styled-table td {
+    text-align: left;
+    padding: 8px;
+  }
+
+.styled-table tr:nth-child(even) {
+    background-color: #ddd;
+    color: black;
+  }
+
+.styled-table tr:hover {
+    background-color: #e95f5f;
+    opacity: 0.5;
+  }
+
+.styled-table img {
+    width: 150px;
+    height: 250px;
+    height: auto;
+    border-radius: 20px;
+  }
+  .total-price-box {
+    padding: 10px;
+    text-align: center;
+    font-size: 30px;
+    font-family: 'nasalization' ,sans-serif;
+    color: azure;
+
+  }

@@ -66,5 +66,6 @@ if (isset($_SESSION["choice"])) {
   $stmt->execute();
 }
 
+
 header("location: login.php?signup=success");
 exit();
