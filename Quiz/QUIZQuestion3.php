@@ -1,6 +1,11 @@
 <?php
 session_start();
-$_SESSION["choice"] = $choice;
+if (isset($_GET["choice"])) {
+  $_SESSION["choice"] = $_GET["choice"];
+  header("location: QUIZQuestion4.html");
+  exit();
+}
+
 ?>
 <html>
 
@@ -36,8 +41,9 @@ $_SESSION["choice"] = $choice;
     <div class="goal2">GOAL</div>
     <div class="experience2">EXPERIENCE</div>
     <img class="jamtransgender-icon2" alt="" src="./public/jamtransgender2.svg" /><img class="quiz-question-child9" alt="" src="./public/rectangle-16.svg" /><img class="quiz-question-child10" alt="" src="./public/rectangle-16.svg" /><img class="quiz-question-child11" alt="" src="./public/rectangle-15.svg" /><img class="quiz-question-child12" alt="" src="./public/rectangle-16.svg" />
-    <a href="insert_data.php?choice=2">
-      <div class="what-is-your1">What is your fitness Goal?</div>
+    <div class="what-is-your1">What is your fitness Goal?</div>
+
+    <a href="QUIZQuestion3.php?choice=2">
       <div class="quiz-question-child13" id="rectangle5"></div>
       <div class="i-have-a-container">
         <p class="i-have-a">I have a low amount of body</p>
@@ -45,7 +51,7 @@ $_SESSION["choice"] = $choice;
       </div>
     </a>
 
-    <a href="insert_data.php?choice=3">
+    <a href="QUIZQuestion3.php?choice=3">
       <div class="quiz-question-child14" id="rectangle4"></div>
       <div class="i-am-a-container">
         <p class="i-have-a">I am a “skinny fat”. I need more</p>
@@ -54,8 +60,16 @@ $_SESSION["choice"] = $choice;
       </div>
     </a>
 
-    <a href="insert_data.php?choice=1">
+    <a href="QUIZQuestion3.php?choice=4">
       <div class="quiz-question-child15" id="rectangle6"></div>
+      <div class="i-have-a-container2">
+        <p class="i-have-a">I have a high amount of body fat.</p>
+        <p class="i-have-a">I need to lose fat as fast as</p>
+        <p class="i-have-a">possible</p>
+      </div>
+    </a>
+    <a href="QUIZQuestion3.php?choice=1">
+      <div class="quiz-question-child16" id="rectangle7"></div>
       <div class="i-have-a-container1">
         <p class="i-have-a">I have a good amount of muscle</p>
         <p class="i-have-a">but I still need to drop fat to</p>
@@ -63,15 +77,8 @@ $_SESSION["choice"] = $choice;
         <p class="i-have-a">definition</p>
       </div>
     </a>
-    <a href="insert_data.php?choice=4">
 
-      <div class="quiz-question-child16" id="rectangle7"></div>
-      <div class="i-have-a-container2">
-        <p class="i-have-a">I have a high amount of body fat.</p>
-        <p class="i-have-a">I need to lose fat as fast as</p>
-        <p class="i-have-a">possible</p>
-      </div>
-    </a>
+
     <img class="red-lines-icon9" alt="" src="./public/red-lines5.svg" /><img class="red-lines-icon10" alt="" src="./public/red-lines4.svg" /><img class="red-lines-icon11" alt="" src="./public/red-lines6.svg" />
     <div class="build-muscle">BUILD MUSCLE</div>
     <div class="build-define">BUILD & DEFINE</div>
@@ -114,20 +121,6 @@ $_SESSION["choice"] = $choice;
         sendDivName("rectangle7", 4);
         window.location.href = "./QUIZQuestion4.html";
       });
-    }
-
-    function sendDivName(divName, choice) {
-      console.log(choice);
-      var xmlhttp = new XMLHttpRequest();
-      xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          console.log(this.responseText);
-        }
-      };
-      xmlhttp.open("POST", "insert_data.php", true);
-      xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-      xmlhttp.send("choice=" + choice);
-
     }
   </script>
 </body>

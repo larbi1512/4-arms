@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once('../db.php');
 
 // Retrieve form values
@@ -7,18 +8,6 @@ $user_email = $_POST["user_email"];
 $user_password = $_POST["user_password"];
 $height = $_POST["height"];
 $weight = $_POST["weight"];
-// Check if form values are valid
-if (!filter_var($user_email, FILTER_VALIDATE_EMAIL)) {
-  $_SESSION['message'] = 'Please enter a valid email address.';
-  header("Location: signup.php");
-  exit();
-}
-
-if (strlen($_POST['user_password']) < 8) {
-  $_SESSION['error_message'] = 'Password must be at least 8 characters long.';
-  header("Location: signup.php");
-  exit();
-}
 
 // Check if username already exists
 $sql = "SELECT * FROM user_signup WHERE user_name = ?";
@@ -46,25 +35,37 @@ if ($result->num_rows > 0) {
   exit();
 }
 
-// Check if height and weight are valid
-if (!is_numeric($height) || !is_numeric($weight)) {
-  $_SESSION['error_message'] = 'Height and weight must be numeric values.';
+if (strlen($_POST['user_password']) < 8) {
+  $_SESSION['error_message'] = 'Password must be at least 8 characters long.';
   header("Location: signup.php");
   exit();
 }
 
+
 $user_password = password_hash($user_password, PASSWORD_DEFAULT);
 // Insert new user into database
-$sql = "INSERT INTO user_signup (user_name, user_email, user_password, height , weight)
+if (isset($_SESSION["gender"])) {
+  $sql = "INSERT INTO user_signup (user_name, user_email, user_password, gender, height , weight)
+  VALUES (?, ?, ?, ?,?,?)";
+  $stmt = $conn->prepare($sql);
+  $stmt->bind_param('ssssii', $user_name, $user_email,  $user_password, $_SESSION["gender"], $height, $weight);
+} else {
+  $sql = "INSERT INTO user_signup (user_name, user_email, user_password, height , weight)
 VALUES (?, ?, ?,?,?)";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param('sssii', $user_name, $user_email,  $user_password, $height, $weight);
+  $stmt = $conn->prepare($sql);
+  $stmt->bind_param('sssii', $user_name, $user_email,  $user_password, $height, $weight);
+}
 $stmt->execute();
-$stmt->close();
+
+if (isset($_SESSION["choice"])) {
+  $new_user = $stmt->insert_id;
+  $choice = $_SESSION["choice"];
+  $sql = "INSERT INTO assigned (user_id, workout_id, diet_id) VALUES (?,?,?)";
+  $stmt = $conn->prepare($sql);
+  $stmt->bind_param('iii', $new_user, $choice, $choice);
+  $stmt->execute();
+}
 
 
-echo "New record created successfully";
-header("location: ../NewHome/newHome.php");
+header("location: login.php?signup=success");
 exit();
-// Close connection to database
-$conn->close();
