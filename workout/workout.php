@@ -193,18 +193,17 @@
         <!-- JavaScript code to handle the timer and AJAX -->
         <script>
           var startTime, endTime, elapsedTime;
-
           function startTimer() {
+            startTime = new Date().getTime();
             const runningElement = document.querySelector('.running');
             runningElement.style.setProperty('--duration', '.7s');
-            startTime = new Date().getTime();
           }
           function stopTimer(event) {
             const runningElement = document.querySelector('.running');
             runningElement.style.setProperty('--duration', '0s');
-            event.preventDefault(); // Prevent the default form submission behavior
             endTime = new Date().getTime();
             elapsedTime = (endTime - startTime) / 1000; // Calculate elapsed time in seconds
+            alert("The Time You Spent In Your Workout Is:"+elapsedTime);
             // Get the current month (1-12)
             var currentMonth = new Date().getMonth() + 1;
             // Send the elapsed time and month to a PHP script using AJAX
@@ -220,6 +219,7 @@
             xhr.open("POST", "insert_elapsed_time.php", true);
             xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             xhr.send("elapsed_time=" + elapsedTime + "&month=" + currentMonth);
+            event.preventDefault(); // Prevent the default form submission behavior
           }
         </script>
       </div>
@@ -244,7 +244,6 @@
           <p>Duration : <?php echo $row['duration'] ?></p>
           <p>Description : <?php echo $row['description'] ?></p>
           <p><?php echo $row['workout_summary'] ?></p>
-
           <a href="<?php echo $row['workout_plan_link'] ?>">Learn More</a>
         </div>
       </div>
