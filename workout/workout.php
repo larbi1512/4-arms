@@ -222,6 +222,7 @@ require_once "../db.php";
           xhr.open("POST", "insert_elapsed_time.php", true);
           xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
           xhr.send("elapsed_time=" + elapsedTime + "&month=" + currentMonth);
+          alert("Your Time Is : "+elapsedTime+" s");
         }
       </script>
     </div>
