@@ -9,7 +9,6 @@ $elapsed_time = $elapsed_time / 3600;
 $sql = "INSERT INTO activity VALUES ($user_id,$month,$elapsed_time)";
 
 if (mysqli_query($conn, $sql)) {
-    header("location: workout.php");
     exit();
 } else {
     echo "Error inserting elapsed time: " . mysqli_error($conn);
