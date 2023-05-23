@@ -221,6 +221,7 @@ require_once "../db.php";
             xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             xhr.send("elapsed_time=" + elapsedTime + "&month=" + currentMonth);
             event.preventDefault(); // Prevent the default form submission behavior
+            location.reload();
           }
         </script>
       </div>
@@ -394,7 +395,6 @@ require_once "../db.php";
             <td>
               <a href="<?php echo $gym['gym_link'] ?>" style="font-size:18px">Contact Gym
             </td>
-
           </tr>
         <?php endforeach; ?>
     </div>
@@ -414,7 +414,7 @@ require_once "../db.php";
       .plan {
         display: flex;
         flex-direction: row;
-        background-color: #2B2B2E;
+        background-color: black;
         border-radius: 30px;
         padding: 20px;
         margin-top: 7%;
