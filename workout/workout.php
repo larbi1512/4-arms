@@ -188,44 +188,42 @@ require_once "../db.php";
             <div class="leg front"></div>
           </div>
         </div>
-      </div>
-      <p id="result"></p>
-
-      <!-- JavaScript code to handle the timer and AJAX -->
-      <script>
-        var startTime, endTime, elapsedTime;
-
-        function startTimer() {
-          const runningElement = document.querySelector('.running');
-          runningElement.style.setProperty('--duration', '.7s');
-          startTime = new Date().getTime();
-        }
-
-        function stopTimer(event) {
-          const runningElement = document.querySelector('.running');
-          runningElement.style.setProperty('--duration', '0s');
-          event.preventDefault(); // Prevent the default form submission behavior
-          endTime = new Date().getTime();
-          elapsedTime = (endTime - startTime) / 1000; // Calculate elapsed time in seconds
-          // Get the current month (1-12)
-          var currentMonth = new Date().getMonth() + 1;
-          // Send the elapsed time and month to a PHP script using AJAX
-          var xhr = new XMLHttpRequest();
-          xhr.onreadystatechange = function() {
-            console.log("readyState: " + this.readyState);
-            console.log("status: " + this.status);
-            console.log("responseText: " + this.responseText);
-            if (this.readyState == 4 && this.status == 200) {
-              document.getElementById("result").innerHTML = this.responseText;
-            }
-          };
-          xhr.open("POST", "insert_elapsed_time.php", true);
-          xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-          xhr.send("elapsed_time=" + elapsedTime + "&month=" + currentMonth);
-          alert("Your Time Is : "+elapsedTime+" s");
-        }
-      </script>
     </div>
+  </div>
+        <p id="result"></p>
+        <!-- JavaScript code to handle the timer and AJAX -->
+        <script>
+          var startTime, endTime, elapsedTime;
+          function startTimer() {
+            startTime = new Date().getTime();
+            const runningElement = document.querySelector('.running');
+            runningElement.style.setProperty('--duration', '.7s');
+          }
+          function stopTimer(event) {
+            const runningElement = document.querySelector('.running');
+            runningElement.style.setProperty('--duration', '0s');
+            endTime = new Date().getTime();
+            elapsedTime = (endTime - startTime) / 1000; // Calculate elapsed time in seconds
+            alert("The Time You Spent In Your Workout Is:"+elapsedTime);
+            // Get the current month (1-12)
+            var currentMonth = new Date().getMonth() + 1;
+            // Send the elapsed time and month to a PHP script using AJAX
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+              console.log("readyState: " + this.readyState);
+              console.log("status: " + this.status);
+              console.log("responseText: " + this.responseText);
+              if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("result").innerHTML = this.responseText;
+              }
+            };
+            xhr.open("POST", "insert_elapsed_time.php", true);
+            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhr.send("elapsed_time=" + elapsedTime + "&month=" + currentMonth);
+            event.preventDefault(); // Prevent the default form submission behavior
+          }
+        </script>
+      </div>
     <div class="plan" style="margin-top:1% !important;">
       <?php
       $sql_workout = "SELECT * FROM assigned inner join workout_plan on workout_plan.workout_id = assigned.workout_id WHERE user_id = $user_id LIMIT 1";
