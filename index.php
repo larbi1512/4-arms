@@ -47,10 +47,10 @@ if (isset($_SESSION['logged'])) {
           color: #ff182c !important;
         }
       </style>
-      <div class="arms"><a href="index.html">Home</a></div>
+      <div class="arms"><a href="index.php">Home</a></div>
       <div class="arms"><a href="./workout/workout.php">Workout</a></div>
       <div class="arms"><a href="./diet/diet.php">Diet</a></div>
-      <div class="arms"><a href="./Shop/supplement.html">Supplement</a></div>
+      <div class="arms"><a href="./Shop/supplement.php">Supplement</a></div>
     </div>
     <div class="be-strong-be">Be strong Be fit</div>
     <div class="make-yourself-stronger-container">

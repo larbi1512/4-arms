@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once "../db.php";
-$user_id = $_SESSION["user_id"];
+$user_id = $_SESSION["user_id"]?? 1;
 ?>
 
 <!DOCTYPE html>
@@ -51,44 +51,49 @@ $user_id = $_SESSION["user_id"];
       <div class="arms"><a href="../workout/workout.php">Workout</a></div>
       <div class="arms"><a href="../diet/diet.php">Diet</a></div>
       <div class="arms"><a href="../Shop/supplement.php">Supplement</a></div>
-      <button class="arms login-button" id="profile">
+      <button class="login-button" id="profile">
         <div class="profile1">Profile</div>
       </button>
     </div>
 
-    <div id="pROFILEContainer" class="popup-overlay" style="display: none">
+        <div id="pROFILEContainer" class="popup-overlay" style="display: none">
       <div class="profile">
         <?php
-        $query = $conn->query(
-          "select * from user_signup where user_id=$user_id"
-        );
-        foreach ($query as $data) {
-          $user_name = $data['user_name'];
-          $user_email = $data['user_email'];
-          $user_img = $data['user_img'];
-        }
-        ?>
-        <div class="profile-child">
-          <img src="<?php echo $user_img ?>" style="height:25%;width:17%; border-radius:15%;margin-right:20%;margin-left:10%;margin-top:4%" />
+            $query = $conn->query(
+              "select * from user_signup where user_id=$user_id"
+            );
+            foreach ($query as $data) {
+              $user_name = $data['user_name'];
+              $user_email = $data['user_email'];
+              $user_img = $data['user_img'];
+            }
+            ?>
+            <div class="profile-child">
+              <img src="<?php echo $user_img ?>"
+                style="height:25%;width:17%; border-radius:15%;margin-right:20%;margin-left:10%;margin-top:4%" />
+            </div>
+            <div class="larbi-saidchikh" style="margin-top:6%">
+              <?php echo $user_name ?>
+            </div>
+            <div class="larbisckgmailcom">
+              <?php echo $user_email ?>
+            </div>
+            <div class="my-progress">
+              <a href="./workout.php" style="color:black !important">My progress</a>
+            </div>
+            <div class="my-diet">
+              <a href="../diet/diet.php" style="color:black !important">My diet</a>
+            </div>
+            <div class="log-out">
+              <a href="../logout.php" style="color:black">Log out</a>
+            </div>
+            <div class="my-supplements">
+              <a href="../Shop/supplement.php" style="color:black !important">My supplements</a>
+            </div>
+          </div>
         </div>
-        <div class="larbi-saidchikh" style="margin-top:6%">
-          <?php echo $user_name ?>
-        </div>
-        <div class="larbisckgmailcom"><?php echo $user_email ?></div>
-        <div class="my-progress">
-          <a href="./workout.php" style="color:black !important">My progress</a>
-        </div>
-        <div class="my-diet">
-          <a href="../diet/diet.php" style="color:black !important">My diet</a>
-        </div>
-        <div class="log-out">
-          <a href="../logout.php" style="color:black">Log out</a>
-        </div>
-        <div class="my-supplements">
-          <a href="../Shop/supplement.php" style="color:black !important">My supplements</a>
-        </div>
-      </div>
-    </div>
+
+
     <div class="be-strong-be">Be strong Be fit</div>
     <div class="make-yourself-stronger-container">
       <p class="make-yourself-stronger">Make yourself stronger</p>
@@ -156,7 +161,7 @@ $user_id = $_SESSION["user_id"];
         var popupStyle = popup.style;
         if (popupStyle) {
           popupStyle.display = "flex";
-          popupStyle.zIndex = 100;
+          popupStyle.zIndex = 999;
           popupStyle.backgroundColor = "rgba(113, 113, 113, 0.3)";
           popupStyle.alignItems = "center";
           popupStyle.justifyContent = "center";
