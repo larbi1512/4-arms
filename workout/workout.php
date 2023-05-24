@@ -315,14 +315,16 @@ require_once "../db.php";
         td {
           text-align: left;
           padding: 8px;
+          color:white;
         }
 
         tr:nth-child(even) {
           background-color: #ddd;
+          color:#272523;
         }
 
         tr:hover {
-          background-color: #FBD5D5;
+          background-color: #e95f5f;;
           opacity: 0.5;
         }
 
@@ -495,29 +497,26 @@ require_once "../db.php";
         }
         ?>
         <div class="profile-child">
-        <img class="profile-item" alt="" src="./public/ellipse-800.svg" />
-        <img src="<?php echo $user_img ?>" style="height:25%;width:17%; border-radius:15%;margin-right:20%;margin-left:10%;margin-top:4%" />
+          <img class="profile-item" alt="" src="./public/ellipse-800.svg" />
+          <img src="<?php echo $user_img ?>" style="height:25%;width:17%; border-radius:15%;margin-right:20%;margin-left:10%;margin-top:4%" />
         </div>
         <div class="larbi-saidchikh" style="margin-top:6%">
         <?php echo $user_name ?>
-        </div>
-        <div class="larbisckgmailcom"><?php echo $user_email ?></div>
-        <div class="my-progress">
+      </div>
+      <div class="larbisckgmailcom"><?php echo $user_email ?></div>
+      <div class="my-progress">
         <a href="./workout.php" style="color:black !important">My progress</a>
-        </div>
-        <div class="my-diet">
+      </div>
+      <div class="my-diet">
         <a href="../diet/diet.php" style="color:black !important">My diet</a>
-        </div>
-        <div class="log-out">
+      </div>
+      <div class="log-out">
         <a href="../logout.php" style="color:black">Log out</a>
-        </div>
-        <div class="my-supplements">
+      </div>
+      <div class="my-supplements">
         <a href="../Shop/supplement.html" style="color:black !important">My supplements</a>
-        </div>
-        </div>
-        </div>
-        </div>
-        <script>
+      </div>
+      <script>
         var loginButton = document.getElementById("profile");
         if (loginButton) {
         loginButton.addEventListener("click", function() {
@@ -543,21 +542,18 @@ require_once "../db.php";
         popup.addEventListener("click", onClick);
         });
         }
-        </script>
-        <div id="goto" class="popup-overlay" style="display: none">
-        <div class="gotopopup">
-        <div class="my-overview">
+      </script>
+      <div id="goto" class="popup-overlay" style="display: none">
+      <div class="gotopopup">
+      <div class="my-overview">
         <a href="#act" style="color:black">My OverView</a>
-        </div>
-        <div class="my_workout_plan">
+      </div>
+      <div class="my_workout_plan">
         <a href="#plan" style="color:black">My WorkOut Plan</a>
-        </div>
-        <div class="my-gym_sapce">
+      </div>
+      <div class="my-gym_sapce">
         <a href="#gym" style="color:black">The Gym Space</a>
-        </div>
-        </div>
-        </div>
-        </div>
+      </div>
         <script>
         var dietText = document.getElementById("dietText");
         if (dietText) {
@@ -565,7 +561,6 @@ require_once "../db.php";
         window.location.href = "./diet1.html";
         });
         }
-
         var loginButton = document.getElementById("go");
         if (loginButton) {
         loginButton.addEventListener("click", function() {
@@ -580,7 +575,6 @@ require_once "../db.php";
         popupStyle.justifyContent = "center";
         }
         popup.setAttribute("closable", "");
-
         var onClick =
         popup.onClick ||
         function(e) {

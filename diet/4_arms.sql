@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : lun. 22 mai 2023 à 01:47
+-- Généré le : mer. 24 mai 2023 à 16:02
 -- Version du serveur : 10.4.27-MariaDB
 -- Version de PHP : 8.2.0
 
@@ -43,7 +43,18 @@ INSERT INTO `activity` (`user_id`, `month`, `activity_time`) VALUES
 (1, 'mar', 12),
 (1, 'apr', 18),
 (1, 'may', 23),
-(1, 'jun', 22);
+(1, 'jun', 22),
+(1, '5', 0.000391389),
+(1, '5', 0.000356111),
+(1, '5', 0.0009775),
+(1, '5', 0.000499167),
+(1, '5', 0.000382778),
+(1, '5', 0.000290556),
+(11, '5', 0.000360833),
+(1, '5', 0.000354167),
+(1, '5', 0.000443056),
+(1, '5', 0.000251389),
+(1, '5', 0.000738611);
 
 -- --------------------------------------------------------
 
@@ -63,6 +74,9 @@ CREATE TABLE `assigned` (
 --
 
 INSERT INTO `assigned` (`user_id`, `workout_id`, `diet_id`, `gym_id`) VALUES
+(8, 2, 2, NULL),
+(9, 2, 2, NULL),
+(11, 3, 3, NULL),
 (1, 2, 2, 1);
 
 -- --------------------------------------------------------
@@ -138,6 +152,7 @@ CREATE TABLE `message` (
 --
 
 CREATE TABLE `orders` (
+  `orders_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `date_order` date NOT NULL DEFAULT current_timestamp(),
@@ -145,21 +160,18 @@ CREATE TABLE `orders` (
   `user_address` varchar(300) DEFAULT NULL,
   `quantity` int(11) DEFAULT NULL,
   `phone_number` int(11) DEFAULT NULL,
-  `name` varchar(50) DEFAULT NULL
+  `name` varchar(50) DEFAULT NULL,
+  `deliverd` tinyint(1) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `orders`
 --
 
-INSERT INTO `orders` (`product_id`, `user_id`, `date_order`, `date_delivery`, `user_address`, `quantity`, `phone_number`, `name`) VALUES
-(1, 1, '2023-05-10', '2023-05-25', 'bir el djir oran', 1, 792765351, 'hafida boukedjar'),
-(1, 1, '2023-05-10', '2023-05-25', 'bir el djir oran', 1, 792765351, 'hafida boukedjar'),
-(1, 1, '2023-05-10', '2023-05-25', 'bir el djir oran', 1, 792765351, 'hafida boukedjar'),
-(1, 1, '2023-05-19', '2023-06-03', 'bir el djir oran', 1, 792765351, 'hafida boukedjar'),
-(1, 1, '2023-05-20', '2023-06-04', 'bir el djir oran', 1, 792765351, 'hafida boukedjar'),
-(1, 1, '2023-05-22', '2023-06-06', 'bir el djir oran', 1, 792765351, 'hafida boukedjar'),
-(1, 1, '2023-05-22', '2023-06-06', 'bir el djir oran', 1, 792765351, 'hafida boukedjar');
+INSERT INTO `orders` (`orders_id`, `product_id`, `user_id`, `date_order`, `date_delivery`, `user_address`, `quantity`, `phone_number`, `name`, `deliverd`) VALUES
+(1, 1, 1, '2023-04-22', '2023-05-01', 'bir el djir oran', 1, 792765351, 'hafida boukedjar', 1),
+(2, 1, 1, '2023-05-04', '2023-05-19', 'bir el djir oran', 1, 792765351, 'hafida boukedjar', 0),
+(3, 1, 1, '2023-05-24', '2023-06-08', 'bir el djir oran', 1, 792765351, 'hafida boukedjar', 0);
 
 -- --------------------------------------------------------
 
@@ -237,6 +249,7 @@ CREATE TABLE `user_signup` (
   `user_email` varchar(255) NOT NULL,
   `user_id` int(11) NOT NULL,
   `user_password` varchar(255) NOT NULL,
+  `gender` varchar(5) DEFAULT NULL,
   `weight` int(4) DEFAULT NULL,
   `height` int(4) DEFAULT NULL,
   `user_img` varchar(100) DEFAULT NULL
@@ -246,10 +259,15 @@ CREATE TABLE `user_signup` (
 -- Déchargement des données de la table `user_signup`
 --
 
-INSERT INTO `user_signup` (`user_name`, `user_email`, `user_id`, `user_password`, `weight`, `height`, `user_img`) VALUES
-('hafida', 'bou@gmail.com', 1, '121212', NULL, NULL, './avatar.jpg'),
-('hafida', 'bou@gmail.com', 5, '$2y$10$2CYM5zuxZWYARPvDLAD55OjmhQus55FkGomo.QitDvXkuu8yURxUy', 144, 144, NULL),
-('hafida', 'bou@gmail.com', 6, '$2y$10$SVg1tsdtzExjF2aiN2SV1eZy2sY9Xp.cksOZ8GTTg7V4rvraoeWlC', 144, 144, NULL);
+INSERT INTO `user_signup` (`user_name`, `user_email`, `user_id`, `user_password`, `gender`, `weight`, `height`, `user_img`) VALUES
+('hafida', 'bou@gmail.com', 1, '121212', NULL, NULL, NULL, './avatar.jpg'),
+('hafida', 'bou@gmail.com', 5, '$2y$10$2CYM5zuxZWYARPvDLAD55OjmhQus55FkGomo.QitDvXkuu8yURxUy', NULL, 144, 144, NULL),
+('hafida', 'bou@gmail.com', 6, '$2y$10$SVg1tsdtzExjF2aiN2SV1eZy2sY9Xp.cksOZ8GTTg7V4rvraoeWlC', NULL, 144, 144, NULL),
+('hafid', 'aniszemali31@gmail.com', 7, '$2y$10$ZA8a4yQ4QflVBhXuxvdtUOXx6Cv0/q178AHIe0k5FTCXmDm9KfJZu', NULL, 40, 140, NULL),
+('hafidaa', 'aniszemali31@gmail.co', 8, '$2y$10$Je/pa2a4JLTIges9XIIoMO4NAMhMAiP5BfQgpAsrHknQJYAP/pisW', 'femal', 40, 140, NULL),
+('ha', 'boukedjarhafida@gmail.co', 9, '$2y$10$1bRsGkDlg2ymhiZmFBuehOu4tXsZJ7Hnvp7Zl/QTYdqzNEmhwHDp.', 'femal', 40, 140, NULL),
+('dayaa.d1', 'dayaa@gmail.com', 10, '$2y$10$f2qgtdfnTbT7OytDYaE/sOtf9KPxuhVSNf9RKKgWjLqiCf2ii3JsC', NULL, 40, 140, NULL),
+('lealea', 'lea@gmail.com', 11, '$2y$10$ZTdPg5x5R0L8bBF1ekVqIeKo5Cvza2V35sIfJ7fZracy8ROeEdi0a', 'male', 40, 140, NULL);
 
 -- --------------------------------------------------------
 
@@ -318,6 +336,14 @@ ALTER TABLE `message`
   ADD KEY `fk_destination` (`destination_id`);
 
 --
+-- Index pour la table `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`orders_id`),
+  ADD KEY `fk_product` (`product_id`),
+  ADD KEY `fk_user` (`user_id`);
+
+--
 -- Index pour la table `product`
 --
 ALTER TABLE `product`
@@ -353,6 +379,12 @@ ALTER TABLE `workout_plan`
 --
 
 --
+-- AUTO_INCREMENT pour la table `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `orders_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT pour la table `product`
 --
 ALTER TABLE `product`
@@ -362,7 +394,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT pour la table `user_signup`
 --
 ALTER TABLE `user_signup`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT pour la table `workout_plan`
@@ -400,8 +432,8 @@ ALTER TABLE `message`
 -- Contraintes pour la table `orders`
 --
 ALTER TABLE `orders`
-  ADD CONSTRAINT `fk_product` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_ID`),
-  ADD CONSTRAINT `fk_user` FOREIGN KEY (`user_id`) REFERENCES `user_signup` (`user_ID`);
+  ADD CONSTRAINT `fk_product` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`),
+  ADD CONSTRAINT `fk_user` FOREIGN KEY (`user_id`) REFERENCES `user_signup` (`user_id`);
 
 --
 -- Contraintes pour la table `progress`

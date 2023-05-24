@@ -270,44 +270,7 @@
   flex-shrink: 0;
   display: none;
 }
-.select-parent {
-  flex: 1;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-  justify-content: flex-start;
-}
-.ic-expand-more-48px-icon {
-  position: relative;
-  width: 24px;
-  height: 24px;
-  flex-shrink: 0;
-  overflow: hidden;
-}
-.frame-parent {
-  align-self: stretch;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  gap: var(--gap-9xs);
-}
-.dropdown-and-multiselect1 {
-  align-self: stretch;
-  border-radius: var(--br-9xs);
-  background-color: var(--black-white-white);
-  box-shadow: var(--bootstrap-focused);
-  border: 1px solid #ff4747;
-  box-sizing: border-box;
-  height: 36px;
-  flex-shrink: 0;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  padding: var(--padding-5xs) var(--padding-base);
-  align-items: flex-start;
-  justify-content: center;
-}
+
 .label {
   align-self: stretch;
   position: relative;
@@ -322,7 +285,7 @@
 .text-input-wrapper {
   align-self: stretch;
   border-radius: var(--br-9xs);
-  background-color: var(--grey-grey-50);
+  /* background-color: var(--grey-grey-50); */
   border: 1px solid var(--grey-grey-50);
   display: flex;
   flex-direction: row;
@@ -368,80 +331,7 @@
   flex: 1;
   position: relative;
 }
-.dropdown-and-multiselect3 {
-  background-color: #fbd5d5;
-  display: flex;
-  color: var(--sexy-rouge);
-}
-.dropdown-and-multiselect3,
-.dropdown-and-multiselect4,
-.dropdown-and-multiselect5 {
-  align-self: stretch;
-  border-radius: var(--br-9xs);
-  flex-direction: row;
-  padding: var(--padding-9xs) var(--padding-5xs);
-  align-items: center;
-  justify-content: flex-start;
-  gap: var(--gap-3xs);
-}
-.dropdown-and-multiselect4 {
-  display: flex;
-}
-.dropdown-and-multiselect5 {
-  display: none;
-}
-.form-parent {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: flex-start;
-  gap: var(--gap-9xs);
-}
-.scroller-child {
-  position: relative;
-  border-radius: var(--br-mini);
-  background-color: var(--grey-grey-300);
-  width: 8px;
-  height: 70px;
-  flex-shrink: 0;
-}
-.frame-group,
-.scroller {
-  align-self: stretch;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-.scroller {
-  border-radius: var(--br-5xs);
-  background-color: var(--black-white-white);
-  overflow: hidden;
-}
-.frame-group {
-  gap: var(--gap-9xs);
-}
-.dropdown-and-multiselect-child {
-  align-self: stretch;
-  position: relative;
-  max-width: 100%;
-  overflow: hidden;
-  height: 1px;
-  flex-shrink: 0;
-}
-.primary-buttons {
-  position: relative;
-  letter-spacing: 1.25px;
-  line-height: 150%;
-  text-transform: uppercase;
-  font-weight: 500;
-}
-.button-large {
-  border-radius: var(--br-5xs);
-  padding: var(--padding-5xs);
-  justify-content: center;
-}
+
 .button-large,
 .button-large-parent,
 .button-large1 {
@@ -605,13 +495,13 @@
 }
 .workout {
   position: relative;
-  background-color: var(--color-gray-500);
+  /* background-color: var(--color-gray-500); */
   width: 100%;
   height: auto;
   overflow: hidden;
   text-align: left;
   font-size: var(--font-size-13xl);
-  color: var(--black-white-white);
+  /* color: var(--black-white-white); */
   font-family: var(--font-font);
 }
 @media screen and (max-width: 1200px) {
