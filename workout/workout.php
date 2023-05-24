@@ -220,7 +220,6 @@ require_once "../db.php";
             xhr.open("POST", "insert_elapsed_time.php", true);
             xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             xhr.send("elapsed_time=" + elapsedTime + "&month=" + currentMonth);
-            event.preventDefault(); // Prevent the default form submission behavior
             location.reload();
           }
         </script>
@@ -414,7 +413,7 @@ require_once "../db.php";
       .plan {
         display: flex;
         flex-direction: row;
-        background-color: black;
+        background-color: #272523;
         border-radius: 30px;
         padding: 20px;
         margin-top: 7%;
@@ -456,7 +455,6 @@ require_once "../db.php";
 
       }
     </style>
-
     <div class="nav-bar">
       <style>
         a {
@@ -484,117 +482,115 @@ require_once "../db.php";
         <div class="profile1">Profile</div>
       </button>
     </div>
-
-    <div id="pROFILEContainer" class="popup-overlay" style="display: none">
-      <div class="profile">
+        <div id="pROFILEContainer" class="popup-overlay" style="display: none">
+        <div class="profile">
         <?php
         $query = $conn->query(
-          "select * from user_signup where user_id=$user_id"
+        "select * from user_signup where user_id=$user_id"
         );
         foreach ($query as $data) {
-          $user_name = $data['user_name'];
-          $user_email = $data['user_email'];
-          $user_img = $data['user_img'];
+        $user_name = $data['user_name'];
+        $user_email = $data['user_email'];
+        $user_img = $data['user_img'];
         }
         ?>
         <div class="profile-child">
-          <img class="profile-item" alt="" src="./public/ellipse-800.svg" />
-          <img src="<?php echo $user_img ?>" style="height:25%;width:17%; border-radius:15%;margin-right:20%;margin-left:10%;margin-top:4%" />
+        <img class="profile-item" alt="" src="./public/ellipse-800.svg" />
+        <img src="<?php echo $user_img ?>" style="height:25%;width:17%; border-radius:15%;margin-right:20%;margin-left:10%;margin-top:4%" />
         </div>
         <div class="larbi-saidchikh" style="margin-top:6%">
-          <?php echo $user_name ?>
+        <?php echo $user_name ?>
         </div>
         <div class="larbisckgmailcom"><?php echo $user_email ?></div>
         <div class="my-progress">
-          <a href="./workout.php" style="color:black !important">My progress</a>
+        <a href="./workout.php" style="color:black !important">My progress</a>
         </div>
         <div class="my-diet">
-          <a href="../diet/diet.php" style="color:black !important">My diet</a>
+        <a href="../diet/diet.php" style="color:black !important">My diet</a>
         </div>
         <div class="log-out">
-          <a href="../logout.php" style="color:black">Log out</a>
+        <a href="../logout.php" style="color:black">Log out</a>
         </div>
         <div class="my-supplements">
-          <a href="../Shop/supplement.html" style="color:black !important">My supplements</a>
+        <a href="../Shop/supplement.html" style="color:black !important">My supplements</a>
         </div>
-      </div>
-    </div>
-  </div>
-  <script>
-    var loginButton = document.getElementById("profile");
-    if (loginButton) {
-      loginButton.addEventListener("click", function() {
+        </div>
+        </div>
+        </div>
+        <script>
+        var loginButton = document.getElementById("profile");
+        if (loginButton) {
+        loginButton.addEventListener("click", function() {
         var popup = document.getElementById("pROFILEContainer");
         if (!popup) return;
         var popupStyle = popup.style;
         if (popupStyle) {
-          popupStyle.display = "flex";
-          popupStyle.zIndex = 100;
-          popupStyle.backgroundColor = "rgba(113, 113, 113, 0.3)";
-          popupStyle.alignItems = "center";
-          popupStyle.justifyContent = "center";
+        popupStyle.display = "flex";
+        popupStyle.zIndex = 100;
+        popupStyle.backgroundColor = "rgba(113, 113, 113, 0.3)";
+        popupStyle.alignItems = "center";
+        popupStyle.justifyContent = "center";
         }
         popup.setAttribute("closable", "");
 
         var onClick =
-          popup.onClick ||
-          function(e) {
-            if (e.target === popup && popup.hasAttribute("closable")) {
-              popupStyle.display = "none";
-            }
-          };
+        popup.onClick ||
+        function(e) {
+        if (e.target === popup && popup.hasAttribute("closable")) {
+        popupStyle.display = "none";
+        }
+        };
         popup.addEventListener("click", onClick);
-      });
-    }
-  </script>
-  <div id="goto" class="popup-overlay" style="display: none">
-    <div class="gotopopup">
-      <div class="my-overview">
+        });
+        }
+        </script>
+        <div id="goto" class="popup-overlay" style="display: none">
+        <div class="gotopopup">
+        <div class="my-overview">
         <a href="#act" style="color:black">My OverView</a>
-      </div>
-      <div class="my_workout_plan">
+        </div>
+        <div class="my_workout_plan">
         <a href="#plan" style="color:black">My WorkOut Plan</a>
-      </div>
-      <div class="my-gym_sapce">
+        </div>
+        <div class="my-gym_sapce">
         <a href="#gym" style="color:black">The Gym Space</a>
-      </div>
-    </div>
-  </div>
-  </div>
-  <script>
-    var dietText = document.getElementById("dietText");
-    if (dietText) {
-      dietText.addEventListener("click", function(e) {
+        </div>
+        </div>
+        </div>
+        </div>
+        <script>
+        var dietText = document.getElementById("dietText");
+        if (dietText) {
+        dietText.addEventListener("click", function(e) {
         window.location.href = "./diet1.html";
-      });
-    }
+        });
+        }
 
-    var loginButton = document.getElementById("go");
-    if (loginButton) {
-      loginButton.addEventListener("click", function() {
+        var loginButton = document.getElementById("go");
+        if (loginButton) {
+        loginButton.addEventListener("click", function() {
         var popup = document.getElementById("goto");
         if (!popup) return;
         var popupStyle = popup.style;
         if (popupStyle) {
-          popupStyle.display = "flex";
-          popupStyle.zIndex = 100;
-          popupStyle.backgroundColor = "rgba(113, 113, 113, 0.3)";
-          popupStyle.alignItems = "center";
-          popupStyle.justifyContent = "center";
+        popupStyle.display = "flex";
+        popupStyle.zIndex = 100;
+        popupStyle.backgroundColor = "rgba(113, 113, 113, 0.3)";
+        popupStyle.alignItems = "center";
+        popupStyle.justifyContent = "center";
         }
         popup.setAttribute("closable", "");
 
         var onClick =
-          popup.onClick ||
-          function(e) {
-            if (e.target === popup && popup.hasAttribute("closable")) {
-              popupStyle.display = "none";
-            }
-          };
+        popup.onClick ||
+        function(e) {
+        if (e.target === popup && popup.hasAttribute("closable")) {
+        popupStyle.display = "none";
+        }
+        };
         popup.addEventListener("click", onClick);
-      });
-    }
-  </script>
+        });
+        }
+        </script>
 </body>
-
 </html>
