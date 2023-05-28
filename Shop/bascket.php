@@ -6,19 +6,6 @@
     ?>
     <head>
         <link rel="stylesheet" href="./bascket.css">
-        <style>
-    @font-face {
-      font-family: "Nasalization";
-      src: url("fonts/nasalization-rg.otf");
-      font-weight: 400;
-    }
-
-    @font-face {
-      font-family: "font";
-      src: url("fonts/nasalization-rg.otf");
-      font-weight: 400;
-    }
-  </style>
     </head>
     <body>
     <div class="nav-bar sticky-nav">

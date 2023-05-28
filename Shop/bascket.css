@@ -1,3 +1,14 @@
+@font-face {
+    font-family: "Nasalization";
+    src: url("fonts/nasalization-rg.otf");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "font";
+    src: url("fonts/nasalization-rg.otf");
+    font-weight: 400;
+}
 body {
     height: 125vh;
     background-color: #1E1E1E;

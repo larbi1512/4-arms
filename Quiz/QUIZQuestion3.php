@@ -18,19 +18,6 @@ if (isset($_GET["choice"])) {
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google Sans:wght@400;500&display=swap" />
 
-  <style>
-    @font-face {
-      font-family: "Nasalization";
-      src: url("fonts/nasalization-rg.otf");
-      font-weight: 400;
-    }
-
-    @font-face {
-      font-family: "font";
-      src: url("fonts/nasalization-rg.otf");
-      font-weight: 400;
-    }
-  </style>
 </head>
 
 <body>
