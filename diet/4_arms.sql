@@ -199,20 +199,45 @@ INSERT INTO `product` (`price`, `product_id`, `product_name`, `product_category`
 --
 -- Structure de la table `progress`
 --
-
 CREATE TABLE `progress` (
-  `gained_weight` float DEFAULT NULL,
-  `lost_weight` float DEFAULT NULL,
-  `user_id` int(11) NOT NULL,
-  `last_update` date NOT NULL DEFAULT current_timestamp()
+  `progress_id` int(11) NOT NULL,
+  `weight` int(11) NOT NULL,
+  `update_date` date NOT NULL,
+  `workout_id` int(11) NOT NULL,
+  `diet_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `progress`
 --
 
-INSERT INTO `progress` (`gained_weight`, `lost_weight`, `user_id`, `last_update`) VALUES
-(12, 12, 1, '2015-12-17');
+INSERT INTO `progress` (`progress_id`, `weight`, `update_date`, `workout_id`, `diet_id`, `user_id`) VALUES
+(1, 40, '2023-05-29', 1, 1, 18),
+(2, 40, '2023-05-29', 1, 1, 0),
+(3, 40, '2023-04-28', 1, 1, 19),
+(4, 0, '2023-05-29', 2, 2, 19),
+(5, 0, '2023-05-29', 2, 2, 19);
+
+--
+-- Index pour les tables déchargées
+--
+
+--
+-- Index pour la table `progress`
+--
+ALTER TABLE `progress`
+  ADD PRIMARY KEY (`progress_id`);
+
+--
+-- AUTO_INCREMENT pour les tables déchargées
+--
+
+--
+-- AUTO_INCREMENT pour la table `progress`
+--
+ALTER TABLE `progress`
+  MODIFY `progress_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 -- --------------------------------------------------------
 
@@ -350,12 +375,6 @@ ALTER TABLE `product`
   ADD PRIMARY KEY (`product_id`);
 
 --
--- Index pour la table `progress`
---
-ALTER TABLE `progress`
-  ADD PRIMARY KEY (`user_id`,`last_update`);
-
---
 -- Index pour la table `team`
 --
 ALTER TABLE `team`
@@ -402,9 +421,6 @@ ALTER TABLE `user_signup`
 ALTER TABLE `workout_plan`
   MODIFY `workout_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
---
--- Contraintes pour les tables déchargées
---
 
 --
 -- Contraintes pour la table `activity`
@@ -434,12 +450,6 @@ ALTER TABLE `message`
 ALTER TABLE `orders`
   ADD CONSTRAINT `fk_product` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`),
   ADD CONSTRAINT `fk_user` FOREIGN KEY (`user_id`) REFERENCES `user_signup` (`user_id`);
-
---
--- Contraintes pour la table `progress`
---
-ALTER TABLE `progress`
-  ADD CONSTRAINT `fk_progress` FOREIGN KEY (`user_id`) REFERENCES `user_signup` (`user_ID`);
 
 --
 -- Contraintes pour la table `workout_plan`
