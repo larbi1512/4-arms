@@ -2,9 +2,17 @@
 <?php
 session_start();
 require_once "../db.php";
-$user_id = $_SESSION["user_id"] ?? 1;
+$user_id = $_SESSION["user_id"];
+$sql_workout = "SELECT * FROM progress WHERE user_id = $user_id order by update_date desc limit 1";
+$result = $conn->query($sql_workout);
+$row = $result->fetch_assoc();
+$currentDate = date("Y-m-d");
+$targetDate = date("Y-m-d", strtotime($row['update_date'] . " +30 days"));
+if ($currentDate >= $targetDate) {
+    header("Location: ../monthly/first.php");
+    exit(); 
+}
 
-// $user_id = $_SESSION["user_id"];
 ?>
 
 <!DOCTYPE html>
