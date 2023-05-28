@@ -21,19 +21,6 @@ $workout_name = $row["workout_name"];
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google Sans:wght@400;500&display=swap" />
 
-  <style>
-    @font-face {
-      font-family: "Nasalization";
-      src: url("fonts/nasalization-rg.otf");
-      font-weight: 400;
-    }
-
-    @font-face {
-      font-family: "font";
-      src: url("fonts/nasalization-rg.otf");
-      font-weight: 400;
-    }
-  </style>
 </head>
 
 <body>
@@ -48,12 +35,6 @@ $workout_name = $row["workout_name"];
 
     <a href="../signup_login/signup.php">
       <div class="quiz-question-child4"></div>
-      <style>
-        a {
-          text-decoration: none;
-          color: white !important;
-        }
-      </style>
       <div class="let-s-start">
         Let‘s Start Now!
       </div>

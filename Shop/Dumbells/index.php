@@ -54,9 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <div class="shop"><a href="../../Shop/shop.html">Shop</a></div>
     </div>
     <style>
-      a {
-        text-decoration: none;
-        color: #ff182c !important;
+
       }
     </style>
     <div class="creatine">Dumbells</div>

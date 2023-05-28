@@ -20,17 +20,7 @@ require_once "../db.php";
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open Sans:wght@400;600&display=swap" />
 
   <style>
-    @font-face {
-      font-family: "Nasalization";
-      src: url("fonts/nasalization-rg.otf");
-      font-weight: 400;
-    }
 
-    @font-face {
-      font-family: "font";
-      src: url("fonts/nasalization-rg.otf");
-      font-weight: 400;
-    }
   </style>
 </head>
 
@@ -579,12 +569,7 @@ require_once "../db.php";
     </div>
     <div class="nav-bar">
       <div class="nav-bar1">
-        <style>
-          a {
-            text-decoration: none;
-            color: #ff182c !important;
-          }
-        </style>
+
         <div class="home"><a href="../NewHome/newHome.php">home</a></div>
         <div class="nav-bar-child"></div>
         <div class="workout" id="workoutText"><a href="../workout/workout.php">Workout</a></div>

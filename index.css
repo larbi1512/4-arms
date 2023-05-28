@@ -1,4 +1,20 @@
+@font-face {
+  font-family: "Nasalization";
+  src: url("fonts/nasalization-rg.otf");
+  font-weight: 400;
+}
 
+@font-face {
+  font-family: "font";
+  src: url("fonts/nasalization-rg.otf");
+  font-weight: 400;
+}
+
+.oldnav{
+  text-decoration: none;
+  color: #ff182c !important;
+  display: flex;
+}
 .white-lines {
   position: absolute;
   top: 151px;

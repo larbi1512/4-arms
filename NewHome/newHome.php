@@ -28,19 +28,7 @@ if ($currentDate >= $targetDate) {
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open Sans:wght@400;600&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google Sans:wght@400;500&display=swap" />
 
-  <style>
-    @font-face {
-      font-family: "Nasalization";
-      src: url("fonts/nasalization-rg.otf");
-      font-weight: 400;
-    }
 
-    @font-face {
-      font-family: "font";
-      src: url("fonts/nasalization-rg.otf");
-      font-weight: 400;
-    }
-  </style>
 </head>
 
 <body>
@@ -52,12 +40,6 @@ if ($currentDate >= $targetDate) {
       <div class="arms">4-ARMS</div>
     </div>
     <div class="nav-bar">
-      <style>
-        a {
-          text-decoration: none;
-          color: #ff182c !important;
-        }
-      </style>
       <div class="arms"><a href="./newHome.php">Home</a></div>
       <div class="arms"><a href="../workout/workout.php">Workout</a></div>
       <div class="arms"><a href="../diet/diet.php">Diet</a></div>

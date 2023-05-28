@@ -18,19 +18,7 @@
             href="https://fonts.googleapis.com/css2?family=Google Sans:wght@400;500&display=swap"
     />
 
-    <style>
-        @font-face {
-            font-family: "Nasalization";
-            src: url("fonts/nasalization-rg.otf");
-            font-weight: 400;
-        }
 
-        @font-face {
-            font-family: "font";
-            src: url("fonts/nasalization-rg.otf");
-            font-weight: 400;
-        }
-    </style>
     <title>4-ARMS</title>
 </head>
 
@@ -47,16 +35,10 @@
         <div class="arms">4-ARMS</div>
     </div>
     <div class="nav-bar">
-        <style>
-            a {
-                text-decoration: none;
-                color: #ff182c !important;
-                display: flex;
-            }
-        </style>
-        <div class="arms"><a href="index.php">Home</a></div>
-        <div class="arms"><a href="#what-we-offer">What We Offer</a></div>
-        <div class="arms"><a href="#our-team">Our Team</a></div>
+
+        <div class="arms"><a class="oldnav" href="index.php">Home</a></div>
+        <div class="arms"><a class="oldnav" href="#what-we-offer">What We Offer</a></div>
+        <div class="arms"><a class="oldnav" href="#our-team">Our Team</a></div>
     </div>
     <div class="be-strong-be">Be strong Be fit</div>
     <div class="make-yourself-stronger-container">
