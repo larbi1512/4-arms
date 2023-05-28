@@ -97,8 +97,8 @@ $userscount = $row_userscount[0];
                             <td align="center"><?php echo $row["diet_name"]; ?></td>
                             <td align="center"><?php echo $row["diet_link"]; ?></td>
                             <td align="center"><?php echo $row["carbs"]; ?></td>
-                            <td align="center"><?php echo $row["calories"]; ?></td>
-                            <td align="center"><?php echo $row["proteins"]; ?></td>
+                            <td align="center"><?php echo $row["Calories"]; ?></td>
+                            <td align="center"><?php echo $row["Proteins"]; ?></td>
                             <td align="center">
                                 <a href="insert.php?id=<?php echo $row["diet_id"]; ?>&table=diet">Edit</a>
                             </td>
@@ -181,10 +181,10 @@ $userscount = $row_userscount[0];
                             <td align="center"><?php echo $row["price"]; ?></td>
                             <td align="center"><?php echo $row["png_link"]; ?></td>
                             <td align="center">
-                                <a href="insert.php?id=<?php echo $row["product_ID"]; ?>&table=product">Edit</a>
+                                <a href="insert.php?id=<?php echo $row["product_id"]; ?>&table=product">Edit</a>
                             </td>
                             <td align="center">
-                                <a href="insert.php?id=<?php echo $row["product_ID"]; ?>&table=product&action=delete">Delete</a>
+                                <a href="insert.php?id=<?php echo $row["product_id"]; ?>&table=product&action=delete">Delete</a>
                             </td>
                         </tr>
                     <?php $count++;

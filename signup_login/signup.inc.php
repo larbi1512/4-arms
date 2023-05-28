@@ -64,6 +64,10 @@ if (isset($_SESSION["choice"])) {
   $stmt = $conn->prepare($sql);
   $stmt->bind_param('iii', $new_user, $choice, $choice);
   $stmt->execute();
+  $currentDate = date("Y-m-d");
+
+  $sql = "INSERT INTO `progress`(`weight`, `update_date`, `workout_id`, `diet_id`, `user_id`) VALUES ('$weight','$currentDate','$choice','$choice','$new_user')";
+  mysqli_query($conn, $sql);
 }
 
 
