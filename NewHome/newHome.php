@@ -1,7 +1,10 @@
+
 <?php
 session_start();
 require_once "../db.php";
-$user_id = $_SESSION["user_id"]?? 1;
+$user_id = $_SESSION["user_id"] ?? 1;
+
+// $user_id = $_SESSION["user_id"];
 ?>
 
 <!DOCTYPE html>
@@ -56,42 +59,43 @@ $user_id = $_SESSION["user_id"]?? 1;
       </button>
     </div>
 
-        <div id="pROFILEContainer" class="popup-overlay" style="display: none">
+
+    <div id="pROFILEContainer" class="popup-overlay" style="display: none">
       <div class="profile">
         <?php
-            $query = $conn->query(
-              "select * from user_signup where user_id=$user_id"
-            );
-            foreach ($query as $data) {
-              $user_name = $data['user_name'];
-              $user_email = $data['user_email'];
-              $user_img = $data['user_img'];
-            }
-            ?>
-            <div class="profile-child">
-              <img src="<?php echo $user_img ?>"
-                style="height:25%;width:17%; border-radius:15%;margin-right:20%;margin-left:10%;margin-top:4%" />
-            </div>
-            <div class="larbi-saidchikh" style="margin-top:6%">
-              <?php echo $user_name ?>
-            </div>
-            <div class="larbisckgmailcom">
-              <?php echo $user_email ?>
-            </div>
-            <div class="my-progress">
-              <a href="./workout.php" style="color:black !important">My progress</a>
-            </div>
-            <div class="my-diet">
-              <a href="../diet/diet.php" style="color:black !important">My diet</a>
-            </div>
-            <div class="log-out">
-              <a href="../logout.php" style="color:black">Log out</a>
-            </div>
-            <div class="my-supplements">
-              <a href="../Shop/supplement.php" style="color:black !important">My supplements</a>
-            </div>
-          </div>
+        $query = $conn->query(
+          "select * from user_signup where user_id=$user_id"
+        );
+        foreach ($query as $data) {
+          $user_name = $data['user_name'];
+          $user_email = $data['user_email'];
+          $user_img = $data['user_img'];
+        }
+        ?>
+        <div class="profile-child">
+          <img src="<?php echo $user_img ?>"
+            style="height:25%;width:17%; border-radius:15%;margin-right:20%;margin-left:10%;margin-top:4%" />
         </div>
+        <div class="larbi-saidchikh" style="margin-top:6%">
+          <?php echo $user_name ?>
+        </div>
+        <div class="larbisckgmailcom">
+          <?php echo $user_email ?>
+        </div>
+        <div class="my-progress">
+          <a href="../workout/workout.php" style="color:black !important">My progress</a>
+        </div>
+        <div class="my-diet">
+          <a href="../diet/diet.php" style="color:black !important">My diet</a>
+        </div>
+        <div class="log-out">
+          <a href="../logout.php" style="color:black">Log out</a>
+        </div>
+        <div class="my-supplements">
+          <a href="../Shop/bascket.php" style="color:black !important">My Orders</a>
+        </div>
+      </div>
+    </div>
 
 
     <div class="be-strong-be">Be strong Be fit</div>
@@ -111,7 +115,9 @@ $user_id = $_SESSION["user_id"]?? 1;
         ?>
         <img src="<?php echo $row['workout_img_link'] ?>" alt="" style="width: 100%; border-radius: 10px" />
         <div class="container">
-          <h4><b><?php echo $row['workout_name'] ?></b></h4>
+          <h4><b>
+              <?php echo $row['workout_name'] ?>
+            </b></h4>
           <p>check your workout progress</p>
         </div>
       </div>
@@ -128,7 +134,8 @@ $user_id = $_SESSION["user_id"]?? 1;
         $result = $conn->query($sql);
         $row = $result->fetch_assoc();
         ?>
-        <img src="<?php echo $row['diet_link_img'] ?>" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.7" alt="Diet" style="width: 100%; border-radius: 10px" />
+        <img src="<?php echo $row['diet_link_img'] ?>" onmouseover="this.style.opacity=1"
+          onmouseout="this.style.opacity=0.7" alt="Diet" style="width: 100%; border-radius: 10px" />
         <div class="container">
           <h4><b>Be healthy</b></h4>
           <p>Do not forget ur diet</p>
@@ -155,13 +162,13 @@ $user_id = $_SESSION["user_id"]?? 1;
   <script>
     var loginButton = document.getElementById("profile");
     if (loginButton) {
-      loginButton.addEventListener("click", function() {
+      loginButton.addEventListener("click", function () {
         var popup = document.getElementById("pROFILEContainer");
         if (!popup) return;
         var popupStyle = popup.style;
         if (popupStyle) {
           popupStyle.display = "flex";
-          popupStyle.zIndex = 999;
+          popupStyle.zIndex = 100;
           popupStyle.backgroundColor = "rgba(113, 113, 113, 0.3)";
           popupStyle.alignItems = "center";
           popupStyle.justifyContent = "center";
@@ -170,7 +177,7 @@ $user_id = $_SESSION["user_id"]?? 1;
 
         var onClick =
           popup.onClick ||
-          function(e) {
+          function (e) {
             if (e.target === popup && popup.hasAttribute("closable")) {
               popupStyle.display = "none";
             }

@@ -20,7 +20,7 @@
         <img src="public/linkedin.png" alt="LinkedIn"> LinkedIn
     </a>
 
-    <a href="mailto:4ARMS@gmail.com" title="Email" class="social-link">
+    <a href="mailto:team.4armss@gmail.com" title="Email" class="social-link">
         <img src="public/gmail.png" alt="Email">Email
     </a>
 
