@@ -40,10 +40,12 @@
                         <th><strong>Quantity</strong></th>
                         <th><strong>Date Of The Order</strong></th>
                         <th><strong>Date Of Delivery</strong></th>
+                        <th><strong>Delivery Status</strong></th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
+                    $date = date("Y-m-d");
                     $sel_query = "SELECT * FROM orders 
                     inner join product on product.product_id=orders.product_id
                     where user_id = $user_id";
@@ -56,6 +58,20 @@
                             <td align="center"><?php echo $row["quantity"]; ?></td>
                             <td align="center"><?php echo $row["date_order"]; ?></td>
                             <td align="center"><?php echo $row["date_delivery"]; ?></td>
+                            <td align='center'>
+                                <?php
+                                if($row["deliverd"] == 0 && $row["date_delivery"]>=$date)
+                                {
+                                    echo "On The Way";
+                                }
+                                elseif ($row["deliverd"] == 0 && $row["date_delivery"]<$date) {
+                                    echo "Late Delivery";
+                                }
+                                elseif ($row["deliverd"] == 1) {
+                                    echo "Deliverd";
+                                }
+                                ?>
+                            </td>
                         </tr>
                     <?php $count+=$row["price"]*$row["quantity"];
                     } ?>
