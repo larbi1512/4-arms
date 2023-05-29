@@ -40,7 +40,7 @@ require_once "../db.php";
 
         <div class="nav-bar sticky-nav">
 
-          <a class="diet1" href="./diet.php">Diet</a><a class="supplement" href="../Shop/supplement.php">Supplement</a>
+          <a class="diet1" href="../diet/diet.php">Diet</a><a class="supplement" href="../Shop/supplement.php">Supplement</a>
           <a class="home" id="home" href="../NewHome/newHome.php">Home</a>
           <a class="workout" id="workout" href="../workout/workout.php">Workout</a>
         </div>
@@ -68,7 +68,7 @@ require_once "../db.php";
               <div class="flex">
                 <div class="price"><?php echo $product['price']; ?> Da</div>
                 <div class="order-button">
-                  <a href="Creatine/index.php?id=<?php echo $product['product_id']; ?>" style="text-decoration: none; color: #ffffff !important;">ORDER</a>
+                  <a href="order.php?id=<?php echo $product['product_id']; ?>" style="text-decoration: none; color: #ffffff !important;">ORDER</a>
                 </div>
               </div>
             </div>
@@ -106,7 +106,7 @@ require_once "../db.php";
       </div>
       <div class="larbisckgmailcom"><?php echo $user_email ?></div>
       <div class="my-progress">
-        <a href="./workout.php" style="color:black !important">My progress</a>
+        <a href="../workout/workout.php" style="color:black !important">My progress</a>
       </div>
       <div class="my-diet">
         <a href="../diet/diet.php" style="color:black !important">My diet</a>
@@ -115,7 +115,7 @@ require_once "../db.php";
         <a href="../logout.php" style="color:black">Log out</a>
       </div>
       <div class="my-supplements">
-        <a href="./bascket.php" style="color:black !important">My Orders</a>
+        <a href="bascket.php" style="color:black !important">My Orders</a>
       </div>
     </div>
   </div>
