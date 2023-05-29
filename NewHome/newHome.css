@@ -120,6 +120,11 @@ color : var(--clr);
     height: 802.56px;
 }
 
+a {
+    text-decoration: none;
+    color: #ff182c !important;
+}
+
 .skipping-rope-bro-1 {
     position: absolute;
     top: 154px;

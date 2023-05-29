@@ -50,20 +50,6 @@ if (isset($_POST['carbs_consumed']) && isset($_POST['calories_consumed']) && iss
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open Sans:wght@400;600&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google Sans:wght@400;500&display=swap" />
-
-  <style>
-    @font-face {
-      font-family: "Nasalization";
-      src: url("fonts/nasalization-rg.otf");
-      font-weight: 400;
-    }
-
-    @font-face {
-      font-family: "font";
-      src: url("fonts/nasalization-rg.otf");
-      font-weight: 400;
-    }
-  </style>
 </head>
 
 <body>
@@ -216,61 +202,6 @@ if (isset($_POST['carbs_consumed']) && isset($_POST['calories_consumed']) && iss
       </div>
     </div>
   </div>
-
-
-  <style>
-    .recommended-activities {
-      margin-top: 28%;
-      margin-left: 10%;
-      color: var(--sexy-rouge);
-    }
-
-    .plan {
-      position: absolute;
-      display: flex;
-      flex-direction: row;
-      background-color: var(--sexy-rouge);
-      border-radius: 30px;
-      width: 95%;
-      padding: 20px;
-      margin-top: 3%;
-      z-index: 99;
-    }
-
-    .plan-img {
-      margin-right: 20px;
-      top: 50%;
-    }
-
-    .plan-img img {
-      width: 200px;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 10px;
-      top: 50%;
-    }
-
-    .plan-description {
-      display: flex;
-      flex-direction: column;
-      top: 50%;
-    }
-
-    .plan-description p {
-      color: white;
-      font-size: 18px;
-      margin: 0 0 10px 0;
-      top: 50%;
-    }
-
-    .plan-description a {
-      color: black;
-      font-size: 16px;
-      text-decoration: none;
-      margin-top: auto;
-
-    }
-  </style>
   <script>
     document.querySelector('form').addEventListener('submit', function() {
       var carbs_consumed = parseInt(document.querySelector('input[name="carbs_consumed"]').value);
@@ -280,8 +211,8 @@ if (isset($_POST['carbs_consumed']) && isset($_POST['calories_consumed']) && iss
       calories_consumed += calories_consumed;
       proteins_consumed += proteins_consumed;
       var carbs_remaining = <?php echo $row['carbs'] ?> - carbs_consumed;
-    var calories_remaining = <?php echo $row['Calories'] ?> - calories_consumed;
-    var proteins_remaining = <?php echo $row['Proteins'] ?> - proteins_consumed;
+      var calories_remaining = <?php echo $row['Calories'] ?> - calories_consumed;
+      var proteins_remaining = <?php echo $row['Proteins'] ?> - proteins_consumed;
 
       document.querySelector('span.remaining:nth-of-type(1)').textContent = carbs_remaining;
       document.querySelector('span.remaining:nth-of-type(2)').textContent = calories_remaining;

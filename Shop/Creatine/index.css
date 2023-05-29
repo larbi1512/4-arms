@@ -1,3 +1,8 @@
+a {
+  text-decoration: none;
+  color: #ff182c !important;
+}
+
 .diet-child {
   position: absolute;
   top: 250px;

@@ -1,10 +1,17 @@
-
 <?php
 session_start();
 require_once "../db.php";
 $user_id = $_SESSION["user_id"];
+$sql_workout = "SELECT * FROM progress WHERE user_id = $user_id order by update_date desc limit 1";
+$result = $conn->query($sql_workout);
+$row = $result->fetch_assoc();
+$currentDate = date("Y-m-d");
+$targetDate = date("Y-m-d", strtotime($row['update_date'] . " +30 days"));
+if ($currentDate >= $targetDate) {
+  header("Location: ../monthly/first.php");
+  exit();
+}
 
-// $user_id = $_SESSION["user_id"];
 ?>
 
 <!DOCTYPE html>
@@ -20,19 +27,7 @@ $user_id = $_SESSION["user_id"];
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open Sans:wght@400;600&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google Sans:wght@400;500&display=swap" />
 
-  <style>
-    @font-face {
-      font-family: "Nasalization";
-      src: url("fonts/nasalization-rg.otf");
-      font-weight: 400;
-    }
 
-    @font-face {
-      font-family: "font";
-      src: url("fonts/nasalization-rg.otf");
-      font-weight: 400;
-    }
-  </style>
 </head>
 
 <body>
@@ -73,8 +68,7 @@ $user_id = $_SESSION["user_id"];
         }
         ?>
         <div class="profile-child">
-          <img src="<?php echo $user_img ?>"
-            style="height:25%;width:17%; border-radius:15%;margin-right:20%;margin-left:10%;margin-top:4%" />
+          <img src="<?php echo $user_img ?>" style="height:25%;width:17%; border-radius:15%;margin-right:20%;margin-left:10%;margin-top:4%" />
         </div>
         <div class="larbi-saidchikh" style="margin-top:6%">
           <?php echo $user_name ?>
@@ -113,7 +107,7 @@ $user_id = $_SESSION["user_id"];
         $result = $conn->query($sql_workout);
         $row = $result->fetch_assoc();
         ?>
-        <img src="<?php echo $row['workout_img_link'] ?>" alt="" style="width: 100%; border-radius: 10px" />
+        <img src="../workout/<?php echo $row['workout_img_link'] ?>" alt="" style="width: 100%; border-radius: 10px" />
         <div class="container">
           <h4><b>
               <?php echo $row['workout_name'] ?>
@@ -134,8 +128,7 @@ $user_id = $_SESSION["user_id"];
         $result = $conn->query($sql);
         $row = $result->fetch_assoc();
         ?>
-        <img src="<?php echo $row['diet_link_img'] ?>" onmouseover="this.style.opacity=1"
-          onmouseout="this.style.opacity=0.7" alt="Diet" style="width: 100%; border-radius: 10px" />
+        <img src="../diet/<?php echo $row['diet_link_img'] ?>" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.7" alt="Diet" style="width: 100%; border-radius: 10px" />
         <div class="container">
           <h4><b>Be healthy</b></h4>
           <p>Do not forget ur diet</p>
@@ -209,7 +202,7 @@ $user_id = $_SESSION["user_id"];
   <script>
     var loginButton = document.getElementById("profile");
     if (loginButton) {
-      loginButton.addEventListener("click", function () {
+      loginButton.addEventListener("click", function() {
         var popup = document.getElementById("pROFILEContainer");
         if (!popup) return;
         var popupStyle = popup.style;
@@ -224,7 +217,7 @@ $user_id = $_SESSION["user_id"];
 
         var onClick =
           popup.onClick ||
-          function (e) {
+          function(e) {
             if (e.target === popup && popup.hasAttribute("closable")) {
               popupStyle.display = "none";
             }
