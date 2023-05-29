@@ -53,10 +53,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <div class="diet1"><a href="../../diet/diet.php">Diet</a></div>
       <div class="shop"><a href="../../Shop/shop.html">Shop</a></div>
     </div>
-    <style>
-
-      }
-    </style>
     <div class="creatine">Dumbells</div>
     <div class="product-description-dumbbells-container">
       <p class="product-description">Product Description:</p>
