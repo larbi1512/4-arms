@@ -9,11 +9,12 @@
     align-items: center;
     flex-wrap: wrap;
     padding: 60px 0;
-    gap: 60px;
-    margin-top: 40%;
+    gap: 10%;
+    margin-top: 70%;
     z-index: 900;
 
 }
+
 
 .container .box{
     position: relative;
@@ -48,7 +49,6 @@
     align-items: center;
     flex-direction: column;
     text-align: center;
-    gap: 20px;
     padding: 0 20px;
     width: 100%;
     height: 100%;
@@ -56,10 +56,10 @@
 
 }
 
-.container .box .content .image {
+ .image {
     color: var(--clr);
     width: 40%;
-    height:40%;
+    height:20%;
     box-shadow: 0 0 0 4px #2e2e2e, 0 0 0 6px var(--clr);
     display: flex;
     justify-content: center;
@@ -73,38 +73,37 @@
     background: var(--clr);
     color: #2e2e2e;
 }
-.container .box .content .text h2{
+.container .box .content .details h3{
     font-size: 1.5rem;
-    font-weight: 500;
+    font-weight: 300;
     color: #fff;
     transition: 0.5s ease-in-out;
 }
 
-.container .box:hover .content .text h2 
+.container .box:hover .content .details h3
 {
     color:#2e2e2e;
 
 }
-.container .box .content .text p{
+.container .box .content .details p{
     color: #999;
     transition: 0.5s ease-in-out;
 }
 
-.container .box:hover .content .text p{
+.container .box:hover .content .details p{
     color: #2e2e2e;
 }
 
-.container .box .content .text a{
+.container .box .content .details a{
     position: relative;
     background: var(--clr);
     color: #2e2e2e;
-    padding: 1% 2%;
     display: inline-block;
     text-decoration: none;
     transition: 0.5s ease-in-out;
 }
 
-.container .box:hover .content .text a{
+.container .box:hover .content .details a{
 background: #2e2e2e;
 color : var(--clr);
 }
@@ -120,7 +119,7 @@ color : var(--clr);
     height: 802.56px;
 }
 
-a {
+.nav-bar a {
     text-decoration: none;
     color: #ff182c !important;
 }
