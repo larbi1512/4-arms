@@ -2,7 +2,11 @@ body {
   margin: 0;
   line-height: normal;
 }
-
+@font-face {
+  font-family: "font";
+  src: url("fonts/nasalization-rg.otf");
+  font-weight: 400;
+}
 :root {
   /* fonts */
   --font-nasalization: Nasalization;

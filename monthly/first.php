@@ -9,25 +9,11 @@ $user_id = $_SESSION["user_id"];
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="initial-scale=1, width=device-width" />
-  <link rel="stylesheet" href="./global.css" />
-  <link rel="stylesheet" href="./next.css" />
+  <link rel="stylesheet" href="global.css" />
+  <link rel="stylesheet" href="next.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open Sans:wght@400;600;800&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google Sans:wght@400;500&display=swap" />
-
-  <style>
-    @font-face {
-      font-family: "Nasalization";
-      src: url("fonts/nasalization-rg.otf");
-      font-weight: 400;
-    }
-
-    @font-face {
-      font-family: "font";
-      src: url("fonts/nasalization-rg.otf");
-      font-weight: 400;
-    }
-  </style>
 </head>
 
 <body>
@@ -40,12 +26,6 @@ $user_id = $_SESSION["user_id"];
 
     <a href="./second.php">
       <div class="quiz-question-child4"></div>
-      <style>
-        a {
-          text-decoration: none;
-          color: white !important;
-        }
-      </style>
       <div class="let-s-start">
         Fill The Form!
       </div>

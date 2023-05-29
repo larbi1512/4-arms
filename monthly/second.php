@@ -1,21 +1,19 @@
-<?php
-session_start();
-$user_id = $_SESSION["user_id"] ?? 1;
-require_once "../db.php";
-?>
-
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Your Progress</title>
-    <link rel="stylesheet" href="./second.css">
+    <link rel="stylesheet" href="second.css">
+    <link rel="stylesheet" href="global.css" />
+
 </head>
+
 <body>
     <div class="container">
-        <h1 >Progress Checker</h1>
+        <h1>Progress Checker</h1>
         <form method="POST" action="third.php">
             <label for="weight">Weight:</label>
-            <input type="number" name="weight" id="weight">
+            <input type="number" name="weight" id="weight" required>
 
             <label for="goal">Your New Goal:</label>
             <div class="goal-buttons">
@@ -35,4 +33,5 @@ require_once "../db.php";
         </form>
     </div>
 </body>
+
 </html>

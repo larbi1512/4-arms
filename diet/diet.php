@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once "../db.php";
-$user_id = $_SESSION["user_id"] ?? 1;
+$user_id = $_SESSION["user_id"];
 $sql = "SELECT * FROM assigned WHERE user_id = $user_id";
 $result = $conn->query($sql);
 $row = $result->fetch_assoc();
@@ -50,8 +50,6 @@ if (isset($_POST['carbs_consumed']) && isset($_POST['calories_consumed']) && iss
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open Sans:wght@400;600&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google Sans:wght@400;500&display=swap" />
-
-
 </head>
 
 <body>
@@ -213,8 +211,8 @@ if (isset($_POST['carbs_consumed']) && isset($_POST['calories_consumed']) && iss
       calories_consumed += calories_consumed;
       proteins_consumed += proteins_consumed;
       var carbs_remaining = <?php echo $row['carbs'] ?> - carbs_consumed;
-    var calories_remaining = <?php echo $row['Calories'] ?> - calories_consumed;
-    var proteins_remaining = <?php echo $row['Proteins'] ?> - proteins_consumed;
+      var calories_remaining = <?php echo $row['Calories'] ?> - calories_consumed;
+      var proteins_remaining = <?php echo $row['Proteins'] ?> - proteins_consumed;
 
       document.querySelector('span.remaining:nth-of-type(1)').textContent = carbs_remaining;
       document.querySelector('span.remaining:nth-of-type(2)').textContent = calories_remaining;

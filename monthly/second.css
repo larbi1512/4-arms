@@ -1,9 +1,9 @@
 body {
-    font-family: var(--font-nasalization);
+    font-family: 'Nasalization', sans-serif !important;
     padding: 20px;
     margin: 0;
     display: flex;
-    height: 100vh;
+    height: 85vh;
     flex: 1;
     background-image: url('./back.png');
     display: flex;
