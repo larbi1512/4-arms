@@ -1,5 +1,7 @@
 <?php
+session_start();
 require_once "../../db.php";
+$user_id = $_SESSION["user_id"];
 // Check if the form is submitted
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   // Retrieve form data
@@ -10,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   // Insert data into database
   $date = date("Y-m-d");
   $datey = date("Y-m-d", strtotime("+15 days"));
-  $sql = "INSERT INTO `orders` (`product_id`, `user_id`, `date_order`, `date_delivery`, `user_address`, `quantity`, `phone_number`, `name`) VALUES ('1', '1', '$date', '$datey', '$address', '1', '$phone', '$name')";
+  $sql = "INSERT INTO `orders` (`product_id`, `user_id`, `date_order`, `date_delivery`, `user_address`, `quantity`, `phone_number`, `name`) VALUES ('1', '$user_id', '$date', '$datey', '$address', '1', '$phone', '$name')";
 
   // Execute the query
   if ($conn->query($sql) === TRUE) {

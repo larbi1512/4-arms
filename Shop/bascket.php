@@ -1,5 +1,6 @@
 <html>
     <?php
+    session_start();
     require_once('../db.php');
     $user_id = $_SESSION["user_id"] ?? 1;
     $count = 0;
