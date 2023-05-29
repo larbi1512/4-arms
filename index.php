@@ -24,88 +24,51 @@ if (isset($_SESSION['user_id'])) {
 </head>
 
 <body>
-    <div class="home-page">
-        <img class="white-lines" alt="" src="./public/white-lines.svg" />
-        <img class="skipping-rope-bro-1" alt="" src="./public/skipping-ropebro-1.svg" />
+<div class="home-page">
+    <img class="white-lines" alt="" src="./public/white-lines.svg"/>
+    <img
+            class="skipping-rope-bro-1"
+            alt=""
+            src="./public/skipping-ropebro-1.svg"
+    />
         <div class="logo">
-            <img class="frame-icon" alt="" src="./public/frame.svg" />
+            <img class="frame-icon" alt="" src="./public/frame.svg"/>
             <div class="arms">4-ARMS</div>
         </div>
         <div class="nav-bar">
-
-            <div class="arms"><a class="oldnav" href="index.php">Home</a></div>
-            <div class="arms"><a class="oldnav" href="#what-we-offer">What We Offer</a></div>
-            <div class="arms"><a class="oldnav" href="#our-team">Our Team</a></div>
+            <style>
+                a {
+                    text-decoration: none;
+                    color: #ff182c !important;
+                    display: flex;
+                }
+                    .arms {
+                transition: transform 0.3s ease;
+            }
+            
+            .arms:hover {
+                transform: scale(1.1);
+            }
+            </style>
+            <div class="arms"><a href="index.php">Home</a></div>
+            <div class="arms"><a href="#what-we-offer">Services</a></div>
+            <div class="arms"><a href="#our-team"> Team</a></div>   
         </div>
-        <div class="be-strong-be">Be strong Be fit</div>
-        <div class="make-yourself-stronger-container">
-            <p class="make-yourself-stronger">Make yourself stronger</p>
-            <p class="make-yourself-stronger">than your excuses</p>
-        </div>
-        <div class="take-our-60-second">
-            Take our 60-second quiz to find the most effective program for achieving
-            your specific fitness goals.
-        </div>
-        <a href="Quiz/QuizQuestion1.php">
-            <div class="button-take-your-quiz">
-                <div class="button">
-                    <img class="buttoniconsettings" alt="" src="public/quiz.png" /><b class="button1">
-                        Take your quiz -&gt;</b>
-                </div>
-            </div>
-        </a>
-        <a class="login-button" id="login" href="signup_login/login.php">
-            <div class="arms">Login</div>
-        </a>
-        <a class="sign-up-button" id="sign up " href="signup_login/signup.php">
-            <div class="arms">sign Up</div>
-        </a>
-        <div class="services">
-            <div class="services-child"></div>
-            <div class="services-item"></div>
-            <img class="frame-icon1" alt="" src="./public/frame1.svg" />
-            <div class="services-inner"></div>
-            <img class="frame-icon2" alt="" src="./public/frame2.svg" />
-            <img class="frame-icon3" alt="" src="./public/frame3.svg" />
-            <img class="frame-icon4" alt="" src="./public/frame4.svg" />
-            <div class="rectangle-div"></div>
-            <div class="services-child1"></div>
-            <div class="services-child2"></div>
-            <img class="frame-icon5" alt="" src="./public/frame5.svg" />
-            <div class="provide-a-marketplace-container">
-                <ul class="a-meal-planner-that-suggests">
-                    <li class="a-meal-planner">Provide a marketplace where you</li>
-                </ul>
-                <p class="make-yourself-stronger">can purchase supplement that</p>
-                <p class="make-yourself-stronger">are recommended by the system</p>
-                <p class="make-yourself-stronger">or from trusted vendors.</p>
-            </div>
-            <div class="customized-workout-plans-container">
-                <ul class="a-meal-planner-that-suggests">
-                    <li class="a-meal-planner">
-                        <span class="customized-workout-plans">Customized workout plans user
-                        </span>
-                    </li>
-                </ul>
-                <p class="make-yourself-stronger">
-                    <span class="span"> </span><span class="customized-workout-plans">goals and fitness levels.
-                    </span>
-                </p>
-            </div>
-            <div class="progress-tracking-and-container">
-                <ul class="a-meal-planner-that-suggests">
-                    <li class="a-meal-planner">Progress tracking and analysis</li>
-                </ul>
-                <p class="make-yourself-stronger">features that help users monitor</p>
-                <p class="make-yourself-stronger">their performance</p>
-            </div>
-            <div class="progress-tracking-and-container2">
-                <ul class="a-meal-planner-that-suggests">
-                    <li class="a-meal-planner">A meal planner that suggests</li>
-                </ul>
-                <p class="make-yourself-stronger">healthy meal options based on</p>
-                <p class="make-yourself-stronger">your dietary preferences and</p>
-                <p class="make-yourself-stronger">goals.</p>
+    <div class="be-strong-be">Be strong Be fit</div>
+    <div class="make-yourself-stronger-container">
+        <p class="make-yourself-stronger">Make yourself stronger</p>
+        <p class="make-yourself-stronger">than your excuses</p>
+    </div>
+    <div class="take-our-60-second">
+        Take our 60-second quiz to find the most effective program for achieving
+        your specific fitness goals.
+    </div>
+    <a href="Quiz/QuizQuestion1.php">
+        <div class="button-take-your-quiz">
+            <div class="button">
+                <img class="buttoniconsettings" alt="" src="public/quiz.png"/><b class="button1">
+                    Take your quiz -&gt;</b
+                >
             </div>
         </div>
         <div class="what-we-offer" id="what-we-offer">WHAT WE OFFER</div>
