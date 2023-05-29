@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once "../db.php";
-$user_id = $_SESSION["user_id"] ?? 1;
+$user_id = $_SESSION["user_id"];
 $sql = "SELECT * FROM assigned WHERE user_id = $user_id";
 $result = $conn->query($sql);
 $row = $result->fetch_assoc();
@@ -43,7 +43,7 @@ if (isset($_POST['carbs_consumed']) && isset($_POST['calories_consumed']) && iss
 
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="initial-scale=1, width=device-width" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="global.css" />
   <link rel="stylesheet" href="diet.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nasalization:wght@400&display=swap" />

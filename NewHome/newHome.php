@@ -2,7 +2,7 @@
 <?php
 session_start();
 require_once "../db.php";
-$user_id = $_SESSION["user_id"] ?? 1;
+$user_id = $_SESSION["user_id"];
 
 // $user_id = $_SESSION["user_id"];
 ?>
@@ -45,7 +45,7 @@ $user_id = $_SESSION["user_id"] ?? 1;
     </div>
     <div class="nav-bar">
       <style>
-        a {
+        .nav-bar a {
           text-decoration: none;
           color: #ff182c !important;
         }
@@ -106,7 +106,7 @@ $user_id = $_SESSION["user_id"] ?? 1;
 
 
 
-    <a href="../workout/workout.php" style="display: block; width: 100%; height: 100%">
+    <!-- <a href="../workout/workout.php" style="display: block; width: 100%; height: 100%">
       <div class="card">
         <?php
         $sql_workout = "SELECT * FROM assigned inner join workout_plan on workout_plan.workout_id = assigned.workout_id WHERE user_id = $user_id LIMIT 1";
@@ -154,7 +154,54 @@ $user_id = $_SESSION["user_id"] ?? 1;
           <p>check the latest supplements</p>
         </div>
       </div>
-    </a>
+    </a> -->
+    <div class="container">
+      <div class="box" style=" --clr: #89ec5b;">
+      <?php
+      $sql_workout = "SELECT * FROM assigned inner join workout_plan on workout_plan.workout_id = assigned.workout_id WHERE user_id = $user_id LIMIT 1";
+      $result = $conn->query($sql_workout);
+      $row = $result->fetch_assoc();
+      ?>
+      <div class="content">
+        <div class="image"><img src="<?php echo $row['workout_img_link'] ?>" alt="workout" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.7" style="width: 100%; border-radius: 10px" /></div>      
+        <div class="details">
+          <h3>Workout</h3>
+          <p>Check your progress</p>
+          <a href="../workout/workout.php">Go</a>
+          </div>
+          </div>
+      </div>
+      <div class="box" style=" --clr: #f9d56e;">
+      <?php
+      $sql = "SELECT * FROM assigned WHERE user_id = $user_id";
+      $result = $conn->query($sql);
+      $row = $result->fetch_assoc();
+      $diet_id = $row['diet_id'];
+      $sql = "SELECT * FROM diet WHERE diet_id = $diet_id";
+      $result = $conn->query($sql);
+      $row = $result->fetch_assoc();
+      ?>
+      <div class="content">
+        <div class="image"> <img src="<?php echo $row['diet_link_img'] ?>" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.7"
+          alt="Diet" style="width: 100%; border-radius: 10px" /></div>
+        <div class="details">
+          <h3>Diet</h3>
+          <p>Do not forget ur diet</p>
+          <a href="../diet/diet.php">Go</a>
+          </div>
+          </div>
+      </div>
+      <div class="box" style=" --clr: #f08a5d;">
+      <div class="content">
+        <div class="image"></div>
+        <div class="details">
+          <h3>Shop</h3>
+          <p>Check the latest supplements</p>
+          <a href="../Shop/supplement.php">Go</a>
+          </div>
+          </div>
+      </div>
+    </div>
     <img class="white-lines" alt="" src="./public/white-lines.svg" />
 
   </div>

@@ -42,22 +42,29 @@
             alt=""
             src="./public/skipping-ropebro-1.svg"
     />
-    <div class="logo">
-        <img class="frame-icon" alt="" src="./public/frame.svg"/>
-        <div class="arms">4-ARMS</div>
-    </div>
-    <div class="nav-bar">
-        <style>
-            a {
-                text-decoration: none;
-                color: #ff182c !important;
-                display: flex;
+        <div class="logo">
+            <img class="frame-icon" alt="" src="./public/frame.svg"/>
+            <div class="arms">4-ARMS</div>
+        </div>
+        <div class="nav-bar">
+            <style>
+                a {
+                    text-decoration: none;
+                    color: #ff182c !important;
+                    display: flex;
+                }
+                    .arms {
+                transition: transform 0.3s ease;
             }
-        </style>
-        <div class="arms"><a href="index.php">Home</a></div>
-        <div class="arms"><a href="#what-we-offer">What We Offer</a></div>
-        <div class="arms"><a href="#our-team">Our Team</a></div>
-    </div>
+            
+            .arms:hover {
+                transform: scale(1.1);
+            }
+            </style>
+            <div class="arms"><a href="index.php">Home</a></div>
+            <div class="arms"><a href="#what-we-offer">Services</a></div>
+            <div class="arms"><a href="#our-team"> Team</a></div>   
+        </div>
     <div class="be-strong-be">Be strong Be fit</div>
     <div class="make-yourself-stronger-container">
         <p class="make-yourself-stronger">Make yourself stronger</p>

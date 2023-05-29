@@ -24,6 +24,7 @@
 .frame-icon {
   position: relative;
 }
+
 .logo {
   position: absolute;
   top: 20px;
@@ -51,7 +52,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  gap: 41px;
+  gap: 20%;
   font-size: var(--font-size-11xl);
 }
 .be-strong-be {
@@ -558,3 +559,74 @@
   color: var(--color-white);
   font-family: var(--font-nasalization);
 }
+
+    @media (max-width: 768px) {
+      .logo {
+        flex-direction: column;
+        align-items: center;
+      }
+  
+      .frame-icon {
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+  
+      .nav-bar {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+  
+      .nav-bar .arms {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+                        @media (max-width: 767px) {
+                          .logo {
+                            font-size: 1.5rem;
+                            margin-bottom: 0.5rem;
+                          }
+            
+                          .nav-bar {
+                            font-size: 1.2rem;
+                            margin-bottom: 0.5rem;
+                          }
+                          .arms{
+                            font-size: 1.2rem;
+                            margin-bottom: 0.5rem;
+                          }
+                          .be-strong-be {
+                            font-size: 2rem;
+                            margin-bottom: 0.5rem;
+                          }
+            
+                          .button {
+                            font-size: 1.2rem;
+                            padding: 0.3rem 0.7rem;
+                          }
+            
+                          .login-button,
+                          .sign-up-button {
+                            font-size: 1.2rem;
+                            padding: 0.3rem 0.7rem;
+                            margin-right: 0.5rem;
+                          }
+            
+                          .services-item,
+                          .services-inner,
+                          .rectangle-div,
+                          .services-child1,
+                          .services-child2 {
+                            min-height: 200px;
+                          }
+            
+                          .provide-a-marketplace-container,
+                          .customized-workout {
+                            margin-bottom: 0.5rem;
+                          }
+            
+                          .our-customers-container {
+                            gap: 0.5rem;
+                          }
+                        } 
