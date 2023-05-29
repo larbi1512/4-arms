@@ -6,7 +6,7 @@ $table_map = array(
     "gym" => array("gym_name", "gym_address", "city", "gym_number", "gym_img_link", "gym_link"),
     "diet" => array("diet_link", "diet_name", "diet_link_img", "carbs", "Calories", "Proteins"),
     "workout" => array("workout_name", "workout_img_link", "workout_plan_link", "description", "workout_summary", "goal", "duration", "length"),
-    "product" => array("price", "product_name", "product_category", "png_link")
+    "product" => array("price", "product_name", "product_category", "product_description", "png_link")
 );
 if (isset($table_map[$table])) {
     if ($table == 'workout') {

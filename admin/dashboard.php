@@ -230,6 +230,7 @@ $orderCount = $row['count'];
                         <th><strong>S.NO</strong></th>
                         <th><strong>Product Name</strong></th>
                         <th><strong>Product Category</strong></th>
+                        <th><strong>Product Description</strong></th>
                         <th><strong>Price</strong></th>
                         <th><strong>Image Link</strong></th>
                         <th><strong>Edit</strong></th>
@@ -246,6 +247,7 @@ $orderCount = $row['count'];
                             <td align="center"><?php echo $count; ?></td>
                             <td align="center"><?php echo $row["product_name"]; ?></td>
                             <td align="center"><?php echo $row["product_category"]; ?></td>
+                            <td align="center"><?php echo $row["product_description"]; ?></td>
                             <td align="center"><?php echo $row["price"]; ?></td>
                             <td align="center"><?php echo $row["png_link"]; ?></td>
                             <td align="center">
