@@ -15,13 +15,13 @@ $orderCount = $row['count'];
 <head>
     <meta charset="utf-8">
     <title>Dashboard - Admin Page</title>
-    <link rel="stylesheet" href="dashboard.css">
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/notyf/notyf.min.css" />
     <script src="https://unpkg.com/notyf/notyf.min.js "></script>
     <script src="dashboard.js"></script>
+    <link rel="stylesheet" href="dashboard.css">
 
 
 </head>
