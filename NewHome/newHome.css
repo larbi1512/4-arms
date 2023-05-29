@@ -139,7 +139,11 @@ color : var(--clr);
     flex-shrink: 0;
     overflow: hidden;
 }
-
+.oldnav {
+    text-decoration: none;
+    color: #ff182c !important;
+    display: flex;
+}
 .arms,
 .frame-icon {
     position: relative;
@@ -383,6 +387,7 @@ color : var(--clr);
     position: absolute;
     top: 16%;
     left: 27%;
+        color: var(--black-like-ur-heart);
 }
 
 .larbisckgmailcom {
@@ -391,30 +396,57 @@ color : var(--clr);
     left: 27%;
     font-size: var(--font-size-xl);
     font-family: var(--font-damion);
-    color: var(--grey-grey-800);
+    color: var(--black-like-ur-heart);
 }
 
 .my-progress {
     position: absolute;
     top: 50%;
     left: 10%;
+    text-decoration: none;
 }
 
 .my-diet {
     position: absolute;
     top: 60%;
     left: 10%;
+        text-decoration: none;
 }
 
 .my-supplements {
     position: absolute;
     top: 70%;
     left: 10%;
+        text-decoration: none;
 }
 
 .log-out {
     position: absolute;
     top: 80%;
     left: 50%;
+    color: var(--sexy-rouge);
+    text-decoration: none;
 }
 
+                        .logo {
+                            display: flex;
+                            align-items: center;
+                        }
+            
+                        .frame-icon {
+                            height: 30px;
+                            margin-right: 10px;
+                        }
+            
+                        .arms {
+                            transition: transform 0.3s ease;
+                        }
+            
+                        .arms:hover {
+                            transform: scale(1.1) rotate(0deg);
+                        }
+            
+                        .nav-bar {
+                            display: flex;
+                            justify-content: space-between;
+                        }

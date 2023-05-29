@@ -45,10 +45,10 @@ if ($currentDate >= $targetDate) {
           color: #ff182c !important;
         }
       </style>
-      <div class="arms"><a href="./newHome.php">Home</a></div>
-      <div class="arms"><a href="../workout/workout.php">Workout</a></div>
-      <div class="arms"><a href="../diet/diet.php">Diet</a></div>
-      <div class="arms"><a href="../Shop/supplement.php">Supplement</a></div>
+      <div class="arms"><a class="oldnav" href="./newHome.php">Home</a></div>
+      <div class="arms"><a class="oldnav" href="../workout/workout.php">Workout</a></div>
+      <div class="arms"><a class="oldnav" href="../diet/diet.php">Diet</a></div>
+      <div class="arms"><a class="oldnav" href="../Shop/supplement.php">Supplement</a></div>
       <button class="login-button" id="profile">
         <div class="profile1">Profile</div>
       </button>

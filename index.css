@@ -150,7 +150,7 @@
 }
 .login-button:hover {
   background-color: #fb4040;
-  cursor: auto;
+  cursor: pointer;
 }
 .login-button:hover .arms {
   background: linear-gradient(#fff, #fff), snow;
@@ -585,7 +585,6 @@
         flex-wrap: wrap;
         justify-content: center;
       }
-  
       .nav-bar .arms {
         width: 100%;
         text-align: center;
@@ -640,3 +639,25 @@
                             gap: 0.5rem;
                           }
                         } 
+            .logo {
+              display: flex;
+              align-items: center;
+            }
+      
+            .frame-icon {
+              height: 30px;
+              margin-right: 10px;
+            }
+      
+            .arms {
+              transition: transform 0.3s ease;
+            }
+      
+            .arms:hover {
+              transform: scale(1.1) rotate(0deg);
+            }
+      
+            .nav-bar {
+              display: flex;
+              justify-content: space-between;
+            }
