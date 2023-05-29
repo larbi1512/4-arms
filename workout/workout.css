@@ -410,6 +410,7 @@
   width: 191px;
   height: 51px;
   flex-shrink: 0;
+  color:white;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -836,6 +837,7 @@
      justify-content: center;
      align-items: center;
      flex-direction: column;
+     color: white;
      background: #232328;
      .running {
          zoom: 2;
