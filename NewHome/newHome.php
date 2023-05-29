@@ -39,6 +39,12 @@ if ($currentDate >= $targetDate) {
       <div class="arms">4-ARMS</div>
     </div>
     <div class="nav-bar">
+      <style>
+        .nav-bar a {
+          text-decoration: none;
+          color: #ff182c !important;
+        }
+      </style>
       <div class="arms"><a href="./newHome.php">Home</a></div>
       <div class="arms"><a href="../workout/workout.php">Workout</a></div>
       <div class="arms"><a href="../diet/diet.php">Diet</a></div>
@@ -94,54 +100,54 @@ if ($currentDate >= $targetDate) {
 
 
 
-    <a href="../workout/workout.php" style="display: block; width: 100%; height: 100%">
-      <div class="card">
-        <?php
-        $sql_workout = "SELECT * FROM assigned inner join workout_plan on workout_plan.workout_id = assigned.workout_id WHERE user_id = $user_id LIMIT 1";
-        $result = $conn->query($sql_workout);
-        $row = $result->fetch_assoc();
-        ?>
-        <img src="../workout/<?php echo $row['workout_img_link'] ?>" alt="" style="width: 100%; border-radius: 10px" />
-        <div class="container">
-          <h4><b>
-              <?php echo $row['workout_name'] ?>
-            </b></h4>
-          <p>check your workout progress</p>
-        </div>
+    <div class="container">
+      <div class="box" style=" --clr: #db3846;">
+      <?php
+      $sql_workout = "SELECT * FROM assigned inner join workout_plan on workout_plan.workout_id = assigned.workout_id WHERE user_id = $user_id LIMIT 1";
+      $result = $conn->query($sql_workout);
+      $row = $result->fetch_assoc();
+      ?>
+      <div class="content">
+        <div class="image"><img src="../workout/<?php echo $row['workout_img_link'] ?>" alt="work" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.7" style="width: 100%; height: 100%; border-radius: 10px" /></div>      
+        <div class="details">
+          <h3>Workout</h3>
+          <p>Check your progress</p>
+          <a href="../workout/workout.php">Go</a>
+          </div>
+          </div>
       </div>
-    </a>
-
-    <a href="../diet/diet.php" style="display: block; width: 100%; height: 100%">
-      <div class="cardyuh">
-        <?php
-        $sql = "SELECT * FROM assigned WHERE user_id = $user_id";
-        $result = $conn->query($sql);
-        $row = $result->fetch_assoc();
-        $diet_id = $row['diet_id'];
-        $sql = "SELECT * FROM diet WHERE diet_id = $diet_id";
-        $result = $conn->query($sql);
-        $row = $result->fetch_assoc();
-        ?>
-        <img src="../diet/<?php echo $row['diet_link_img'] ?>" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.7" alt="Diet" style="width: 100%; border-radius: 10px" />
-        <div class="container">
-          <h4><b>Be healthy</b></h4>
+      <div class="box" style=" --clr: #82b63f;">
+      <?php
+      $sql = "SELECT * FROM assigned WHERE user_id = $user_id";
+      $result = $conn->query($sql);
+      $row = $result->fetch_assoc();
+      $diet_id = $row['diet_id'];
+      $sql = "SELECT * FROM diet WHERE diet_id = $diet_id";
+      $result = $conn->query($sql);
+      $row = $result->fetch_assoc();
+      ?>
+      <div class="content">
+        <div class="image"> <img src="../diet/<?php echo $row['diet_link_img'] ?>" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.7"
+          alt="Diet" style="width: 100%; border-radius: 10px" /></div>
+        <div class="details">
+          <h3>Diet</h3>
           <p>Do not forget ur diet</p>
-        </div>
+          <a href="../diet/diet.php">Go</a>
+          </div>
+          </div>
       </div>
-    </a>
-
-    <a href="../Shop/supplement.php" style="display: block; width: 100%; height: 100%">
-      <div class="cardib">
-
-        <img src="" alt="" style="width: 100%; border-radius: 10px" />
-        <div class="container">
-          <h4><b>
-              our shop
-            </b></h4>
-          <p>check the latest supplements</p>
-        </div>
+      <div class="box" style=" --clr: #79d7ff;">
+      <div class="content">
+        <div class="image"><img src=" " onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.7"
+          alt="Shop" style="width: 100%; border-radius: 10px" /></div>
+        <div class="details">
+          <h3>Shop</h3>
+          <p>Check the latest supplements</p>
+          <a href="../Shop/supplement.php">Go</a>
+          </div>
+          </div>
       </div>
-    </a>
+    </div>
     <img class="white-lines" alt="" src="./public/white-lines.svg" />
 
   </div>

@@ -1,18 +1,30 @@
 <?php
 session_start();
 require_once "../../db.php";
+<<<<<<< HEAD
 $user_id = $_SESSION["user_id"];
+=======
+session_start();
+$product_id = $_GET['id'];
+$user_id = $_SESSION['user_id'];
+$product = $conn->query("SELECT * FROM product WHERE product_id = $product_id")->fetch_assoc();
+>>>>>>> 4d37c66ab1f32e28732a41300963bd40b832e3f4
 // Check if the form is submitted
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   // Retrieve form data
   $name = $_POST['name'];
   $address = $_POST['address'];
   $phone = $_POST['phone'];
+  $quantity = $_POST['quantity'];
 
   // Insert data into database
   $date = date("Y-m-d");
   $datey = date("Y-m-d", strtotime("+15 days"));
+<<<<<<< HEAD
   $sql = "INSERT INTO `orders` (`product_id`, `user_id`, `date_order`, `date_delivery`, `user_address`, `quantity`, `phone_number`, `name`) VALUES ('1', '$user_id', '$date', '$datey', '$address', '1', '$phone', '$name')";
+=======
+  $sql = "INSERT INTO `orders` (`product_id`, `user_id`, `date_order`, `date_delivery`, `user_address`, `quantity`, `phone_number`, `name`) VALUES ($product_id, $user_id , '$date', '$datey', '$address', $quantity, '$phone', '$name')";
+>>>>>>> 4d37c66ab1f32e28732a41300963bd40b832e3f4
 
   // Execute the query
   if ($conn->query($sql) === TRUE) {
@@ -23,8 +35,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
   }
-  // Close the connection
-  $conn->close();
 }
 ?>
 
@@ -36,9 +46,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <meta name="viewport" content="initial-scale=1, width=device-width" />
   <link rel="stylesheet" href="./global.css" />
   <link rel="stylesheet" href="./index.css" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nasalization:wght@400&display=swap" />
+  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nasalization:wght@400&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600&display=swap" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open Sans:wght@600;700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open Sans:wght@600;700&display=swap" /> -->
 </head>
 
 <body>
@@ -63,29 +73,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <div class="diet1"><a href="../../diet/diet.php">Diet</a></div>
       <div class="shop"><a href="../../Shop/supplement.php">Shop</a></div>
     </div>
-    <div class="creatine" style="color: #ffffff !important; ">Premium Creatine</div>
+
+
     <div class="product-description-creatine-container">
+      <div class="product-description" style="color:#1E1E1E; font-size:60px;"> <?php echo $product['product_name'] ?> </div>
+      <p class="product-description">&nbsp;</p>
       <p class="product-description">Product Description:</p>
       <p class="product-description">&nbsp;</p>
-      <p class="product-description">CREATINE POWDER (317GR)</p>
-      <ul class="intensely-stimulates-muscle-gr">
-        <li class="without-aroma">
-          <span>Intensely Stimulates Muscle Growth and Strength</span>
-        </li>
-        <li class="without-aroma">
-          <span>Without aroma</span>
-        </li>
-        <li class="without-aroma">
-          <span>99.9% pure creatine</span>
-        </li>
-      </ul>
+      <p class="product-description"> <?php echo $product['product_description'] ?> </p>
     </div>
 
     <img class="pngwing-icon" alt="" src="./public/pngwing@2x.png" />
 
     <img class="pngwing-icon1" alt="" src="./public/pngwing1@2x.png" />
 
-    <img class="pngwing-icon2" alt="" src="./public/pngwing2@2x.png" />
+    <img class="product_image" alt="" src="../<?php echo $product['png_link']; ?>" />
 
     <div class="diet-child1"></div>
 
@@ -94,6 +96,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="client-information-address-container">
       <p class="product-description">Client information:</p>
       <form method="post" action="">
+        <div class="form-group">
+          <label for="name" class="control-label">Quantity:</label>
+          <input type="number" min=0 name="quantity" id="name" class="form-control" value="1" required>
+        </div>
         <div class="form-group">
           <label for="name" class="control-label">Name:</label>
           <input type="text" name="name" id="name" class="form-control" required>
@@ -116,7 +122,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <style>
   .diet-child {
     position: absolute;
-    top: 250px;
+    top: 150px;
     left: 53px;
     border-radius: 30px;
     background-color: #3E3E3E;
@@ -344,12 +350,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     position: absolute;
     top: 1240px;
     left: 165px;
-    font-size: var(--font-size-15xl);
+    font-size: 18px;
     color: var(--color-black);
     font-weight: bold;
     display: inline-block;
     width: 1037px;
-    height: 226px;
+    height: 300px;
   }
 
   .pngwing-icon2 {

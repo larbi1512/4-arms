@@ -5,7 +5,7 @@ a {
 
 .diet-child {
   position: absolute;
-  top: 250px;
+  top: 150px;
   left: 53px;
   border-radius: 30px;
   background-color: var(--color-gainsboro);
@@ -22,6 +22,17 @@ a {
   width: 1167px;
   height: 849px;
   
+}
+
+
+.product_image
+{ 
+  max-width: 400px;
+  max-height: 400px;
+  position: absolute;
+  top: 40%;
+  left: 60%;
+  z-index: 999;
 }
 .diet-inner,
 .frame-icon {
@@ -124,11 +135,8 @@ a {
   color: var(--sexy-rouge);
 }
 .creatine {
-  position: absolute;
-  top: 169px;
-  left: 448px;
   font-size: 60px;
-  color: #2b2b2e;
+  color: black;
 }
 .product-description {
   margin: 0;
