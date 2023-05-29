@@ -63,12 +63,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <div class="diet1"><a href="../../diet/diet.php">Diet</a></div>
       <div class="shop"><a href="../../Shop/supplement.php">Shop</a></div>
     </div>
-    <style>
-      a {
-        text-decoration: none;
-        color: #ff182c !important;
-      }
-    </style>
     <div class="creatine" style="color: #ffffff !important; ">Premium Creatine</div>
     <div class="product-description-creatine-container">
       <p class="product-description">Product Description:</p>

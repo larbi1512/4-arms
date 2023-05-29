@@ -1,3 +1,8 @@
+<?php
+session_start();
+$user_id = $_SESSION["user_id"] ?? 1;
+require_once "../db.php";
+?>
 <!DOCTYPE html>
 <html>
 
@@ -17,19 +22,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $address = $_POST['address'];
   $phone = $_POST['phone'];
 
-  // Connect to database
-  $servername = "localhost";
-  $username = "root";
-  $password = "";
-  $dbname = "4-arms";
-
-  $conn = mysqli_connect($servername, $username, $password, $dbname);
-
-  // Check connection
-  if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-  }
-
   // Insert data into database
   $sql = "INSERT INTO `delivery info` (Address, phone, name) VALUES ('$address', '$phone', '$name')";
 
@@ -38,9 +30,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
   }
-
-  // Close database connection
-  mysqli_close($conn);
 }
 ?>
 
@@ -64,12 +53,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <div class="diet1"><a href="../../diet/diet.php">Diet</a></div>
       <div class="shop"><a href="../../Shop/shop.html">Shop</a></div>
     </div>
-    <style>
-      a {
-        text-decoration: none;
-        color: #ff182c !important;
-      }
-    </style>
     <div class="creatine">Dumbells</div>
     <div class="product-description-dumbbells-container">
       <p class="product-description">Product Description:</p>

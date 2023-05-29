@@ -500,6 +500,7 @@
   height: auto;
   overflow: hidden;
   text-align: left;
+  color: white;
   font-size: var(--font-size-13xl);
   /* color: var(--black-white-white); */
   font-family: var(--font-font);
@@ -835,7 +836,7 @@
      justify-content: center;
      align-items: center;
      flex-direction: column;
-     background: #2B3044;
+     background: #232328;
      .running {
          zoom: 2;
          margin-top: -32px;

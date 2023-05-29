@@ -1,3 +1,18 @@
+@font-face {
+  font-family: "Nasalization";
+  src: url("fonts/nasalization-rg.otf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "font";
+  src: url("fonts/nasalization-rg.otf");
+  font-weight: 400;
+}
+a {
+  text-decoration: none;
+  color: white !important;
+}
 .red-lines-icon3,
 .red-lines-icon4,
 .vector-icon {
