@@ -245,8 +245,6 @@ ALTER TABLE `workout_plan`
   ADD PRIMARY KEY (`workout_id`),
   ADD KEY `fk_workout_planer_id` (`workout_planer_id`);
     
-    
-
 ALTER TABLE `diet`
   MODIFY `diet_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
