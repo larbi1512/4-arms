@@ -35,6 +35,13 @@ try {
     <meta charset="utf-8">
     <title> All <?php echo $table ?> </title>
     <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/notyf/notyf.min.css" />
+    <script src="https://unpkg.com/notyf/notyf.min.js "></script>
+    <script src="dashboard.js"></script>
+
 </head>
 
 <body>
@@ -42,6 +49,7 @@ try {
         <h2 class="welcome">Welcome to Dashboard !</h2>
         <nav>
             <ul>
+                <li><a href="dashboard.php">GO BACK TO Dashboard</a></li>
                 <li><a href="../index.html">Homepage</a></li>
                 <li><a href="insert.php?table=<?php echo $table ?>">Add New one</a></li>
             </ul>
@@ -65,13 +73,13 @@ try {
             <tbody>
                 <?php $count = 1;
                 while ($row = $result->fetch_assoc()) { ?>
-                    <tr>
+                    <tr id="<?php echo $tableName . "-" . $row[$tableName . "_id"] ?? $row['workout_id'] ?>">
                         <td><?php echo $count ?></td>
                         <?php foreach ($fieldNames as $fieldName) { ?>
                             <td><?php echo $row[$fieldName] ?></td>
                         <?php } ?>
-                        <td><a href='insert.php?table=<?php echo $table ?>&id=<?php echo $row[$tableName . "_id"] ?? $row['workout_id'] ?>'>Update</a></td>
-                        <td><a href='insert.php?table=<?php echo $table ?>&id=<?php echo $row[$tableName . "_id"] ?? $row['workout_id'] ?>&action=delete'>Delete</a></td>
+                        <td><a class="btn-table" href='insert.php?table=<?php echo $table ?>&id=<?php echo $row[$tableName . "_id"] ?? $row['workout_id'] ?>'>Update</a></td>
+                        <td><button class="btn-table" onclick="deleteRecord('<?php echo $tableName ?>', <?php echo $row[$tableName . "_id"] ?? $row["workout_id"] ?>)"><i class="ion-close"></i></button></td>
                     </tr>
                 <?php $count++;
                 } ?>
