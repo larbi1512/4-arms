@@ -316,6 +316,9 @@ color : var(--clr);
     color: #fff;
     font-size: 36px;
 }
+body{
+    overflow-x: hidden;
+}
 
 .home-page {
     background-color: var(--black-like-ur-heart);

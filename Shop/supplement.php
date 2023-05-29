@@ -78,11 +78,6 @@ require_once "../db.php";
         ?>
       </div>
     </div>
-  </div>
-
-
-
-
   <button class="login-button" id="profile">
     <div class="profile1">Profile</div>
   </button>
@@ -119,6 +114,7 @@ require_once "../db.php";
       </div>
     </div>
   </div>
+    </div>
 
 
 

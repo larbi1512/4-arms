@@ -2,6 +2,11 @@
 session_start();
 require_once "../db.php";
 $user_id = $_SESSION["user_id"];
+if($user_id == 1)
+{
+  header("Location: ../admin/dashboard.php");
+  exit();
+}
 $sql_workout = "SELECT * FROM progress WHERE user_id = $user_id order by update_date desc limit 1";
 $result = $conn->query($sql_workout);
 $row = $result->fetch_assoc();

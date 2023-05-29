@@ -1,9 +1,5 @@
 <?php
 session_start();
-if (isset($_SESSION['user_id'])) {
-    header("Location: newhome/newhome.php");
-    exit;
-}
 ?>
 
 <!DOCTYPE html>
@@ -34,7 +30,7 @@ if (isset($_SESSION['user_id'])) {
         <div class="nav-bar">
 
             <div class="arms"><a class="oldnav" href="index.php">Home</a></div>
-            <div class="arms"><a class="oldnav" href="#what-we-offer">services</a></div>
+            <div class="arms"><a class="oldnav" href="#what-we-offer">Services</a></div>
             <div class="arms"><a class="oldnav" href="#our-team"> Team</a></div>
         </div>
         <div class="be-strong-be">Be strong Be fit</div>
