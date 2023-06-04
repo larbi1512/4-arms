@@ -25,7 +25,7 @@ $workout_name = $row["workout_name"];
 
 <body>
   <div class="quiz-question1">
-    <img class="red-lines-icon3" alt="" src="./public/red-lines3.svg" /><img class="red-lines-icon4" alt="" src="./public/red-lines4.svg" /><img class="red-lines-icon5" alt="" src="./public/red-lines4.svg" /><img class="vector-icon" alt="" src="./public/vector-2.svg" /><img class="quiz-question-child2" alt="" src="./public/vector-3.svg" /><img class="quiz-question-child3" alt="" src="./public/vector-4.svg" />
+    <img class="red-lines-icon" alt="" src="./public/red-lines.svg" /><img class="red-lines-icon1" alt="" src="./public/red-lines.svg" /><img class="vector-icon" alt="" src="./public/vector-2.svg" /><img class="quiz-question-child2" alt="" src="./public/vector-3.svg" /><img class="quiz-question-child3" alt="" src="./public/vector-4.svg" />
     <div class="your-results-are">Your results are in !</div>
     <div class="based-on-your-container">
       <span>Based on your answers, </span><span class="name-of-the"> <?php echo $workout_name ?> </span><span>is the right fit for your body type and goals. Use it to build lean

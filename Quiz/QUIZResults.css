@@ -13,8 +13,7 @@ a {
   text-decoration: none;
   color: white !important;
 }
-.red-lines-icon3,
-.red-lines-icon4,
+
 .vector-icon {
   position: absolute;
   top: 3px;
@@ -22,12 +21,12 @@ a {
   width: 209.96px;
   height: 141.72px;
 }
-.red-lines-icon4,
+
 .vector-icon {
   top: 900px;
   left: 1310px;
 }
-.red-lines-icon5,
+
 .vector-icon {
   top: 29px;
   left: 136px;
@@ -37,6 +36,20 @@ a {
   left: 471.76px;
   width: 50.13px;
   height: 35.04px;
+}
+
+.red-lines-icon,
+.red-lines-icon1 {
+  position: absolute;
+  top: 3px;
+  left: 187px;
+  width: 209.96px;
+  height: 141.72px;
+}
+
+.red-lines-icon1 {
+  top: 900px;
+  left: 1310px;
 }
 .quiz-question-child2 {
   position: absolute;
@@ -101,4 +114,32 @@ a {
   font-size: 64px;
   color: var(--yuuuuh-nice-black);
   font-family: var(--font-font);
+}
+
+.red-lines-icon {
+  animation: slide 4s infinite linear;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(600%);
+  }
+}
+
+.red-lines-icon1 {
+  animation: slide1 4s infinite linear;
+}
+
+@keyframes slide1 {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-700%);
+  }
 }

@@ -72,9 +72,9 @@ session_start();
                 <ul class="a-meal-planner-that-suggests">
                     <li class="a-meal-planner">Provide a marketplace where you</li>
                 </ul>
-                <p class="make-yourself-stronger">can purchase supplement that</p>
-                <p class="make-yourself-stronger">are recommended by the system</p>
-                <p class="make-yourself-stronger">or from trusted vendors.</p>
+                <p class="a-meal-planner">can purchase supplement that</p>
+                <p class="a-meal-planner">are recommended by the system</p>
+                <p class="a-meal-planner">or from trusted vendors.</p>
             </div>
             <div class="customized-workout-plans-container">
                 <ul class="a-meal-planner-that-suggests">
@@ -83,7 +83,7 @@ session_start();
                         </span>
                     </li>
                 </ul>
-                <p class="make-yourself-stronger">
+                <p class="a-meal-planner">
                     <span class="span"> </span><span class="customized-workout-plans">goals and fitness levels.
                     </span>
                 </p>
@@ -92,16 +92,16 @@ session_start();
                 <ul class="a-meal-planner-that-suggests">
                     <li class="a-meal-planner">Progress tracking and analysis</li>
                 </ul>
-                <p class="make-yourself-stronger">features that help users monitor</p>
-                <p class="make-yourself-stronger">their performance</p>
+                <p class="a-meal-planner">features that help users monitor</p>
+                <p class="a-meal-planner">their performance</p>
             </div>
             <div class="progress-tracking-and-container2">
                 <ul class="a-meal-planner-that-suggests">
                     <li class="a-meal-planner">A meal planner that suggests</li>
                 </ul>
-                <p class="make-yourself-stronger">healthy meal options based on</p>
-                <p class="make-yourself-stronger">your dietary preferences and</p>
-                <p class="make-yourself-stronger">goals.</p>
+                <p class="a-meal-planner">healthy meal options based on</p>
+                <p class="a-meal-planner">your dietary preferences and</p>
+                <p class="a-meal-planner">goals.</p>
             </div>
         </div>
         <div class="what-we-offer" id="what-we-offer">WHAT WE OFFER</div>
