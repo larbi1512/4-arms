@@ -66,7 +66,7 @@ if (isset($_GET["choice"])) {
     </a>
 
 
-    <img class="red-lines-icon9" alt="" src="./public/red-lines5.svg" /><img class="red-lines-icon10" alt="" src="./public/red-lines4.svg" /><img class="red-lines-icon11" alt="" src="./public/red-lines6.svg" />
+    <img class="red-lines-icon" alt="" src="./public/red-lines.svg" /><img class="red-lines-icon1" alt="" src="./public/red-lines.svg" />
     <div class="build-muscle">BUILD MUSCLE</div>
     <div class="build-define">BUILD & DEFINE</div>
     <div class="lose-a-lot">LOSE A LOT OF FAT</div>
