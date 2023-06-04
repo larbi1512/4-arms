@@ -125,10 +125,6 @@
   left: 1310px;
 }
 
-.red-lines-icon2 {
-  top: 0px;
-  left: 136px;
-}
 
 .quiz-question {
   position: relative;
@@ -141,3 +137,46 @@
   color: var(--black-like-ur-heart);
   font-family: var(--font-nasalization);
 }
+
+.quiz-question {
+  animation: slideIn 1s forwards;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.red-lines-icon {
+  animation: slide 4s infinite linear;
+}
+
+ @keyframes slide {
+   0% {
+     transform: translateX(-100%);
+   }
+
+   100% {
+     transform: translateX(600%);
+   }
+ }
+
+ .red-lines-icon1 {
+   animation: slide1 4s infinite linear;
+ }
+
+ @keyframes slide1 {
+   0% {
+     transform: translateX(0%);
+   }
+
+   100% {
+     transform: translateX(-700%);
+   }
+ }

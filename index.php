@@ -35,8 +35,8 @@ session_start();
         </div>
         <div class="be-strong-be">Be strong Be fit</div>
         <div class="make-yourself-stronger-container">
-            <p class="make-yourself-stronger">Make yourself stronger</p>
-            <p class="make-yourself-stronger">than your excuses</p>
+            <p class="make-yourself-stronger" id="changing-text1">Make yourself stronger</p>
+            <p class="make-yourself-stronger" id="changing-text2">than your excuses</p>
         </div>
         <div class="take-our-60-second">
             Take our 60-second quiz to find the most effective program for achieving
@@ -181,6 +181,24 @@ session_start();
         });
     });
 </script>
+<script>
+ const changingText1 = document.getElementById('changing-text1');
+        const changingText2 = document.getElementById('changing-text2');
+        const texts1 = ['Embrace the Grind, ', 'Train with Purpose, ', 'Unleash Your Inner Beast!'];
+        const texts2 = ['Transform Your Body.', 'Achieve with Passion.', ''];
+        let index1 = 0;
+        let index2 = 0;
 
+
+        function changeText() {
+            changingText1.textContent = texts1[index1];
+            changingText2.textContent = texts2[index2];
+
+            index1 = (index1 + 1) % texts1.length;
+            index2 = (index2 + 1) % texts2.length;
+        }
+
+        setInterval(changeText, 3000); // Change text every 5 seconds
+    </script>
 
 </html>
