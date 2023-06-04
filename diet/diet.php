@@ -1,25 +1,29 @@
 <?php
 session_start();
 require_once "../db.php";
+
 $user_id = $_SESSION["user_id"];
+
 $sql = "SELECT * FROM assigned WHERE user_id = $user_id";
 $result = $conn->query($sql);
 $row = $result->fetch_assoc();
 $diet_id = $row['diet_id'];
+
 $sql = "SELECT * FROM diet WHERE diet_id = $diet_id";
 $result = $conn->query($sql);
 $row = $result->fetch_assoc();
+
 $carbs_consumed = $_SESSION['carbs_consumed'] ?? 0;
 $calories_consumed = $_SESSION['calories_consumed'] ?? 0;
 $proteins_consumed = $_SESSION['proteins_consumed'] ?? 0;
 
-// initialize the remaining variables
+// Initialize the remaining variables
 $carbs_remaining = max($row['carbs'] - $carbs_consumed, 0);
 $calories_remaining = max($row['Calories'] - $calories_consumed, 0);
 $proteins_remaining = max($row['Proteins'] - $proteins_consumed, 0);
 
-// check if the form was submitted:
-if (isset($_POST['carbs_consumed']) && isset($_POST['calories_consumed']) && isset($_POST['proteins_consumed'])) {
+// Check if the form was submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $newcarbs_consumed = (int) $_POST['carbs_consumed'];
   $newcalories_consumed = (int) $_POST['calories_consumed'];
   $newproteins_consumed = (int) $_POST['proteins_consumed'];
@@ -37,7 +41,7 @@ if (isset($_POST['carbs_consumed']) && isset($_POST['calories_consumed']) && iss
     $calories_consumed = min($calories_consumed, $row['Calories']);
     $proteins_consumed = min($proteins_consumed, $row['Proteins']);
 
-    // store the updated consumed variables in the session
+    // Store the updated consumed variables in the session
     $_SESSION['carbs_consumed'] = $carbs_consumed;
     $_SESSION['calories_consumed'] = $calories_consumed;
     $_SESSION['proteins_consumed'] = $proteins_consumed;
@@ -48,7 +52,6 @@ if (isset($_POST['carbs_consumed']) && isset($_POST['calories_consumed']) && iss
   }
 }
 ?>
-
 <!DOCTYPE html>
 <html>
 
@@ -155,7 +158,7 @@ if (isset($_POST['carbs_consumed']) && isset($_POST['calories_consumed']) && iss
 
     <p class="text">Eat healthy while having fun :3 </p>
 
-      <form method="post" action="" class="form-container">
+      <form method="post" action="" class="form-container" id="myForm">
             <?php if (isset($error_message)) { ?>
               <p style="color: #e8e7e2;  text-align: center; margin-left: 10%;">
                 <?php echo $error_message; ?>
@@ -175,7 +178,7 @@ if (isset($_POST['carbs_consumed']) && isset($_POST['calories_consumed']) && iss
             <td>Carbs</td>
             <td><?php echo $row['carbs'] ?></td>
             <td><input type="number" name="carbs_consumed" value="" required></td>
-            <td><span class="remaining">
+            <td><span class="remaining" id="carbs_remaining">
                 <?php echo $carbs_remaining ?>
               </span></td>
           </tr>
@@ -183,7 +186,7 @@ if (isset($_POST['carbs_consumed']) && isset($_POST['calories_consumed']) && iss
             <td>Calories</td>
             <td><?php echo $row['Calories'] ?></td>
             <td><input type="number" name="calories_consumed" value="" required></td>
-            <td><span class="remaining">
+            <td><span class="remaining" id="calories_remaining">
                 <?php echo $calories_remaining ?>
               </span></td>
           </tr>
@@ -191,7 +194,7 @@ if (isset($_POST['carbs_consumed']) && isset($_POST['calories_consumed']) && iss
             <td>Proteins</td>
             <td><?php echo $row['Proteins'] ?></td>
             <td><input type="number" name="proteins_consumed" value="" required></td>
-            <td><span class="remaining">
+            <td><span class="remaining" id="proteins_remaining">
                 <?php echo $proteins_remaining ?>
               </span></td>
           </tr>
@@ -217,45 +220,32 @@ if (isset($_POST['carbs_consumed']) && isset($_POST['calories_consumed']) && iss
       </div>
     </div>
   </div>
-    <script>
-    // Function to update the remaining values dynamically
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
     function updateRemainingValues() {
-      var carbsConsumed = parseInt(document.querySelector('input[name="carbs_consumed"]').value);
-      var caloriesConsumed = parseInt(document.querySelector('input[name="calories_consumed"]').value);
-      var proteinsConsumed = parseInt(document.querySelector('input[name="proteins_consumed"]').value);
-      var carbsRemaining = <?php echo $row['carbs'] ?> - (carbsConsumed + <?php echo $carbs_consumed ?>);
-        var caloriesRemaining = <?php echo $row['Calories'] ?> - (caloriesConsumed + <?php echo $calories_consumed ?>);
-        var proteinsRemaining = <?php echo $row['Proteins'] ?> - (proteinsConsumed + <?php echo $proteins_consumed ?>);
+      const carbs = <?php echo $row['carbs']; ?>;
+        const calories = <?php echo $row['Calories']; ?>;
+        const proteins = <?php echo $row['Proteins']; ?>;
 
-        // Update the remaining values in the HTML
+        const carbsConsumed = parseInt(document.querySelector('input[name="carbs_consumed"]').value);
+        const caloriesConsumed = parseInt(document.querySelector('input[name="calories_consumed"]').value);
+        const proteinsConsumed = parseInt(document.querySelector('input[name="proteins_consumed"]').value);
+
+        const carbsRemaining = Math.max(carbs - carbsConsumed, 0);
+        const caloriesRemaining = Math.max(calories - caloriesConsumed, 0);
+        const proteinsRemaining = Math.max(proteins - proteinsConsumed, 0);
+
         document.getElementById('carbs_remaining').textContent = carbsRemaining;
         document.getElementById('calories_remaining').textContent = caloriesRemaining;
         document.getElementById('proteins_remaining').textContent = proteinsRemaining;
       }
 
-      // Add an event listener to the form submission
       document.getElementById('myForm').addEventListener('submit', function (e) {
         e.preventDefault();
-
-        // Perform AJAX request to submit the form data
-        var formData = new FormData(this);
-        var xhr = new XMLHttpRequest();
-        xhr.open('POST', 'your_php_script.php', true);
-        xhr.onreadystatechange = function () {
-          if (xhr.readyState === 4 && xhr.status === 200) {
-            // Handle the AJAX response if needed
-            // ...
-
-            // Update the remaining values
-            updateRemainingValues();
-          }
-        };
-        xhr.send(formData);
+        updateRemainingValues();
       });
-
-      // Update the remaining values on page load
-      updateRemainingValues();
-    </script>
+    });
+  </script>
 
   <div id="goto" class="popup-overlay" style="display: none">
     <div class="gotopopup">
