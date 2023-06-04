@@ -904,3 +904,14 @@
           top: 70%;
           left: 17%;
         }
+#timeDisplay{
+  font-size: 120%;
+  color: var(--grey-grey-50);
+  font-family: consolas, monospace;
+}
+
+#timeContainer{
+  text-align: center;
+  margin-top: 5%;
+
+}
