@@ -915,3 +915,170 @@
   margin-top: 5%;
 
 }
+.gym-space {
+  background-color: #2B2B2E;
+  font-size: 24px;
+  font-family: var(--font-nasalization);
+  margin-top: 100px;
+  border-radius: 30px;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+.nav-bar {
+  top: 0;
+  position: fixed;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: #272523;
+  height: 13%;
+}
+.plan {
+  display: flex;
+  flex-direction: row;
+  background-color: #272523;
+  border-radius: 30px;
+  padding: 20px;
+  margin-top: 7%;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.plan-img {
+  margin-right: 20px;
+  top: 50%;
+}
+
+.plan-img img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  top: 50%;
+}
+
+.plan-description {
+  display: flex;
+  flex-direction: column;
+  top: 50%;
+}
+
+.plan-description p {
+  color: white;
+  font-size: 18px;
+  margin: 0 0 10px 0;
+  top: 50%;
+}
+
+.plan-description a {
+  color: #EEC643;
+  font-size: 16px;
+  text-decoration: none;
+  margin-top: auto;
+
+}
+a {
+    text-decoration: none;
+    color: #ff182c !important;
+}
+@font-face {
+  font-family: "Nasalization";
+  src: url("fonts/nasalization-rg.otf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "font";
+  src: url("fonts/nasalization-rg.otf");
+  font-weight: 400;
+}
+.activity {
+  background-color: #3E3E3E;
+  width: 600px;
+  height: 282px;
+}
+.overview {
+  right: 10%;
+  border-radius: 10%;
+}
+      select {
+        border-radius: 30px;
+        padding: 10px;
+        font-size: 32px;
+      }
+
+      select option:hover {
+        background-color: red;
+      }
+
+      button[type="submit"] {
+        padding: 8px 16px;
+        border-radius: 30px;
+        border: none;
+        background-color: #D9D9D9;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+      }
+
+      button[type="submit"]:hover {
+        background-color: #f00;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        border-radius: 30px;
+      }
+
+      th {
+        text-align: left;
+        padding: 8px;
+        background-color: red;
+      }
+
+      td {
+        text-align: left;
+        padding: 8px;
+        color: white;
+      }
+
+      tr:nth-child(even) {
+        background-color: #ddd;
+        color: #272523;
+      }
+
+      tr:hover {
+        background-color: #e95f5f;
+        ;
+        opacity: 0.5;
+      }
+
+      img {
+        width: 250px;
+        height: 350px;
+        height: auto;
+        border-radius: 20px;
+      }
+
+      /* Added styles for filter selector */
+      label {
+        font-size: 18px;
+        margin-right: 10px;
+      }
+
+      select {
+        font-size: 16px;
+        padding: 4px;
+        border-radius: 4px;
+      }
+
+      .nav-bar {
+        top: 0;
+        position: fixed;
+        left: 0;
+        width: 100%;
+        z-index: 999;
+        background-color: #272523;
+      }

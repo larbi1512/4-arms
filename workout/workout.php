@@ -24,33 +24,12 @@ require_once "../db.php";
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open Sans:wght@400;600&display=swap" />
-
-  <style>
-    @font-face {
-      font-family: "Nasalization";
-      src: url("fonts/nasalization-rg.otf");
-      font-weight: 400;
-    }
-
-    @font-face {
-      font-family: "font";
-      src: url("fonts/nasalization-rg.otf");
-      font-weight: 400;
-    }
-  </style>
 </head>
 
 <body>
   <div class="workout">
     <p style='margin-top:130px;margin-left:4%;font-size:50px;' id="act">My OverView</p>
     <p style='margin-top:53px;margin-left:7%'>Activity</p>
-    <style>
-      .activity {
-        background-color: #3E3E3E;
-        width: 600px;
-        height: 282px;
-      }
-    </style>
     <div class="activity">
       <canvas id="myChart"></canvas>
     </div>
@@ -90,12 +69,6 @@ require_once "../db.php";
         }
       });
     </script>
-    <style>
-      .overview {
-        right: 10%;
-        border-radius: 10%;
-      }
-    </style>
     <div id="container" class="overview">
       <?php
       $sql = "SELECT Calories, carbs, Proteins FROM diet 
@@ -185,6 +158,7 @@ require_once "../db.php";
         </div>
       </div>
       <div id="timeContainer">
+        <br>
         <div id="timeDisplay">00:00:00</div>
       </div>
     </div>
@@ -206,7 +180,6 @@ require_once "../db.php";
     runningElement.style.setProperty('--duration', '0s');
     endTime = new Date().getTime();
     elapsedTime = (endTime - startTime) / 1000; // Calculate elapsed time in seconds
-    alert("The Time You Spent In Your Workout Is: " + formatTime(elapsedTime));
     // Get the current month (1-12)
     var currentMonth = new Date().getMonth() + 1;
     // Send the elapsed time and month to a PHP script using AJAX
@@ -264,17 +237,6 @@ require_once "../db.php";
       <a href="<?php echo $row['workout_plan_link'] ?>">Learn More</a>
     </div>
   </div>
-  <style>
-    .gym-space {
-      background-color: #2B2B2E;
-      font-size: 24px;
-      font-family: var(--font-nasalization);
-      margin-top: 100px;
-      border-radius: 30px;
-      margin-left: 40px;
-      margin-right: 40px;
-    }
-  </style>
   <div class="gym-space" id="gym">
     <?php
     // Fetch gyms from database
@@ -293,90 +255,6 @@ require_once "../db.php";
     ?>
 
     <title>List of Gyms</title>
-
-    <style>
-      select {
-        border-radius: 30px;
-        padding: 10px;
-        font-size: 32px;
-      }
-
-      select option:hover {
-        background-color: red;
-      }
-
-      button[type="submit"] {
-        padding: 8px 16px;
-        border-radius: 30px;
-        border: none;
-        background-color: #D9D9D9;
-        color: #fff;
-        font-size: 16px;
-        cursor: pointer;
-        transition: background-color 0.3s ease-in-out;
-      }
-
-      button[type="submit"]:hover {
-        background-color: #f00;
-      }
-
-      table {
-        border-collapse: collapse;
-        width: 100%;
-        border-radius: 30px;
-      }
-
-      th {
-        text-align: left;
-        padding: 8px;
-        background-color: red;
-      }
-
-      td {
-        text-align: left;
-        padding: 8px;
-        color: white;
-      }
-
-      tr:nth-child(even) {
-        background-color: #ddd;
-        color: #272523;
-      }
-
-      tr:hover {
-        background-color: #e95f5f;
-        ;
-        opacity: 0.5;
-      }
-
-      img {
-        width: 250px;
-        height: 350px;
-        height: auto;
-        border-radius: 20px;
-      }
-
-      /* Added styles for filter selector */
-      label {
-        font-size: 18px;
-        margin-right: 10px;
-      }
-
-      select {
-        font-size: 16px;
-        padding: 4px;
-        border-radius: 4px;
-      }
-
-      .nav-bar {
-        top: 0;
-        position: fixed;
-        left: 0;
-        width: 100%;
-        z-index: 999;
-        background-color: #272523;
-      }
-    </style>
 
     <p style="font-size: 36px; color: #ffffff;font-family: var(--font-nasalization);">GYM Space</p>
 
@@ -401,10 +279,7 @@ require_once "../db.php";
         <th>City</th>
         <th>Number</th>
         <th></th>
-
-
       </tr>
-
       <?php foreach ($gyms as $gym) : ?>
         <?php if (isset($_GET['city']) && $_GET['city'] != '' && $gym['city'] != $_GET['city']) continue; ?>
 
@@ -421,70 +296,7 @@ require_once "../db.php";
       <?php endforeach; ?>
   </div>
   </table>
-  <style>
-    .nav-bar {
-      top: 0;
-      position: fixed;
-      left: 0;
-      width: 100%;
-      z-index: 999;
-      background-color: #272523;
-      height: 13%;
-    }
-  </style>
-  <style>
-    .plan {
-      display: flex;
-      flex-direction: row;
-      background-color: #272523;
-      border-radius: 30px;
-      padding: 20px;
-      margin-top: 7%;
-      margin-left: 40px;
-      margin-right: 40px;
-    }
-
-    .plan-img {
-      margin-right: 20px;
-      top: 50%;
-    }
-
-    .plan-img img {
-      width: 200px;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 10px;
-      top: 50%;
-    }
-
-    .plan-description {
-      display: flex;
-      flex-direction: column;
-      top: 50%;
-    }
-
-    .plan-description p {
-      color: white;
-      font-size: 18px;
-      margin: 0 0 10px 0;
-      top: 50%;
-    }
-
-    .plan-description a {
-      color: #EEC643;
-      font-size: 16px;
-      text-decoration: none;
-      margin-top: auto;
-
-    }
-  </style>
   <div class="nav-bar">
-    <style>
-      a {
-        text-decoration: none;
-        color: #ff182c !important;
-      }
-    </style>
     <div class="logo">
       <img class="frame-icon" alt="" src="./public/frame.svg" />
       <p class="arms">4-ARMS</p>
