@@ -184,42 +184,65 @@ require_once "../db.php";
           </div>
         </div>
       </div>
+      <div id="timeContainer">
+        <div id="timeDisplay">00:00:00</div>
+      </div>
     </div>
     <p id="result"></p>
     <!-- JavaScript code to handle the timer and AJAX -->
-    <script>
-      var startTime, endTime, elapsedTime;
+<script>
+  var startTime, endTime, elapsedTime, timerInterval;
 
-      function startTimer() {
-        startTime = new Date().getTime();
-        const runningElement = document.querySelector('.running');
-        runningElement.style.setProperty('--duration', '.7s');
-      }
+  function startTimer() {
+    startTime = new Date().getTime();
+    const runningElement = document.querySelector('.running');
+    runningElement.style.setProperty('--duration', '.7s');
+    timerInterval = setInterval(updateTime, 1000); // Update time every second
+  }
 
-      function stopTimer(event) {
-        const runningElement = document.querySelector('.running');
-        runningElement.style.setProperty('--duration', '0s');
-        endTime = new Date().getTime();
-        elapsedTime = (endTime - startTime) / 1000; // Calculate elapsed time in seconds
-        alert("The Time You Spent In Your Workout Is:" + elapsedTime);
-        // Get the current month (1-12)
-        var currentMonth = new Date().getMonth() + 1;
-        // Send the elapsed time and month to a PHP script using AJAX
-        var xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function() {
-          console.log("readyState: " + this.readyState);
-          console.log("status: " + this.status);
-          console.log("responseText: " + this.responseText);
-          if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("result").innerHTML = this.responseText;
-          }
-        };
-        xhr.open("POST", "insert_elapsed_time.php", true);
-        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhr.send("elapsed_time=" + elapsedTime + "&month=" + currentMonth);
-        location.reload();
+  function stopTimer(event) {
+    clearInterval(timerInterval); // Clear the interval to stop updating time
+    const runningElement = document.querySelector('.running');
+    runningElement.style.setProperty('--duration', '0s');
+    endTime = new Date().getTime();
+    elapsedTime = (endTime - startTime) / 1000; // Calculate elapsed time in seconds
+    alert("The Time You Spent In Your Workout Is: " + formatTime(elapsedTime));
+    // Get the current month (1-12)
+    var currentMonth = new Date().getMonth() + 1;
+    // Send the elapsed time and month to a PHP script using AJAX
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+      console.log("readyState: " + this.readyState);
+      console.log("status: " + this.status);
+      console.log("responseText: " + this.responseText);
+      if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("result").innerHTML = this.responseText;
       }
-    </script>
+    };
+    xhr.open("POST", "insert_elapsed_time.php", true);
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.send("elapsed_time=" + elapsedTime + "&month=" + currentMonth);
+    location.reload();
+  }
+
+  function updateTime() {
+    var currentTime = new Date().getTime();
+    elapsedTime = (currentTime - startTime) / 1000; // Calculate elapsed time in seconds
+    document.getElementById("timeDisplay").textContent = formatTime(elapsedTime);
+  }
+
+  function formatTime(time) {
+    var hours = Math.floor(time / 3600);
+    var minutes = Math.floor((time % 3600) / 60);
+    var seconds = Math.floor(time % 60);
+    return pad(hours) + ":" + pad(minutes) + ":" + pad(seconds);
+  }
+
+  function pad(number) {
+    return (number < 10) ? "0" + number : number;
+  }
+</script>
+
   </div>
   <div class="plan" style="margin-top:1% !important;">
     <?php
