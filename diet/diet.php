@@ -245,24 +245,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         updateRemainingValues();
       });
     });
-  </script>
-
-  <div id="goto" class="popup-overlay" style="display: none">
-    <div class="gotopopup">
-      <div class="my-overview">
-        <a href="#act" style="color:black">My OverView</a>
-      </div>
-      <div class="my_workout_plan">
-        <a href="#plan" style="color:black">My WorkOut Plan</a>
-      </div>
-      <div class="my-gym_sapce">
-        <a href="#gym" style="color:black">The Gym Space</a>
-      </div>
-    </div>
-  </div>
-
-
-  <script>
+  
     var loginButton = document.getElementById("go");
     if (loginButton) {
       loginButton.addEventListener("click", function() {
