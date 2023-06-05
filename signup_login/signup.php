@@ -1,5 +1,14 @@
+<?php
+session_start();
+if (isset($_SESSION['user_id'])) {
+  header("Location: ../NewHome/newHome.php");
+  exit();
+}
+?>
+
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Sign Up</title>
   <meta charset="utf-8" />
