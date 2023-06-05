@@ -7,7 +7,7 @@ include_once("../db.php");
 
 <head>
     <meta charset="utf-8">
-    <title>All Orders</title>
+    <title>All Users</title>
     <link rel="stylesheet" href="dashboard.css">
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">

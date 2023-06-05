@@ -32,14 +32,44 @@ $workout_name = $row["workout_name"];
         muscle, take your gains to the next level, and finally create the body
         of your dreams.</span>
     </div>
-
-    <a href="../signup_login/signup.php">
-      <div class="quiz-question-child4"></div>
-      <div class="let-s-start">
-        Let‘s Start Now!
-      </div>
+    <?php
+    if (isset($_SESSION["user_id"])) { ?>
+      <a href="../NewHome/newHome.php">
+        <div class="quiz-question-child4"></div>
+        <div class="let-s-start">
+          Let‘s Start Now!
+        </div>
   </div>
   </a>
+
+<?php
+      $user_id = $_SESSION["user_id"];
+      $sql = "INSERT INTO assigned (user_id, workout_id, diet_id) VALUES (?,?,?)";
+      $stmt = $conn->prepare($sql);
+      $stmt->bind_param('iii', $user_id, $choice, $choice);
+      $stmt->execute();
+      $currentDate = date("Y-m-d");
+      //extract weight from user_signup table and insert into progress table
+      $sql = "SELECT weight FROM user_signup WHERE user_id = '$user_id'";
+      $result = mysqli_query($conn, $sql);
+      $row = mysqli_fetch_assoc($result);
+      $weight = $row["weight"];
+      $sql = "INSERT INTO `progress`(`weight`, `update_date`, `workout_id`, `diet_id`, `user_id`) VALUES ('$weight','$currentDate','$choice','$choice','$user_id')";
+      mysqli_query($conn, $sql);
+      //update the gender of the user
+      $sql = "UPDATE user_signup SET gender = '" . $_SESSION['gender'] . "' WHERE user_id = '" . $user_id . "'";
+      mysqli_query($conn, $sql);
+    } else { ?>
+  <a href="../Login/signup.php">
+    <div class="quiz-question-child4"></div>
+    <div class="let-s-start">
+      Let‘s Start Now!
+    </div>
+    </div>
+  </a>
+<?php
+    }
+?>
 </body>
 
 </html>
