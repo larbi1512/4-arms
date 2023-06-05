@@ -41,6 +41,42 @@ $orderCount = $row['count'];
 
     <br>
 
+    <!-- table of users information, including workout plan and diet plan and gym assigned to user -->
+    <section>
+        <div class="record">
+            <h2>Users</h2>
+            <a href="users.php"><button class="btn">See All</button></a>
+            <table class="styled-table" width="100%" border="1" style="border-collapse:collapse;">
+                <thead>
+                    <tr>
+                        <th><strong>S.NO</strong></th>
+                        <th><strong>User ID</strong></th>
+                        <th><strong>Name</strong></th>
+                        <th><strong>Workout Plan</strong></th>
+                        <th><strong>Diet Plan</strong></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    $count = 1;
+                    $sel_query = "SELECT * FROM user_signup inner join assigned on user_signup.user_id = assigned.user_id inner join workout_plan on assigned.workout_id = workout_plan.workout_id inner join diet on assigned.diet_id = diet.diet_id order by user_signup.user_id asc limit 3;";
+                    $result = mysqli_query($conn, $sel_query);
+                    while ($row = mysqli_fetch_assoc($result)) { ?>
+                        <tr>
+                            <td align="center"><?php echo $count; ?></td>
+                            <td align="center"><?php echo $row["user_id"]; ?></td>
+                            <td align="center"><?php echo $row["user_name"]; ?></td>
+                            <td align="center"><?php echo $row["workout_name"]; ?></td>
+                            <td align="center"><?php echo $row["diet_name"]; ?></td>
+                        </tr>
+                    <?php $count++;
+                    } ?>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+
     <section>
         <div class="record">
             <h2>Orders</h2>
