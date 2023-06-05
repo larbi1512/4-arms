@@ -1,5 +1,9 @@
 <?php
 session_start();
+if (isset($_SESSION['user_id'])) {
+    header('Location: NewHome/newHome.php');
+    exit;
+}
 ?>
 
 <!DOCTYPE html>
@@ -182,23 +186,23 @@ session_start();
     });
 </script>
 <script>
- const changingText1 = document.getElementById('changing-text1');
-        const changingText2 = document.getElementById('changing-text2');
-        const texts1 = ['Embrace the Grind, ', 'Train with Purpose, ', 'Unleash Your Inner Beast!'];
-        const texts2 = ['Transform Your Body.', 'Achieve with Passion.', ''];
-        let index1 = 0;
-        let index2 = 0;
+    const changingText1 = document.getElementById('changing-text1');
+    const changingText2 = document.getElementById('changing-text2');
+    const texts1 = ['Embrace the Grind, ', 'Train with Purpose, ', 'Unleash Your Inner Beast!'];
+    const texts2 = ['Transform Your Body.', 'Achieve with Passion.', ''];
+    let index1 = 0;
+    let index2 = 0;
 
 
-        function changeText() {
-            changingText1.textContent = texts1[index1];
-            changingText2.textContent = texts2[index2];
+    function changeText() {
+        changingText1.textContent = texts1[index1];
+        changingText2.textContent = texts2[index2];
 
-            index1 = (index1 + 1) % texts1.length;
-            index2 = (index2 + 1) % texts2.length;
-        }
+        index1 = (index1 + 1) % texts1.length;
+        index2 = (index2 + 1) % texts2.length;
+    }
 
-        setInterval(changeText, 3000); // Change text every 5 seconds
-    </script>
+    setInterval(changeText, 3000); // Change text every 5 seconds
+</script>
 
 </html>

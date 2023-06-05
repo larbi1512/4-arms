@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (isset($_SESSION['user_id'])) {
+  header("Location: ../NewHome/newHome.php");
+  exit();
+}
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -11,8 +19,6 @@
 </head>
 
 <body>
-
-
 
   <div class="frame-parent">
     <div class="logo">
@@ -28,7 +34,6 @@
     <div class="form-group">
       <p class="create">Create an account</p>
       <?php
-      session_start();
       if (isset($_SESSION['error_message'])) {
         echo '<p class="error">' . $_SESSION['error_message'] . '</p>';
         unset($_SESSION['error_message']); // unset the session variable after displaying the message
@@ -36,25 +41,21 @@
       ?>
     </div>
     <div class="form-group">
-      <label>Name :</label>
-      <input class="form-control" type="text" name="user_name" placeholder="Enter Your Username" required />
-    </div>
-
-    <div class="form-group">
       <label>Email :</label>
       <input class="form-control" type="email" name="user_email" placeholder="Enter Your E-mail" required />
     </div>
-
+    <div class="form-group">
+      <label>Username :</label>
+      <input class="form-control" type="text" name="user_name" placeholder="Enter Your Username" required />
+    </div>
     <div class="form-group">
       <label>Password :</label>
       <input class="form-control" type="password" name="user_password" placeholder="Enter Your Password" required />
     </div>
-
     <div class="form-group">
       <label>Height :</label>
-      <input type="number" name="height" min="140" max="220" placeholder="Enter your Height">
+      <input type="number" name="height" min="140" max="300" placeholder="Enter your Height">
     </div>
-
     <div class="form-group">
       <label>Weight</label>
       <input type="number" name="weight" min="40" max="200" placeholder="Enter your Weight">

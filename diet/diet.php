@@ -174,15 +174,16 @@ if (isset($_POST['carbs_consumed']) && isset($_POST['calories_consumed']) && iss
           <tr>
             <td>Carbs</td>
             <td><?php echo $row['carbs'] ?></td>
-            <td><input type="number" name="carbs_consumed" value="" required></td>
+            <td><input type="number" name="carbs_consumed" value="0" required></td>
             <td><span class="remaining">
+
                 <?php echo $carbs_remaining ?>
               </span></td>
           </tr>
           <tr>
             <td>Calories</td>
             <td><?php echo $row['Calories'] ?></td>
-            <td><input type="number" name="calories_consumed" value="" required></td>
+            <td><input type="number" name="calories_consumed" value="0" required></td>
             <td><span class="remaining">
                 <?php echo $calories_remaining ?>
               </span></td>
@@ -190,8 +191,9 @@ if (isset($_POST['carbs_consumed']) && isset($_POST['calories_consumed']) && iss
           <tr>
             <td>Proteins</td>
             <td><?php echo $row['Proteins'] ?></td>
-            <td><input type="number" name="proteins_consumed" value="" required></td>
+            <td><input type="number" name="proteins_consumed" value="0" required></td>
             <td><span class="remaining">
+
                 <?php echo $proteins_remaining ?>
               </span></td>
           </tr>
