@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html>
-<?php
-?>
 <head>
   <title>Sign Up</title>
   <meta charset="utf-8" />
@@ -36,7 +34,7 @@
     </div>
     <div class="form-group">
       <label>Email :</label>
-      <input class="form-control" type="text" name="user_email" placeholder="Enter Your E-mail" required />
+      <input class="form-control" type="email" name="user_email" placeholder="Enter Your E-mail" required />
     </div>
     <div class="form-group">
       <label>Name :</label>
