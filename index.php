@@ -53,9 +53,9 @@ session_start();
         <a class="login-button" id="login" href="signup_login/login.php">
             <div class="arms">Login</div>
         </a>
-        <a class="sign-up-button" id="sign up " href="signup_login/signup.php">
+        <!-- <a class="sign-up-button" id="sign up " href="signup_login/signup.php">
             <div class="arms">sign Up</div>
-        </a>
+        </a> -->
         <div class="services">
             <div class="services-child"></div>
             <div class="services-item"></div>

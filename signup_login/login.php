@@ -47,7 +47,7 @@
       </div>
       <div class="form-group">
         <h3 class="text no-account">
-          Don't have an account ?<a href="signup.php"> SIGN UP !</a>
+          Don't have an account ?<a href="../Quiz/QuizQuestion1.php"> SIGN UP !</a>
         </h3>
       </div>
     </form>

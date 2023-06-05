@@ -82,7 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <form method="post" action="">
         <div class="form-group">
           <label for="name" class="control-label">Quantity:</label>
-          <input type="number" min=0 name="quantity" id="name" class="form-control" value="1" required>
+          <input type="number" min=1 name="quantity" id="name" class="form-control" value="1" required>
         </div>
         <div class="form-group">
           <label for="name" class="control-label">Name:</label>

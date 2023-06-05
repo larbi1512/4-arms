@@ -13,7 +13,7 @@
         <h1>Progress Checker</h1>
         <form method="POST" action="third.php">
             <label for="weight">Weight:</label>
-            <input type="number" name="weight" id="weight" required>
+            <input type="number" name="weight" id="weight" required min="40" max="200">
 
             <label for="goal">Your New Goal:</label>
             <div class="goal-buttons">
