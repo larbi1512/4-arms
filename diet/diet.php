@@ -1,29 +1,25 @@
 <?php
 session_start();
 require_once "../db.php";
-
 $user_id = $_SESSION["user_id"];
-
 $sql = "SELECT * FROM assigned WHERE user_id = $user_id";
 $result = $conn->query($sql);
 $row = $result->fetch_assoc();
 $diet_id = $row['diet_id'];
-
 $sql = "SELECT * FROM diet WHERE diet_id = $diet_id";
 $result = $conn->query($sql);
 $row = $result->fetch_assoc();
-
 $carbs_consumed = $_SESSION['carbs_consumed'] ?? 0;
 $calories_consumed = $_SESSION['calories_consumed'] ?? 0;
 $proteins_consumed = $_SESSION['proteins_consumed'] ?? 0;
 
-// Initialize the remaining variables
+// initialize the remaining variables
 $carbs_remaining = max($row['carbs'] - $carbs_consumed, 0);
 $calories_remaining = max($row['Calories'] - $calories_consumed, 0);
 $proteins_remaining = max($row['Proteins'] - $proteins_consumed, 0);
 
-// Check if the form was submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+// check if the form was submitted:
+if (isset($_POST['carbs_consumed']) && isset($_POST['calories_consumed']) && isset($_POST['proteins_consumed'])) {
   $newcarbs_consumed = (int) $_POST['carbs_consumed'];
   $newcalories_consumed = (int) $_POST['calories_consumed'];
   $newproteins_consumed = (int) $_POST['proteins_consumed'];
@@ -41,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $calories_consumed = min($calories_consumed, $row['Calories']);
     $proteins_consumed = min($proteins_consumed, $row['Proteins']);
 
-    // Store the updated consumed variables in the session
+    // store the updated consumed variables in the session
     $_SESSION['carbs_consumed'] = $carbs_consumed;
     $_SESSION['calories_consumed'] = $calories_consumed;
     $_SESSION['proteins_consumed'] = $proteins_consumed;
@@ -52,6 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 }
 ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -158,7 +155,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <p class="text">Eat healthy while having fun :3 </p>
 
-      <form method="post" action="" class="form-container" id="myForm">
+      <form method="post" action="" class="form-container">
             <?php if (isset($error_message)) { ?>
               <p style="color: #e8e7e2;  text-align: center; margin-left: 10%;">
                 <?php echo $error_message; ?>
@@ -178,7 +175,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <td>Carbs</td>
             <td><?php echo $row['carbs'] ?></td>
             <td><input type="number" name="carbs_consumed" value="" required></td>
-            <td><span class="remaining" id="carbs_remaining">
+            <td><span class="remaining">
                 <?php echo $carbs_remaining ?>
               </span></td>
           </tr>
@@ -186,7 +183,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <td>Calories</td>
             <td><?php echo $row['Calories'] ?></td>
             <td><input type="number" name="calories_consumed" value="" required></td>
-            <td><span class="remaining" id="calories_remaining">
+            <td><span class="remaining">
                 <?php echo $calories_remaining ?>
               </span></td>
           </tr>
@@ -194,7 +191,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <td>Proteins</td>
             <td><?php echo $row['Proteins'] ?></td>
             <td><input type="number" name="proteins_consumed" value="" required></td>
-            <td><span class="remaining" id="proteins_remaining">
+            <td><span class="remaining">
                 <?php echo $proteins_remaining ?>
               </span></td>
           </tr>
@@ -220,32 +217,59 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       </div>
     </div>
   </div>
-  <script>
-  document.addEventListener('DOMContentLoaded', function () {
+    <script>
+    // Function to update the remaining values dynamically
     function updateRemainingValues() {
-      const carbs = <?php echo $row['carbs']; ?>;
-        const calories = <?php echo $row['Calories']; ?>;
-        const proteins = <?php echo $row['Proteins']; ?>;
+      var carbsConsumed = parseInt(document.querySelector('input[name="carbs_consumed"]').value);
+      var caloriesConsumed = parseInt(document.querySelector('input[name="calories_consumed"]').value);
+      var proteinsConsumed = parseInt(document.querySelector('input[name="proteins_consumed"]').value);
+      var carbsRemaining = <?php echo $row['carbs'] ?> - (carbsConsumed + <?php echo $carbs_consumed ?>);
+        var caloriesRemaining = <?php echo $row['Calories'] ?> - (caloriesConsumed + <?php echo $calories_consumed ?>);
+        var proteinsRemaining = <?php echo $row['Proteins'] ?> - (proteinsConsumed + <?php echo $proteins_consumed ?>);
 
-        const carbsConsumed = parseInt(document.querySelector('input[name="carbs_consumed"]').value);
-        const caloriesConsumed = parseInt(document.querySelector('input[name="calories_consumed"]').value);
-        const proteinsConsumed = parseInt(document.querySelector('input[name="proteins_consumed"]').value);
-
-        const carbsRemaining = Math.max(carbs - carbsConsumed, 0);
-        const caloriesRemaining = Math.max(calories - caloriesConsumed, 0);
-        const proteinsRemaining = Math.max(proteins - proteinsConsumed, 0);
-
+        // Update the remaining values in the HTML
         document.getElementById('carbs_remaining').textContent = carbsRemaining;
         document.getElementById('calories_remaining').textContent = caloriesRemaining;
         document.getElementById('proteins_remaining').textContent = proteinsRemaining;
       }
 
+      // Add an event listener to the form submission
       document.getElementById('myForm').addEventListener('submit', function (e) {
         e.preventDefault();
-        updateRemainingValues();
+
+        // Perform AJAX request to submit the form data
+        var formData = new FormData(this);
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'your_php_script.php', true);
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4 && xhr.status === 200) {
+          s
+            updateRemainingValues();
+          }
+        };
+        xhr.send(formData);
       });
-    });
-  
+
+      // Update the remaining values on page load
+      updateRemainingValues();
+    </script>
+
+  <div id="goto" class="popup-overlay" style="display: none">
+    <div class="gotopopup">
+      <div class="my-overview">
+        <a href="#act" style="color:black">My OverView</a>
+      </div>
+      <div class="my_workout_plan">
+        <a href="#plan" style="color:black">My WorkOut Plan</a>
+      </div>
+      <div class="my-gym_sapce">
+        <a href="#gym" style="color:black">The Gym Space</a>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
     var loginButton = document.getElementById("go");
     if (loginButton) {
       loginButton.addEventListener("click", function() {
