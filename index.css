@@ -80,14 +80,29 @@
   left: 93px;
   font-size: var(--font-size-29xl);
 }
+
 .take-our-60-second {
   top: 555px;
   font-size: var(--font-size-xl);
   letter-spacing: 0.05em;
   line-height: 24px;
   display: inline-block;
+  max-width: 100%;
   width: 516px;
   height: 76px;
+}
+
+@media only screen and (max-width: 600px) {
+  .take-our-60-second {
+    top: 20%;
+    margin-bottom: 5%;
+    font-size: var(--font-size-l);
+    letter-spacing: 0;
+    line-height: 20px;
+    width: auto;
+    /* padding: 10px; */
+    text-align: center;
+  }
 }
 .buttoniconsettings {
   position: relative;
