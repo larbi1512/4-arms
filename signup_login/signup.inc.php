@@ -3,19 +3,51 @@ session_start();
 require_once('../db.php');
 
 // Retrieve form values
-$user_name = $_POST["user_name"];
-$user_email = $_POST["user_email"];
+$user_name = trim($_POST["user_name"]);
 $user_password = $_POST["user_password"];
 $height = $_POST["height"];
 $weight = $_POST["weight"];
-// check if email is valid
-$email = "example@example.com";
-$pattern = '/^[a-zA-Z]+@[^\s]+\.[a-zA-Z]{2,4}$/';
-if (!preg_match($pattern, $email)) {
-  $_SESSION['error_message'] = 'Invalid Email Structure';
+
+
+
+
+if (empty($_POST['user_email'])) {
+  $_SESSION['error_message'] = 'please enter an email address';
   header("Location: signup.php");
   exit();
-} 
+} else if (!filter_var($_POST['user_email'], FILTER_VALIDATE_EMAIL)) {
+  $_SESSION['error_message'] =  "Please enter a valid email address.";
+  header("Location: signup.php");
+  exit();
+} else {
+  $user_email = trim($_POST["user_email"]);
+}
+
+//verify if height and weight is not empty and is a positive number 
+if (empty($_POST['height'])) {
+  $_SESSION['error_message'] = 'please enter your height';
+  header("Location: signup.php");
+  exit();
+} else if (!is_numeric($_POST['height']) || $_POST['height'] < 130) {
+  $_SESSION['error_message'] =  "Please enter a valid height.";
+  header("Location: signup.php");
+  exit();
+} else {
+  $height = trim($_POST["height"]);
+}
+
+if (empty($_POST['weight'])) {
+  $_SESSION['error_message'] = 'please enter your weight';
+  header("Location: signup.php");
+  exit();
+} else if (!is_numeric($_POST['weight']) || $_POST['weight'] < 35) {
+  $_SESSION['error_message'] =  "Please enter a valid weight.";
+  header("Location: signup.php");
+  exit();
+} else {
+  $weight = trim($_POST["weight"]);
+}
+
 // Check if username already exists
 $sql = "SELECT * FROM user_signup WHERE user_name = ?";
 $stmt = $conn->prepare($sql);

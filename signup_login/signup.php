@@ -34,7 +34,6 @@ if (isset($_SESSION['user_id'])) {
     <div class="form-group">
       <p class="create">Create an account</p>
       <?php
-      session_start();
       if (isset($_SESSION['error_message'])) {
         echo '<p class="error">' . $_SESSION['error_message'] . '</p>';
         unset($_SESSION['error_message']); // unset the session variable after displaying the message
@@ -46,7 +45,7 @@ if (isset($_SESSION['user_id'])) {
       <input class="form-control" type="email" name="user_email" placeholder="Enter Your E-mail" required />
     </div>
     <div class="form-group">
-      <label>Name :</label>
+      <label>Username :</label>
       <input class="form-control" type="text" name="user_name" placeholder="Enter Your Username" required />
     </div>
     <div class="form-group">

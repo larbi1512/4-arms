@@ -2,11 +2,10 @@
 session_start();
 require_once "../db.php";
 $user_id = $_SESSION["user_id"];
-$weight = $_POST["weight"];
+$weight = trim($_POST["weight"]);
 $goal = $_POST["goal"];
-
+ 
 // Validate and sanitize the data (optional)
-
 $weight = filter_var($weight, FILTER_SANITIZE_NUMBER_FLOAT);
 $goal = htmlspecialchars($goal, ENT_QUOTES, 'UTF-8');
 $currentDate = date("Y-m-d");

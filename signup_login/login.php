@@ -34,7 +34,6 @@ if (isset($_SESSION['user_id'])) {
     <div class="form-group">
       <h3 class="text">Log in to your account</h3>
       <?php
-      session_start();
       if (isset($_SESSION['error_message'])) {
         echo '<p class="error">' . $_SESSION['error_message'] . '</p>';
         unset($_SESSION['error_message']); // unset the session variable after displaying the message
