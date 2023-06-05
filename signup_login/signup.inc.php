@@ -8,7 +8,14 @@ $user_email = $_POST["user_email"];
 $user_password = $_POST["user_password"];
 $height = $_POST["height"];
 $weight = $_POST["weight"];
-
+// check if email is valid
+$email = "example@example.com";
+$pattern = '/^[a-zA-Z]+@[^\s]+\.[a-zA-Z]{2,4}$/';
+if (!preg_match($pattern, $email)) {
+  $_SESSION['error_message'] = 'Invalid Email Structure';
+  header("Location: signup.php");
+  exit();
+} 
 // Check if username already exists
 $sql = "SELECT * FROM user_signup WHERE user_name = ?";
 $stmt = $conn->prepare($sql);
