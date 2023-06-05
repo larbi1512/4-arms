@@ -2,11 +2,24 @@
 session_start();
 require_once "../db.php";
 $user_id = $_SESSION["user_id"];
-if($user_id == 1)
-{
+
+
+
+
+if ($user_id == 1) {
   header("Location: ../admin/dashboard.php");
   exit();
 }
+
+//verify is user id exits in assigned table
+$sql = "SELECT * FROM assigned WHERE user_id = $user_id";
+$result = $conn->query($sql);
+if ($result->num_rows == 0) {
+  header("Location: ../quiz/LandingQuiz.php");
+  exit();
+}
+
+
 $sql_workout = "SELECT * FROM progress WHERE user_id = $user_id order by update_date desc limit 1";
 $result = $conn->query($sql_workout);
 $row = $result->fetch_assoc();
@@ -99,58 +112,56 @@ if ($currentDate >= $targetDate) {
 
     <div class="be-strong-be">Be strong Be fit</div>
     <div class="make-yourself-stronger-container">
-             <p class="make-yourself-stronger" id="changing-text1">Make yourself stronger</p>
-            <p class="make-yourself-stronger" id="changing-text2">than your excuses</p>
+      <p class="make-yourself-stronger" id="changing-text1">Make yourself stronger</p>
+      <p class="make-yourself-stronger" id="changing-text2">than your excuses</p>
     </div>
 
 
 
     <div class="container">
       <div class="box" style=" --clr: #db3846;">
-      <?php
-      $sql_workout = "SELECT * FROM assigned inner join workout_plan on workout_plan.workout_id = assigned.workout_id WHERE user_id = $user_id LIMIT 1";
-      $result = $conn->query($sql_workout);
-      $row = $result->fetch_assoc();
-      ?>
-      <div class="content">
-        <div class="image"><img src="../workout/<?php echo $row['workout_img_link'] ?>" alt="work" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.7" style="width: 100%; height: 100%; border-radius: 10px" /></div>      
-        <div class="details">
-          <h3>Workout</h3>
-          <p>Check your progress</p>
-          <a href="../workout/workout.php">Go</a>
+        <?php
+        $sql_workout = "SELECT * FROM assigned inner join workout_plan on workout_plan.workout_id = assigned.workout_id WHERE user_id = $user_id LIMIT 1";
+        $result = $conn->query($sql_workout);
+        $row = $result->fetch_assoc();
+        ?>
+        <div class="content">
+          <div class="image"><img src="../workout/<?php echo $row['workout_img_link'] ?>" alt="work" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.7" style="width: 100%; height: 100%; border-radius: 10px" /></div>
+          <div class="details">
+            <h3>Workout</h3>
+            <p>Check your progress</p>
+            <a href="../workout/workout.php">Go</a>
           </div>
-          </div>
+        </div>
       </div>
       <div class="box" style=" --clr: #82b63f;">
-      <?php
-      $sql = "SELECT * FROM assigned WHERE user_id = $user_id";
-      $result = $conn->query($sql);
-      $row = $result->fetch_assoc();
-      $diet_id = $row['diet_id'];
-      $sql = "SELECT * FROM diet WHERE diet_id = $diet_id";
-      $result = $conn->query($sql);
-      $row = $result->fetch_assoc();
-      ?>
-      <div class="content">
-        <div class="image"> <img src="../diet/<?php echo $row['diet_link_img'] ?>" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.7"
-          alt="Diet" style="width: 100%; border-radius: 10px" /></div>
-        <div class="details">
-          <h3>Diet</h3>
-          <p>Do not forget ur diet</p>
-          <a href="../diet/diet.php">Go</a>
+        <?php
+        $sql = "SELECT * FROM assigned WHERE user_id = $user_id";
+        $result = $conn->query($sql);
+        $row = $result->fetch_assoc();
+        $diet_id = $row['diet_id'];
+        $sql = "SELECT * FROM diet WHERE diet_id = $diet_id";
+        $result = $conn->query($sql);
+        $row = $result->fetch_assoc();
+        ?>
+        <div class="content">
+          <div class="image"> <img src="../diet/<?php echo $row['diet_link_img'] ?>" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.7" alt="Diet" style="width: 100%; border-radius: 10px" /></div>
+          <div class="details">
+            <h3>Diet</h3>
+            <p>Do not forget ur diet</p>
+            <a href="../diet/diet.php">Go</a>
           </div>
-          </div>
+        </div>
       </div>
       <div class="box" style=" --clr: #79d7ff;">
-      <div class="content">
-        <div class="image"><img src=" " onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.7"
-          alt="Shop" style="width: 100%; border-radius: 10px" /></div>
-        <div class="details">
-          <h3>Shop</h3>
-          <p>Check the latest supplements</p>
-          <a href="../Shop/supplement.php">Go</a>
+        <div class="content">
+          <div class="image"><img src=" " onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.7" alt="Shop" style="width: 100%; border-radius: 10px" /></div>
+          <div class="details">
+            <h3>Shop</h3>
+            <p>Check the latest supplements</p>
+            <a href="../Shop/supplement.php">Go</a>
           </div>
-          </div>
+        </div>
       </div>
     </div>
     <img class="white-lines" alt="" src="./public/white-lines.svg" />
@@ -185,24 +196,24 @@ if ($currentDate >= $targetDate) {
     }
   </script>
   <script>
- const changingText1 = document.getElementById('changing-text1');
-        const changingText2 = document.getElementById('changing-text2');
-        const texts1 = ['Embrace the Grind, ', 'Train with Purpose, ', 'Unleash Your Inner Beast!'];
-        const texts2 = ['Transform Your Body.', 'Achieve with Passion.', ''];
-        let index1 = 0;
-        let index2 = 0;
+    const changingText1 = document.getElementById('changing-text1');
+    const changingText2 = document.getElementById('changing-text2');
+    const texts1 = ['Embrace the Grind, ', 'Train with Purpose, ', 'Unleash Your Inner Beast!'];
+    const texts2 = ['Transform Your Body.', 'Achieve with Passion.', ''];
+    let index1 = 0;
+    let index2 = 0;
 
 
-        function changeText() {
-            changingText1.textContent = texts1[index1];
-            changingText2.textContent = texts2[index2];
+    function changeText() {
+      changingText1.textContent = texts1[index1];
+      changingText2.textContent = texts2[index2];
 
-            index1 = (index1 + 1) % texts1.length;
-            index2 = (index2 + 1) % texts2.length;
-        }
+      index1 = (index1 + 1) % texts1.length;
+      index2 = (index2 + 1) % texts2.length;
+    }
 
-        setInterval(changeText, 3000); // Change text every 5 seconds
-    </script>
+    setInterval(changeText, 3000); // Change text every 5 seconds
+  </script>
 </body>
 
 </html>
